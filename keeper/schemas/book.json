@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-keeper/schemas/book.json",
+  "title": "book",
+  "description": "SPEC P2: a book = {id, account, strategyType, config, state, createdAt}.",
+  "type": "object",
+  "required": ["id", "account", "strategyType", "config", "state", "createdAt"],
+  "properties": {
+    "id": {"type": "string"},
+    "account": {"type": "string"},
+    "strategyType": {"type": "string", "enum": ["harvestAndFeed", "auto", "craft"]},
+    "config": {"type": "object"},
+    "state": {"type": "string", "enum": ["created", "running", "paused", "stopped", "failed"]},
+    "createdAt": {"type": "string"},
+    "reason": {"type": ["object", "null"]}
+  }
+}

@@ -1,0 +1,4522 @@
+{
+ "data": {
+  "account": {
+   "index": 2849,
+   "name": "carol"
+  },
+  "kamisTotal": 147,
+  "kamisServed": 147,
+  "kamis": [
+   {
+    "id": "0x588b0abe296f36fa30deca46efa4a40c55aaac3a98061e49b2bd283d5fe6fbe1",
+    "index": 263,
+    "name": "Kami 263",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 129823,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 171,
+     "total": 240,
+     "percent": 71
+    },
+    "hpRatePerHr": "-12.97",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789414357,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 470,
+     "spotRatePerHr": "+88.93",
+     "avgRatePerHr": "+59.12"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x58680a76143497e5859073028bc0c6f388cebb5c6bbd99ca79f730d5c68ea4c4",
+    "index": 508,
+    "name": "Kami 508",
+    "state": "HARVESTING",
+    "level": 39,
+    "xp": 190577,
+    "xpRequired": 252951,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 212,
+     "total": 220,
+     "percent": 96
+    },
+    "hpRatePerHr": "-5.09",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435910,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 62,
+     "spotRatePerHr": "+40.27",
+     "avgRatePerHr": "+31.66"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x030dc5b2079ffc7679770dfc9f4fe0cc86e0db2d14cf7b23830e1787e0bd6289",
+    "index": 699,
+    "name": "Kami 699",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 121922,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 196,
+     "total": 220,
+     "percent": 89
+    },
+    "hpRatePerHr": "-7.73",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789428792,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 171,
+     "spotRatePerHr": "+55.75",
+     "avgRatePerHr": "+43.46"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xa15f3174053407fc5fc3083b6b3798fc49e5e1279100405c5d36c579f1eeebca",
+    "index": 1008,
+    "name": "Kami 1008",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 60759,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 194,
+     "total": 210,
+     "percent": 92
+    },
+    "hpRatePerHr": "-6.47",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431550,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 121,
+     "spotRatePerHr": "+50.06",
+     "avgRatePerHr": "+38.19"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6bcd60656842826010ed61e108bf8e26060107333893216b5d777bce5dc809d2",
+    "index": 1248,
+    "name": "Kami 1248",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 12587,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 114,
+     "total": 220,
+     "percent": 52
+    },
+    "hpRatePerHr": "-13.24",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789396106,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 834,
+     "spotRatePerHr": "+104.76",
+     "avgRatePerHr": "+64.08"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x1078637db0563a7cf4162398f7c8e540321006928d2d4fdbf50bbabc2b99c929",
+    "index": 1362,
+    "name": "Kami 1362",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 50215,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 182,
+     "total": 220,
+     "percent": 83
+    },
+    "hpRatePerHr": "-8.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789419093,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 293,
+     "spotRatePerHr": "+64.86",
+     "avgRatePerHr": "+44.13"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x681c2b6920a482d323d5ae4eef9117cae9661ffed140812f0acae29e39ec79fb",
+    "index": 1473,
+    "name": "Kami 1473",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 80243,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 149,
+     "total": 250,
+     "percent": 60
+    },
+    "hpRatePerHr": "-13.75",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789402364,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 721,
+     "spotRatePerHr": "+99.14",
+     "avgRatePerHr": "+63.88"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbf7b234528a41883784b5c9d8b4ef1fa2c5e0eaf5f92cfa367cda026773ee421",
+    "index": 1820,
+    "name": "Kami 1820",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 106353,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 105,
+     "total": 200,
+     "percent": 53
+    },
+    "hpRatePerHr": "-12.47",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789399371,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 763,
+     "spotRatePerHr": "+100.89",
+     "avgRatePerHr": "+63.03"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xedf41976f70fdbd4ad6e0843d1d12c2219012ee6a7c2c1fb1ec1959acc3b66bc",
+    "index": 1941,
+    "name": "Kami 1941",
+    "state": "RESTING",
+    "level": 38,
+    "xp": 176322,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 272,
+     "total": 280,
+     "percent": 97
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789429104,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x24b9e452a7542e12d8f9ac5efb4c657009fafddc9a1c03608895e186fc380281",
+    "index": 2065,
+    "name": "Kami 2065",
+    "state": "RESTING",
+    "level": 37,
+    "xp": 33811,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 214,
+     "total": 240,
+     "percent": 89
+    },
+    "hpRatePerHr": "+24.60",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789432301,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x3380b1ba3a569cc18051b9ab01e003a609f838a5366ce9aadc7e257a9caff731",
+    "index": 2180,
+    "name": "Kami 2180",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 84601,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 170,
+     "total": 220,
+     "percent": 77
+    },
+    "hpRatePerHr": "-9.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789414175,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 395,
+     "spotRatePerHr": "+74.38",
+     "avgRatePerHr": "+49.38"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x5613b27d435399633cdcc4a13fde87c2fdee607cb81a2f2440b8f2d50d55b6c0",
+    "index": 2296,
+    "name": "Kami 2296",
+    "state": "HARVESTING",
+    "level": 39,
+    "xp": 134118,
+    "xpRequired": 252951,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 132,
+     "total": 230,
+     "percent": 57
+    },
+    "hpRatePerHr": "-16.72",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789410462,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 734,
+     "spotRatePerHr": "+126.41",
+     "avgRatePerHr": "+81.25"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xe99a75d61ebfdce33bc7ea762c7f82e185d66d938b244885a928434ba3d14b6e",
+    "index": 2405,
+    "name": "Kami 2405",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 90906,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 188,
+     "total": 190,
+     "percent": 99
+    },
+    "hpRatePerHr": "-5.09",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789442097,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 8,
+     "spotRatePerHr": "+35.24",
+     "avgRatePerHr": "+33.37"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x08aeb6052ba568e6424e72fd2c76e71f82f3a1552a5ab37fb1b32dfd6f411ebd",
+    "index": 3098,
+    "name": "Kami 3098",
+    "state": "HARVESTING",
+    "level": 41,
+    "xp": 112529,
+    "xpRequired": 400949,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 280,
+     "total": 290,
+     "percent": 97
+    },
+    "hpRatePerHr": "-5.76",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436357,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 71,
+     "spotRatePerHr": "+44.58",
+     "avgRatePerHr": "+38.85"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xc9f908030fd516464f11db97dd58e9089acd366ee15ca0f64b3652fd3f1740c",
+    "index": 3451,
+    "name": "Kami 3451",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 13706,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 199,
+     "total": 260,
+     "percent": 77
+    },
+    "hpRatePerHr": "-11.05",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789413789,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 425,
+     "spotRatePerHr": "+77.75",
+     "avgRatePerHr": "+52.43"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x7064f900001abbfbcc058423e8bccb2b6559ad16f11d8f56970cfbd1351cba53",
+    "index": 3789,
+    "name": "Kami 3789",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 60694,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 156,
+     "total": 210,
+     "percent": 74
+    },
+    "hpRatePerHr": "-10.52",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416829,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 385,
+     "spotRatePerHr": "+75.80",
+     "avgRatePerHr": "+53.09"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xcf4c52c46ae1b8f6d6a57583f4e0b62bd384be4a4931bce35a3cdc3f0443286b",
+    "index": 4129,
+    "name": "Kami 4129",
+    "state": "HARVESTING",
+    "level": 40,
+    "xp": 263054,
+    "xpRequired": 318466,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 197,
+     "total": 250,
+     "percent": 79
+    },
+    "hpRatePerHr": "-10.51",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789418818,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 402,
+     "spotRatePerHr": "+80.84",
+     "avgRatePerHr": "+59.85"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x0795490e07abe39981ee85fa33bd47e8e783b2b8242cc413195e1773fee53466",
+    "index": 4358,
+    "name": "Kami 4358",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 110096,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 101,
+     "total": 200,
+     "percent": 51
+    },
+    "hpRatePerHr": "-12.71",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789398409,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 794,
+     "spotRatePerHr": "+102.82",
+     "avgRatePerHr": "+64.12"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x9c2eb26ac869686f9b8e2b1f3349ddc6eaf37b94eacd0cc40d76b2e2c8a82fe5",
+    "index": 4579,
+    "name": "Kami 4579",
+    "state": "HARVESTING",
+    "level": 40,
+    "xp": 187815,
+    "xpRequired": 318466,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 288,
+     "total": 290,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.35",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441565,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 13,
+     "spotRatePerHr": "+34.28",
+     "avgRatePerHr": "+33.08"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xb2b72b57b7fa5c24dd025fed622793225a5291570455b0dc35c36ccf8afcffce",
+    "index": 4802,
+    "name": "Kami 4802",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 21738,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 203,
+     "total": 210,
+     "percent": 97
+    },
+    "hpRatePerHr": "-4.27",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436011,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 55,
+     "spotRatePerHr": "+34.51",
+     "avgRatePerHr": "+28.47"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x1d2e29235bafe5378c42f2587c8773ec179a6926bf78c11a8954e86ebe46cb78",
+    "index": 4916,
+    "name": "Kami 4916",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 130315,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 158,
+     "total": 220,
+     "percent": 72
+    },
+    "hpRatePerHr": "-10.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789411055,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 444,
+     "spotRatePerHr": "+77.84",
+     "avgRatePerHr": "+50.13"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xef8ec46099eda4be0084398b71aae74d663c92f656e8ff92ff48ee02678058f4",
+    "index": 5034,
+    "name": "Kami 5034",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 116188,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 161,
+     "total": 240,
+     "percent": 67
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438335,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xb63badfd3027b3ec3fd2c8e669efb59689160f808fffd1c48fd1ab4d5b4e69e4",
+    "index": 5146,
+    "name": "Kami 5146",
+    "state": "RESTING",
+    "level": 41,
+    "xp": 142455,
+    "xpRequired": 400949,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 221,
+     "total": 300,
+     "percent": 74
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438843,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x6599ab7b54b74abfc48388d415be77d931a2f71fdf2b2d380b29245d08500fc6",
+    "index": 5607,
+    "name": "Kami 5607",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 58006,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 203,
+     "total": 230,
+     "percent": 88
+    },
+    "hpRatePerHr": "-8.11",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789427818,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 191,
+     "spotRatePerHr": "+58.50",
+     "avgRatePerHr": "+45.32"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x3ab414fd75818156b42c739c2026c03a4fb0299f67426128b5128475f1e60b8f",
+    "index": 5721,
+    "name": "Kami 5721",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 82253,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 169,
+     "total": 240,
+     "percent": 70
+    },
+    "hpRatePerHr": "-11.43",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789409220,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 536,
+     "spotRatePerHr": "+86.44",
+     "avgRatePerHr": "+57.17"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x5381966212b0111481e81b9f6b24613550851d86bf76ac4326ee38121eb7ae95",
+    "index": 6288,
+    "name": "Kami 6288",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 59563,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 143,
+     "total": 210,
+     "percent": 68
+    },
+    "hpRatePerHr": "-10.78",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789408905,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 527,
+     "spotRatePerHr": "+85.31",
+     "avgRatePerHr": "+55.73"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xa884afce4821d20ff98b51a7294ff691aca4aa8266af48753f9e2273a1015086",
+    "index": 6399,
+    "name": "Kami 6399",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 172593,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 181,
+     "total": 270,
+     "percent": 67
+    },
+    "hpRatePerHr": "-14.11",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789411862,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 606,
+     "spotRatePerHr": "+97.06",
+     "avgRatePerHr": "+70.08"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xd6f4f2fa8b8e28c58dff0afd8e9bf733e2e982779f1bb98c96edfbf85d63714a",
+    "index": 6736,
+    "name": "Kami 6736",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 88207,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 146,
+     "total": 230,
+     "percent": 63
+    },
+    "hpRatePerHr": "-12.03",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789403319,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 646,
+     "spotRatePerHr": "+93.04",
+     "avgRatePerHr": "+58.61"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x7c8a94a9a01688309283ae643ca2151f724c5ca7397cc889b46a2cc7dfd4616a",
+    "index": 7078,
+    "name": "Kami 7078",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 20383,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 193,
+     "total": 230,
+     "percent": 84
+    },
+    "hpRatePerHr": "-8.38",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789420305,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 284,
+     "spotRatePerHr": "+64.80",
+     "avgRatePerHr": "+45.11"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xc0c2aead0d3c263c9297c4e0e3329d5f82fd1e2da0a38ad677698ad7bd07d1d3",
+    "index": 7420,
+    "name": "Kami 7420",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 32817,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 250,
+     "percent": 89
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431010,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xde7e1f0b76256a30cd25d8646e7e2ffa28afd8748571002ae8f25d0f9cb28dc9",
+    "index": 7534,
+    "name": "Kami 7534",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 87154,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 182,
+     "total": 240,
+     "percent": 76
+    },
+    "hpRatePerHr": "-10.28",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789411846,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 438,
+     "spotRatePerHr": "+77.72",
+     "avgRatePerHr": "+50.70"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6a29f830a5336927799df0a34aad5e46927b65bbce318ffc739fedd49243b404",
+    "index": 7771,
+    "name": "Kami 7771",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 30467,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 191,
+     "total": 230,
+     "percent": 83
+    },
+    "hpRatePerHr": "-8.93",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789420766,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 288,
+     "spotRatePerHr": "+65.92",
+     "avgRatePerHr": "+46.65"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xc6cd51b8348e42bdbcb8b9a365d3f2e44a6f5e7fdb15db689e2eb13b1e2bfac",
+    "index": 7886,
+    "name": "Kami 7886",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 28187,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 216,
+     "total": 220,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.56",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439419,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 28,
+     "spotRatePerHr": "+32.09",
+     "avgRatePerHr": "+29.02"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbb3dce8b8f70230af94736ebee66578d752e0691de4e5b242bdf6f311f5219ba",
+    "index": 7999,
+    "name": "Kami 7999",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 36705,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 234,
+     "total": 240,
+     "percent": 98
+    },
+    "hpRatePerHr": "-5.18",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439025,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 38,
+     "spotRatePerHr": "+38.24",
+     "avgRatePerHr": "+34.80"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xb39a8a5d1fb9bfab80736b76ef7b74b5d5784065b4759f5303dc6e192ef723e1",
+    "index": 10004,
+    "name": "Kami 10004",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 56833,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 173,
+     "total": 210,
+     "percent": 82
+    },
+    "hpRatePerHr": "-9.21",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789422413,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 284,
+     "spotRatePerHr": "+71.25",
+     "avgRatePerHr": "+49.81"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xf4f172c511a5e0bb14ef7d49e7708517170cdad139ab5cf5a53ce3d6ffe534ab",
+    "index": 10694,
+    "name": "Kami 10694",
+    "state": "HARVESTING",
+    "level": 38,
+    "xp": 175602,
+    "xpRequired": 200914,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 245,
+     "total": 300,
+     "percent": 82
+    },
+    "hpRatePerHr": "-11.41",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789420157,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 372,
+     "spotRatePerHr": "+78.45",
+     "avgRatePerHr": "+58.65"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x912465e590dde0a418632f134b82411738e4aebdf05a74d35b25966e44d3b054",
+    "index": 11400,
+    "name": "Kami 11400",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 35594,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 186,
+     "total": 250,
+     "percent": 74
+    },
+    "hpRatePerHr": "-11.13",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789412825,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 469,
+     "spotRatePerHr": "+82.16",
+     "avgRatePerHr": "+56.01"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xde3d64364c92d2c02f05f745c8b630b6cbf00ab4f2058773e01ca6e548210ff8",
+    "index": 12796,
+    "name": "Kami 12796",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 88182,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 136,
+     "total": 220,
+     "percent": 62
+    },
+    "hpRatePerHr": "-11.88",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789402153,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 664,
+     "spotRatePerHr": "+93.97",
+     "avgRatePerHr": "+58.56"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x184870091b7ff3505288d3686e74ad993e9d7a67c8aa0359bbe17e917ff1a8f3",
+    "index": 13485,
+    "name": "Kami 13485",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 150434,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 206,
+     "total": 210,
+     "percent": 98
+    },
+    "hpRatePerHr": "-3.82",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438748,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 31,
+     "spotRatePerHr": "+30.24",
+     "avgRatePerHr": "+26.59"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xcd607a40ba558062dc0674c326fe369f546735c7370ab81f386ad376cb0b767c",
+    "index": 14173,
+    "name": "Kami 14173",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 75759,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 234,
+     "total": 250,
+     "percent": 94
+    },
+    "hpRatePerHr": "-6.19",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431287,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 115,
+     "spotRatePerHr": "+45.68",
+     "avgRatePerHr": "+35.52"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x4776e9ab2bb0153c8a6656d133b3ce310bbf594c7f3fda8caccfdca2d6c564ed",
+    "index": 16245,
+    "name": "Kami 16245",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 20844,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 182,
+     "total": 230,
+     "percent": 79
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435218,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xb75917e60e72dcd59cad1cadb7ca6a386673ee47118a3ab85ef30f1b469718a9",
+    "index": 16932,
+    "name": "Kami 16932",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 72433,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 250,
+     "percent": 89
+    },
+    "hpRatePerHr": "-7.92",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789426231,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 191,
+     "spotRatePerHr": "+55.73",
+     "avgRatePerHr": "+41.19"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x3a1f9d8df7d5fb826cddcca336e469dbcfa703004edd1e8d89de80ff7cd32069",
+    "index": 17622,
+    "name": "Kami 17622",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 91968,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 220,
+     "total": 230,
+     "percent": 96
+    },
+    "hpRatePerHr": "-5.48",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435812,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 64,
+     "spotRatePerHr": "+38.54",
+     "avgRatePerHr": "+32.34"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xa587a05a0f3de6d070006b7c20172a0bec717cf3d6a2be852a30dcf539e3b65",
+    "index": 18992,
+    "name": "Kami 18992",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 81395,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 165,
+     "total": 240,
+     "percent": 69
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438927,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xacda34f07a8fbb65d24580625b5974d8510d8f11767639901fb82a40c302f4b7",
+    "index": 19684,
+    "name": "Kami 19684",
+    "state": "HARVESTING",
+    "level": 37,
+    "xp": 40310,
+    "xpRequired": 159582,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 189,
+     "total": 230,
+     "percent": 82
+    },
+    "hpRatePerHr": "-12.48",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789425904,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 307,
+     "spotRatePerHr": "+94.37",
+     "avgRatePerHr": "+64.79"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x9846616f7f2543ad78accebc88a2113d1f6c0eca736fed3c561e4fe1c5e1e33b",
+    "index": 20369,
+    "name": "Kami 20369",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 35193,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 206,
+     "total": 260,
+     "percent": 79
+    },
+    "hpRatePerHr": "+23.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437452,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x44d348f6ca164cfa074b7b188f39d7a629a240c3fcc61fadc9108dc6191a2563",
+    "index": 21052,
+    "name": "Kami 21052",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 55431,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 155,
+     "total": 220,
+     "percent": 70
+    },
+    "hpRatePerHr": "+27.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437723,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x8f3edb76b09c1c485d90ba4f59e149b22dea5e8b1bcf0fcbc7fc215850532202",
+    "index": 21732,
+    "name": "Kami 21732",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 45701,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 213,
+     "total": 240,
+     "percent": 89
+    },
+    "hpRatePerHr": "-7.99",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789427126,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 193,
+     "spotRatePerHr": "+57.62",
+     "avgRatePerHr": "+43.87"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xefc1281346264d92d346428258a7a0b6fa37e3251be4aeeee4fc2b352d84840d",
+    "index": 23093,
+    "name": "Kami 23093",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 91071,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 173,
+     "total": 200,
+     "percent": 87
+    },
+    "hpRatePerHr": "-8.39",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789428955,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 188,
+     "spotRatePerHr": "+60.49",
+     "avgRatePerHr": "+48.31"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xcc2f43f48c1ac34406dd95064a0e0a46a11b909ff8bf32f2da3c331978e740d9",
+    "index": 23770,
+    "name": "Kami 23770",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 79365,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 179,
+     "total": 240,
+     "percent": 75
+    },
+    "hpRatePerHr": "-10.66",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789412194,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 460,
+     "spotRatePerHr": "+80.56",
+     "avgRatePerHr": "+53.84"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x43c66bf653d6caa72d24b1fe53f36981332c911254bb6aef23faff6e39e4e624",
+    "index": 24454,
+    "name": "Kami 24454",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 85037,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 170,
+     "total": 250,
+     "percent": 68
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439197,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xa3add52f50f7e163f7166fd8e52ec38d88b10ef72202c9157f2535014a0494cc",
+    "index": 25133,
+    "name": "Kami 25133",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 78888,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 133,
+     "total": 240,
+     "percent": 55
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789442592,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x79375748cdd79e2076a5c8d36b7efa39afbe4c4d1e9d3b2fec5b6e22f8b4b748",
+    "index": 25814,
+    "name": "Kami 25814",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 68960,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 217,
+     "total": 230,
+     "percent": 94
+    },
+    "hpRatePerHr": "-6.84",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435030,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 88,
+     "spotRatePerHr": "+46.87",
+     "avgRatePerHr": "+40.00"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x921f74fcf4ead83e3877a113dea6649b4a2e233bb2cb66f6ba362d5977004daa",
+    "index": 27850,
+    "name": "Kami 27850",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 15771,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 211,
+     "total": 220,
+     "percent": 96
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789430371,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x6e63cf6139a6bb13275f31b4e1265db9276f351059541a7f6743c453b03d3ec4",
+    "index": 28532,
+    "name": "Kami 28532",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 66286,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 171,
+     "total": 230,
+     "percent": 74
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436549,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xbeafdcb67648548f827e60dc0dd806092c80bd4b76fe585073b58bb91514bae8",
+    "index": 29213,
+    "name": "Kami 29213",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 96390,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 149,
+     "total": 250,
+     "percent": 60
+    },
+    "hpRatePerHr": "+24.60",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441840,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x730f0e567370862d526d9b8d5c2c3781dbcc58f5c0a2bfa5542e2d919019051b",
+    "index": 29891,
+    "name": "Kami 29891",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 21976,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 126,
+     "total": 230,
+     "percent": 55
+    },
+    "hpRatePerHr": "-13.28",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789396723,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 804,
+     "spotRatePerHr": "+102.74",
+     "avgRatePerHr": "+62.58"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xfb9ecd86301dc448072dd47969e775e98dd68ad3438630abd51261ba24ebb6d",
+    "index": 30574,
+    "name": "Kami 30574",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 34936,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 219,
+     "total": 230,
+     "percent": 95
+    },
+    "hpRatePerHr": "-6.16",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435572,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 73,
+     "spotRatePerHr": "+42.22",
+     "avgRatePerHr": "+35.81"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xf4143fcc7bc6c9e2f001043c7743a7d9c9dfb31aac17ebb4f4035dea7a26c45c",
+    "index": 31929,
+    "name": "Kami 31929",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 38366,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 218,
+     "total": 230,
+     "percent": 95
+    },
+    "hpRatePerHr": "-6.10",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789434539,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 88,
+     "spotRatePerHr": "+45.07",
+     "avgRatePerHr": "+37.73"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x482c06585ef36cf32835397374cc07f0be5cf5920ec6c8299773c96cfbffad4c",
+    "index": 32611,
+    "name": "Kami 32611",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 48488,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 146,
+     "total": 250,
+     "percent": 58
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441908,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x4be7a324248336a2f27a3de1a823b993c410d8a22e131234c924fbb6c8e3d00c",
+    "index": 33972,
+    "name": "Kami 33972",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54456,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 238,
+     "total": 240,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.83",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441607,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 10,
+     "spotRatePerHr": "+28.28",
+     "avgRatePerHr": "+27.08"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbeb335db3a43bd7c292028a85bcf3df2eea8e6c5ef0595fb50d5df25ca8c504b",
+    "index": 35338,
+    "name": "Kami 35338",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 76896,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 168,
+     "total": 230,
+     "percent": 73
+    },
+    "hpRatePerHr": "+26.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437527,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xbcdbc1c9c0e4496eef05603e8fdd95a08435b8f744a9e776eb2226f820b60d86",
+    "index": 36024,
+    "name": "Kami 36024",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 11488,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 166,
+     "total": 220,
+     "percent": 75
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436533,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xdb49743d8002fffb9be7b71b64a4a4a19934306aeb0574d2e9534d10621b1fbd",
+    "index": 36703,
+    "name": "Kami 36703",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 56866,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 247,
+     "total": 250,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.30",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789440777,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 17,
+     "spotRatePerHr": "+30.97",
+     "avgRatePerHr": "+29.05"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xc30390c80a9401687bea354d823d6e165367c02b418fddccec6230ddf5398ae5",
+    "index": 37383,
+    "name": "Kami 37383",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 26632,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 149,
+     "total": 240,
+     "percent": 62
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789440433,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xc62762fbf07d425248e9e279610f9994a72afcde1277a84f1685f762bc021d1",
+    "index": 38064,
+    "name": "Kami 38064",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 24661,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 270,
+     "percent": 82
+    },
+    "hpRatePerHr": "+23.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789433454,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xb4372041635a011104f65084759e97736de31c531388e8dcf66e030eb7d4b961",
+    "index": 38749,
+    "name": "Kami 38749",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 42769,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 145,
+     "total": 210,
+     "percent": 69
+    },
+    "hpRatePerHr": "+27.60",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438104,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x118f8b1b7dfeadcc3b3222a675f9f9dbc5a683be181d28c98ffabf7af78992dc",
+    "index": 39427,
+    "name": "Kami 39427",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 89899,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 190,
+     "total": 210,
+     "percent": 90
+    },
+    "hpRatePerHr": "-7.36",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789430975,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 133,
+     "spotRatePerHr": "+50.50",
+     "avgRatePerHr": "+40.08"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6e45201649589cf0eb0d55bcc359613ebccd10a8609176d16389268164dd9bf4",
+    "index": 40788,
+    "name": "Kami 40788",
+    "state": "HARVESTING",
+    "level": 36,
+    "xp": 74283,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 237,
+     "total": 240,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.91",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441053,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 18,
+     "spotRatePerHr": "+37.12",
+     "avgRatePerHr": "+35.12"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x0d1f7517a5ca084757bd162040908b9e4791f1df51f3c419b7aeb912c6a543c0",
+    "index": 41466,
+    "name": "Kami 41466",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 61529,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 174,
+     "total": 210,
+     "percent": 83
+    },
+    "hpRatePerHr": "-9.49",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789425320,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 252,
+     "spotRatePerHr": "+66.75",
+     "avgRatePerHr": "+51.43"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x663cfc75be47bc7a274e3d875465937febf73bf9ce3b4230a887da5be7972d45",
+    "index": 42143,
+    "name": "Kami 42143",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 102926,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 228,
+     "total": 240,
+     "percent": 95
+    },
+    "hpRatePerHr": "-6.69",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435895,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 76,
+     "spotRatePerHr": "+44.69",
+     "avgRatePerHr": "+38.55"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x2653c0a8cd858bbaf8264ce6310b90c115c5c37a8c25bdb8b4a8aeb29f470c6f",
+    "index": 43502,
+    "name": "Kami 43502",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 63216,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 200,
+     "total": 210,
+     "percent": 95
+    },
+    "hpRatePerHr": "-5.87",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436079,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 73,
+     "spotRatePerHr": "+44.38",
+     "avgRatePerHr": "+38.39"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xf07e485da12f48c9156b50431b261324c2e421f3fdea69feab9b3f76dc23cd41",
+    "index": 44860,
+    "name": "Kami 44860",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 73735,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 154,
+     "total": 250,
+     "percent": 62
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441433,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xe5c53af03da604d75a097271fa011ae19bec02dc02f55591057a002a5f2e3ea9",
+    "index": 45539,
+    "name": "Kami 45539",
+    "state": "RESTING",
+    "level": 39,
+    "xp": 12643,
+    "xpRequired": 252951,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 157,
+     "total": 270,
+     "percent": 58
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441404,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xfba64b8af54c9e4faecaa1aaedee46fe0beabba2b21972e2efd2fba0c86ece9e",
+    "index": 46897,
+    "name": "Kami 46897",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 111105,
+    "xpRequired": 100678,
+    "levelUpReady": true,
+    "skillPoints": 0,
+    "hp": {
+     "current": 177,
+     "total": 210,
+     "percent": 84
+    },
+    "hpRatePerHr": "+27.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789434014,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x73dfc50d4a3149109f027793e9d4730c0d8c279d93eecb5c596ce5227f388221",
+    "index": 48261,
+    "name": "Kami 48261",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 100133,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 172,
+     "total": 230,
+     "percent": 75
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436318,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xcbdf0cac2e3ddfcc28bf074471aa3a581580774cf86440098e0db0a7c9f8c0e6",
+    "index": 48941,
+    "name": "Kami 48941",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 92427,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 205,
+     "total": 210,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.38",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439081,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 32,
+     "spotRatePerHr": "+33.87",
+     "avgRatePerHr": "+29.81"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x03e0356fb161f3f170327ab493ee70dc371f5cb0f1390540255d76d4739f0bcd",
+    "index": 49621,
+    "name": "Kami 49621",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 62227,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 185,
+     "total": 240,
+     "percent": 77
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436074,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x57170acd0966765f8f1e9e0c80356c1f7164d309d968ea6acf076ff2a5657246",
+    "index": 50305,
+    "name": "Kami 50305",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 88492,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 184,
+     "total": 240,
+     "percent": 77
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436269,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xe4e82d80ac71db1cfebc6f8b18d169fb5dffd2b6891a5f0b8a022fdc4a9477ee",
+    "index": 50986,
+    "name": "Kami 50986",
+    "state": "RESTING",
+    "level": 36,
+    "xp": 13502,
+    "xpRequired": 126753,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 156,
+     "total": 220,
+     "percent": 71
+    },
+    "hpRatePerHr": "+27.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437578,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xcc2b009662dbd790a42cb5b90c5480e82242f1374faff3e83540fa3ad5a85018",
+    "index": 51668,
+    "name": "Kami 51668",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 84494,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 191,
+     "total": 260,
+     "percent": 73
+    },
+    "hpRatePerHr": "+23.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437229,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xb08623cc1895252641075bf707e14f21c3495b8a0a8fb34c7c8d81c120dfd949",
+    "index": 52351,
+    "name": "Kami 52351",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 54619,
+    "xpRequired": 50449,
+    "levelUpReady": true,
+    "skillPoints": 0,
+    "hp": {
+     "current": 214,
+     "total": 220,
+     "percent": 97
+    },
+    "hpRatePerHr": "+26.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431606,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x2944cb6450dc86f745784a387ce7860b57db77de7b4ec91ad6b4ae309c3a868a",
+    "index": 53031,
+    "name": "Kami 53031",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 41147,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 197,
+     "total": 230,
+     "percent": 86
+    },
+    "hpRatePerHr": "+26.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789433536,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x83ef4df450159e0325c4dfda03815ec36922e7a24ec159bf8ffe43cc49ff0860",
+    "index": 53710,
+    "name": "Kami 53710",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 27702,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 226,
+     "total": 230,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.41",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439330,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 30,
+     "spotRatePerHr": "+33.31",
+     "avgRatePerHr": "+29.50"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x3f922fcc026b60aa4c41498198be489eb39b2895a2c87571da0a04800ad6a6f3",
+    "index": 54391,
+    "name": "Kami 54391",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 42171,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 164,
+     "total": 240,
+     "percent": 68
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439065,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xf29f124079fdf9f4d2943276d269385911693fe9c12e553677241d797c514f8",
+    "index": 55081,
+    "name": "Kami 55081",
+    "state": "HARVESTING",
+    "level": 35,
+    "xp": 79200,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 207,
+     "total": 230,
+     "percent": 90
+    },
+    "hpRatePerHr": "-8.26",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789430339,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 168,
+     "spotRatePerHr": "+61.00",
+     "avgRatePerHr": "+47.81"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x20cf0810ad6dfb78883f0bf51fe823ada33f6a3fb06e716ec9151e9778f90c84",
+    "index": 55767,
+    "name": "Kami 55767",
+    "state": "RESTING",
+    "level": 34,
+    "xp": 46669,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 248,
+     "total": 270,
+     "percent": 92
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789430780,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x750d03a5c1f13703785871f3c6af7400a3def9a22363c2b1dd9eba532c360083",
+    "index": 56446,
+    "name": "Kami 56446",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 67074,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 224,
+     "total": 280,
+     "percent": 80
+    },
+    "hpRatePerHr": "+23.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789434949,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x8d16384cf702a0a45f28219d9350b58ff061de8083711b2995bd803cca69d20e",
+    "index": 57130,
+    "name": "Kami 57130",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 56912,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 238,
+     "total": 240,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.92",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441330,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 12,
+     "spotRatePerHr": "+28.95",
+     "avgRatePerHr": "+27.55"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x2a2d3fdd5bc1b7b599ea24646b807a3c94d4a4c79285fd1de64dcfaea35ac9a1",
+    "index": 57810,
+    "name": "Kami 57810",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 70026,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 169,
+     "total": 240,
+     "percent": 70
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438342,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x24c7b7b5b96a5945a2de21c6d5fa700cd6bdb81158d0d97e674be34c2edd14e9",
+    "index": 58493,
+    "name": "Kami 58493",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 30069,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 217,
+     "total": 240,
+     "percent": 90
+    },
+    "hpRatePerHr": "-7.83",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789429761,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 150,
+     "spotRatePerHr": "+52.32",
+     "avgRatePerHr": "+40.86"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x4b1acaeca7e8f87ab5e50c1ab7471f27580bd3377572c4bf1b964b37ac75da83",
+    "index": 59170,
+    "name": "Kami 59170",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 47472,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 257,
+     "total": 260,
+     "percent": 99
+    },
+    "hpRatePerHr": "-5.04",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789440776,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 20,
+     "spotRatePerHr": "+35.47",
+     "avgRatePerHr": "+33.55"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6f7224725fb8ba994099eac7a1d3b1691e19726f5b2fa3acce01a84cb52971a7",
+    "index": 59852,
+    "name": "Kami 59852",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 61537,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 208,
+     "total": 220,
+     "percent": 95
+    },
+    "hpRatePerHr": "-6.05",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789434803,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 90,
+     "spotRatePerHr": "+46.77",
+     "avgRatePerHr": "+39.68"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x0b901cf2638928f124d1782cc7787c6c00958363df36e988d97b3a84b2a7fa06",
+    "index": 61212,
+    "name": "Kami 61212",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 58064,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 236,
+     "total": 240,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.42",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789440083,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 24,
+     "spotRatePerHr": "+32.64",
+     "avgRatePerHr": "+30.14"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x15e9e101fb5cefac8f47e260578146e485f7533e059f36e57fc3d9a660b3dd89",
+    "index": 61891,
+    "name": "Kami 61891",
+    "state": "RESTING",
+    "level": 35,
+    "xp": 48302,
+    "xpRequired": 100678,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 172,
+     "total": 230,
+     "percent": 75
+    },
+    "hpRatePerHr": "+26.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789436910,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0xcf0f8e10b4d723a442aef38e217fc7cd3128a6c1649f7284656839c2fe68e7bb",
+    "index": 62579,
+    "name": "Kami 62579",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 59207,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 225,
+     "total": 230,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.61",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439246,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 32,
+     "spotRatePerHr": "+34.82",
+     "avgRatePerHr": "+31.59"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x46c51c16d71855a0c54d1ab3fbc595679a5fd15cda3e3d73c9195d8ee9da7fab",
+    "index": 63260,
+    "name": "Kami 63260",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 55454,
+    "xpRequired": 50449,
+    "levelUpReady": true,
+    "skillPoints": 0,
+    "hp": {
+     "current": 230,
+     "total": 240,
+     "percent": 96
+    },
+    "hpRatePerHr": "+25.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431158,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x5e25694a21c50a1049261d7c5d72f440dbd1eddcd2cd12d817333903c41f2145",
+    "index": 63940,
+    "name": "Kami 63940",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 57494,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 237,
+     "total": 240,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.26",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789440529,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 20,
+     "spotRatePerHr": "+31.46",
+     "avgRatePerHr": "+29.32"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6263167554539bdb95e2dcac7a65dc8e19fa19cfc781b6d1419dae9bf287ecbc",
+    "index": 64617,
+    "name": "Kami 64617",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 32323,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 205,
+     "total": 220,
+     "percent": 93
+    },
+    "hpRatePerHr": "-6.43",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789432613,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 104,
+     "spotRatePerHr": "+45.21",
+     "avgRatePerHr": "+36.19"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x531fbc7705ad59593781122f11783144c075b6f4de22be42e7b94de67c9f122c",
+    "index": 65297,
+    "name": "Kami 65297",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 42843,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 219,
+     "total": 240,
+     "percent": 91
+    },
+    "hpRatePerHr": "-7.62",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431108,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 138,
+     "spotRatePerHr": "+52.25",
+     "avgRatePerHr": "+41.93"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x5c62d5884794be7936c19419fc8fd2d6328807b37a3497e1a681a516500cb337",
+    "index": 66655,
+    "name": "Kami 66655",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 20548,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 157,
+     "total": 220,
+     "percent": 71
+    },
+    "hpRatePerHr": "-11.44",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789414181,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 427,
+     "spotRatePerHr": "+78.42",
+     "avgRatePerHr": "+53.42"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x15917d354a65e560308287ccce00478dd7386869843b0272356ff6c2f39d6d7e",
+    "index": 67338,
+    "name": "Kami 67338",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 47827,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 195,
+     "total": 240,
+     "percent": 81
+    },
+    "hpRatePerHr": "-9.83",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789420358,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 322,
+     "spotRatePerHr": "+70.89",
+     "avgRatePerHr": "+51.26"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x167b6ae3ee0a5599029f734140024a4fc6c6fba84ea0c418a6d906be31955b9d",
+    "index": 68017,
+    "name": "Kami 68017",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54640,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 268,
+     "total": 270,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.07",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441679,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 9,
+     "spotRatePerHr": "+27.91",
+     "avgRatePerHr": "+26.77"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6ba3f470c760a5cbe66df2e5c8510236769b3076f9324af5209cc7012e78c5ed",
+    "index": 68696,
+    "name": "Kami 68696",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54667,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 198,
+     "total": 200,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.06",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441379,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 10,
+     "spotRatePerHr": "+24.72",
+     "avgRatePerHr": "+23.31"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x9a3feabbe56b9f8bd95d4107ad6df56fccb8cd3d2d2c8f298d8a0d85072a0d5c",
+    "index": 69376,
+    "name": "Kami 69376",
+    "state": "RESTING",
+    "level": 34,
+    "xp": 39818,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 140,
+     "total": 210,
+     "percent": 67
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441397,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x08701dd14e8858e6727b418432dfd5d30d8e9a9669a8291cc143a608194f446b",
+    "index": 70056,
+    "name": "Kami 70056",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 55304,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 194,
+     "total": 230,
+     "percent": 84
+    },
+    "hpRatePerHr": "-8.19",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789420374,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 265,
+     "spotRatePerHr": "+61.96",
+     "avgRatePerHr": "+42.32"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6120e6a06f396b875d5e7df8119aa0a432a57b336ddcfcadf55c298279863c49",
+    "index": 70735,
+    "name": "Kami 70735",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 57945,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 228,
+     "total": 230,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.82",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441215,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 13,
+     "spotRatePerHr": "+28.90",
+     "avgRatePerHr": "+27.39"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x66bf0ded4c21172607bd75f6068fa2c1895c7a0a0cc3a7971bda3ebd5bed5358",
+    "index": 72774,
+    "name": "Kami 72774",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 55084,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 218,
+     "total": 220,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.59",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441165,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 13,
+     "spotRatePerHr": "+27.77",
+     "avgRatePerHr": "+26.20"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xfda7ed98561aa390012a0e291e943764624fb2885f5748d25be2dfa8914093d4",
+    "index": 73455,
+    "name": "Kami 73455",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54471,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 219,
+     "total": 220,
+     "percent": 100
+    },
+    "hpRatePerHr": "-3.11",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789442459,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 3,
+     "spotRatePerHr": "+24.08",
+     "avgRatePerHr": "+23.61"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xb5d0de2040932a938156ecaaf14008a12b816ff11a96c5a7513b00ebe5f29b77",
+    "index": 74136,
+    "name": "Kami 74136",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 58002,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 173,
+     "total": 220,
+     "percent": 79
+    },
+    "hpRatePerHr": "-9.25",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416513,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 357,
+     "spotRatePerHr": "+71.56",
+     "avgRatePerHr": "+48.59"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xf35791cc39ab8d332eb5652faf79250fa2381a982dce6fe07737592f0ee86c7d",
+    "index": 74818,
+    "name": "Kami 74818",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 52067,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 250,
+     "percent": 89
+    },
+    "hpRatePerHr": "-7.69",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789424680,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 201,
+     "spotRatePerHr": "+55.43",
+     "avgRatePerHr": "+39.55"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xa7770c3ce7e711009a41abf43ad576a2fb7c04658e6876a4ce809523150043e6",
+    "index": 75497,
+    "name": "Kami 75497",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54857,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 218,
+     "total": 220,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.59",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441149,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 13,
+     "spotRatePerHr": "+27.77",
+     "avgRatePerHr": "+26.20"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x4c11571e59e6d65f3c51e968fea5590d828d239dc37801f9945e890bedbb967e",
+    "index": 76179,
+    "name": "Kami 76179",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 40755,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 259,
+     "total": 260,
+     "percent": 100
+    },
+    "hpRatePerHr": "-4.22",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789442689,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 2,
+     "spotRatePerHr": "+29.66",
+     "avgRatePerHr": "+29.40"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xcc2bd0fad01810f7b6922503b1272d080370e89492fed23f840fcf583760f3b4",
+    "index": 76859,
+    "name": "Kami 76859",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54778,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 183,
+     "total": 220,
+     "percent": 83
+    },
+    "hpRatePerHr": "-8.12",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789418678,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 282,
+     "spotRatePerHr": "+62.85",
+     "avgRatePerHr": "+41.76"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xefdab417dcc02529a73978db5bc75cad7f65ed0828a7e6303016ed98a6ba9620",
+    "index": 77541,
+    "name": "Kami 77541",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 50298,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 178,
+     "total": 230,
+     "percent": 77
+    },
+    "hpRatePerHr": "-10.28",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789417752,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 378,
+     "spotRatePerHr": "+75.89",
+     "avgRatePerHr": "+54.02"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbf0bbe1f4c4a3fc21070bedb84195e6e11742faf53b1be873a298ff0f3ddd04f",
+    "index": 78220,
+    "name": "Kami 78220",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 55210,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 208,
+     "total": 210,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.27",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441421,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 10,
+     "spotRatePerHr": "+25.85",
+     "avgRatePerHr": "+24.49"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbcd88e392c722cee3a627332f58804414c628e838c123a2cca336f4c8843fbb9",
+    "index": 78903,
+    "name": "Kami 78903",
+    "state": "HARVESTING",
+    "level": 34,
+    "xp": 35294,
+    "xpRequired": 79966,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 264,
+     "total": 270,
+     "percent": 98
+    },
+    "hpRatePerHr": "-5.58",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439005,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 37,
+     "spotRatePerHr": "+37.26",
+     "avgRatePerHr": "+33.82"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xbe9be2dc34c8018ee24a461d505f7e5eaec4278debf8b7172b1e8afe9781cb02",
+    "index": 79586,
+    "name": "Kami 79586",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 57181,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 252,
+     "total": 260,
+     "percent": 97
+    },
+    "hpRatePerHr": "-5.56",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789437783,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 50,
+     "spotRatePerHr": "+39.08",
+     "avgRatePerHr": "+34.60"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x7348016a0f0cf45a60008c57fcfbca955a9c809e79c73da697adffa3f0ca765c",
+    "index": 80269,
+    "name": "Kami 80269",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 52006,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 250,
+     "percent": 89
+    },
+    "hpRatePerHr": "-7.62",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789424760,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 198,
+     "spotRatePerHr": "+54.96",
+     "avgRatePerHr": "+39.18"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x3f55db0c2a82c297c3fba4dbf511df5bc3087b034bea06f3513821efb819f060",
+    "index": 80950,
+    "name": "Kami 80950",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 34851,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 226,
+     "total": 230,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789439744,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 24,
+     "spotRatePerHr": "+29.55",
+     "avgRatePerHr": "+26.73"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x4c8c35585f3b94271cbd31af8e5ddb4b5846ec248d6f1e6fa89223596791bbea",
+    "index": 81635,
+    "name": "Kami 81635",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 34611,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 188,
+     "total": 230,
+     "percent": 82
+    },
+    "hpRatePerHr": "-9.05",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789418695,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 308,
+     "spotRatePerHr": "+66.83",
+     "avgRatePerHr": "+45.74"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xef8e2a77a533344e24b960ec744c32aea9967984da4701035bba049637792e37",
+    "index": 82316,
+    "name": "Kami 82316",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35342,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 153,
+     "total": 210,
+     "percent": 73
+    },
+    "hpRatePerHr": "-10.18",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789412992,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 439,
+     "spotRatePerHr": "+78.75",
+     "avgRatePerHr": "+52.71"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x931f30d81dd4b1bbf2228c36f297f91e0bd8ec359fb46c6a21a9447f4767623a",
+    "index": 82995,
+    "name": "Kami 82995",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54284,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 254,
+     "total": 260,
+     "percent": 98
+    },
+    "hpRatePerHr": "-5.14",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438762,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 38,
+     "spotRatePerHr": "+36.17",
+     "avgRatePerHr": "+32.53"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xc43aaf724ccf627080c1f84fd2bfe276f692022f0f9fdd0ce26459ded7285d",
+    "index": 83675,
+    "name": "Kami 83675",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 55824,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 224,
+     "total": 230,
+     "percent": 97
+    },
+    "hpRatePerHr": "-5.03",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438166,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 45,
+     "spotRatePerHr": "+38.00",
+     "avgRatePerHr": "+33.83"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xecaecaeb060d652748e68d809c23ce660a4886a54701e94dfd9948de6c7e83c4",
+    "index": 84355,
+    "name": "Kami 84355",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35116,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 255,
+     "total": 260,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.73",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438758,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 33,
+     "spotRatePerHr": "+32.45",
+     "avgRatePerHr": "+28.81"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x264aad894398f4e0425172544966b6c4635c67d84545b513d22716f90edc6df2",
+    "index": 85036,
+    "name": "Kami 85036",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35586,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 173,
+     "total": 220,
+     "percent": 79
+    },
+    "hpRatePerHr": "-9.25",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416481,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 357,
+     "spotRatePerHr": "+71.56",
+     "avgRatePerHr": "+48.59"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x81c143b35155d30ab0e7c35017ff7176876d4a0b4091cafb5ac2eb9ce514fd95",
+    "index": 85717,
+    "name": "Kami 85717",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 56644,
+    "xpRequired": 50449,
+    "levelUpReady": true,
+    "skillPoints": 0,
+    "hp": {
+     "current": 224,
+     "total": 230,
+     "percent": 97
+    },
+    "hpRatePerHr": "+25.80",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789431027,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x44966b3363cbc75252469e5f0535b722c8b26c567fef3618c8f4b1029db4bb5e",
+    "index": 86396,
+    "name": "Kami 86396",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 55313,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 228,
+     "total": 230,
+     "percent": 99
+    },
+    "hpRatePerHr": "-3.58",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441892,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 8,
+     "spotRatePerHr": "+27.04",
+     "avgRatePerHr": "+26.10"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x3578f3f9764174dfb5d3b38eb097b88b7bf67c9390fc380621b0d8c25329579b",
+    "index": 87079,
+    "name": "Kami 87079",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54279,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 210,
+     "total": 240,
+     "percent": 88
+    },
+    "hpRatePerHr": "-7.71",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789422929,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 220,
+     "spotRatePerHr": "+56.96",
+     "avgRatePerHr": "+39.56"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x5609b9a5340579262a24c65d13cfa1550969c9f24434e3cb607963d078509d12",
+    "index": 87760,
+    "name": "Kami 87760",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35247,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 177,
+     "total": 220,
+     "percent": 80
+    },
+    "hpRatePerHr": "-8.88",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789417071,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 321,
+     "spotRatePerHr": "+67.17",
+     "avgRatePerHr": "+44.67"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x938a86e29afa04cdeae026ab789cdd29c54cf37fcea0086064e5a36cddb91a68",
+    "index": 88440,
+    "name": "Kami 88440",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 60198,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 176,
+     "total": 230,
+     "percent": 77
+    },
+    "hpRatePerHr": "-10.29",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416531,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 403,
+     "spotRatePerHr": "+77.82",
+     "avgRatePerHr": "+54.85"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xda9c0d25bf4029ad92e2e30f51f6a9f28d6002f7fb9a29c7277defa306dd105",
+    "index": 89119,
+    "name": "Kami 89119",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 52179,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 224,
+     "total": 250,
+     "percent": 90
+    },
+    "hpRatePerHr": "-7.32",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789425347,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 183,
+     "spotRatePerHr": "+52.79",
+     "avgRatePerHr": "+37.48"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x9c480757a8465fefbb9f4908d114f302bda1ab93fef83bc317df2ee358d6117e",
+    "index": 89798,
+    "name": "Kami 89798",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 33110,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 207,
+     "total": 260,
+     "percent": 80
+    },
+    "hpRatePerHr": "+24.00",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789435727,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x8e9917be4a07c6cbf4950745a758c20dc576f88a981835ecb855d16182b1b384",
+    "index": 90477,
+    "name": "Kami 90477",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54928,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 171,
+     "total": 220,
+     "percent": 78
+    },
+    "hpRatePerHr": "-9.48",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416061,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 374,
+     "spotRatePerHr": "+73.33",
+     "avgRatePerHr": "+50.00"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x43275face05bdfb39882d43b8806a5699d516856289eb25e534a1e9f574865ad",
+    "index": 91157,
+    "name": "Kami 91157",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 53328,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 184,
+     "total": 220,
+     "percent": 84
+    },
+    "hpRatePerHr": "-8.01",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789418892,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 275,
+     "spotRatePerHr": "+61.97",
+     "avgRatePerHr": "+41.09"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x7e14a4f14b9ea8701b645388031c0efc424412e81871c3ea648dee467a610430",
+    "index": 91836,
+    "name": "Kami 91836",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 52590,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 170,
+     "total": 210,
+     "percent": 81
+    },
+    "hpRatePerHr": "-8.28",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416596,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 312,
+     "spotRatePerHr": "+65.52",
+     "avgRatePerHr": "+42.60"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x45aabcc9709c7ea548d4479210559224ce82b4992145e45d4cf837c266475168",
+    "index": 92519,
+    "name": "Kami 92519",
+    "state": "HARVESTING",
+    "level": 33,
+    "xp": 42314,
+    "xpRequired": 63516,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 190,
+     "total": 230,
+     "percent": 83
+    },
+    "hpRatePerHr": "-8.82",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789419109,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 294,
+     "spotRatePerHr": "+65.12",
+     "avgRatePerHr": "+44.39"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x454bce179cd24a2605f9ebd987fd619ea77e70a1d6d8c939b6e6f7c574a48053",
+    "index": 93199,
+    "name": "Kami 93199",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 34953,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 234,
+     "total": 240,
+     "percent": 98
+    },
+    "hpRatePerHr": "-4.70",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789438379,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 38,
+     "spotRatePerHr": "+33.90",
+     "avgRatePerHr": "+29.89"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x79655aa1ca4981acd026a5339bfac367522ae4527576a5c4d42b7d2cb28f5cbd",
+    "index": 93881,
+    "name": "Kami 93881",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 37406,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 230,
+     "total": 240,
+     "percent": 96
+    },
+    "hpRatePerHr": "-5.16",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789434529,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 72,
+     "spotRatePerHr": "+38.09",
+     "avgRatePerHr": "+30.75"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6a33fed37d143fb3b6780b6bc5ba7a66aa93029a1b9b6fa6344014e12c6afd7a",
+    "index": 94559,
+    "name": "Kami 94559",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 36169,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 211,
+     "total": 250,
+     "percent": 84
+    },
+    "hpRatePerHr": "-9.20",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789422010,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 271,
+     "spotRatePerHr": "+64.72",
+     "avgRatePerHr": "+46.54"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x24ade2e0135e67d8249a574cf28fdfd2501e40208e319501472ffca8502541ac",
+    "index": 95241,
+    "name": "Kami 95241",
+    "state": "RESTING",
+    "level": 32,
+    "xp": 34172,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 250,
+     "total": 270,
+     "percent": 93
+    },
+    "hpRatePerHr": "+23.40",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789425737,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    }
+   },
+   {
+    "id": "0x4065470b78b0b7f62f94be91228d669e34986bda7f33d1bb82801ec1a81f3d20",
+    "index": 95922,
+    "name": "Kami 95922",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35813,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 192,
+     "total": 230,
+     "percent": 83
+    },
+    "hpRatePerHr": "-8.79",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789421199,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 287,
+     "spotRatePerHr": "+66.43",
+     "avgRatePerHr": "+47.53"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x6b8878b5fd4219f558e0c21ffd2f7b35825d0b7a873ca7fcb8c5c90b05506b51",
+    "index": 96602,
+    "name": "Kami 96602",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 37877,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 160,
+     "total": 250,
+     "percent": 64
+    },
+    "hpRatePerHr": "-12.85",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789402932,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 644,
+     "spotRatePerHr": "+92.62",
+     "avgRatePerHr": "+57.88"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0xd2d05495b571749429b95e924e88597137d2a181cf164901da5fdc129dda7f8d",
+    "index": 97280,
+    "name": "Kami 97280",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35889,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 162,
+     "total": 210,
+     "percent": 77
+    },
+    "hpRatePerHr": "-9.23",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789414784,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 367,
+     "spotRatePerHr": "+71.38",
+     "avgRatePerHr": "+46.90"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x5cb649650a0feaa699805650fc2867fe7dba7f6df571a3f18235e23cc74ea50b",
+    "index": 98640,
+    "name": "Kami 98640",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 35590,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 173,
+     "total": 220,
+     "percent": 79
+    },
+    "hpRatePerHr": "-9.25",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789416480,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 357,
+     "spotRatePerHr": "+71.56",
+     "avgRatePerHr": "+48.59"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x915401a9c0c45475e65eb5c589535f63846ec03b4c510caf28d90f09ee007f15",
+    "index": 99320,
+    "name": "Kami 99320",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 38729,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "EXPERIENCE",
+    "skillPoints": 0,
+    "hp": {
+     "current": 222,
+     "total": 260,
+     "percent": 85
+    },
+    "hpRatePerHr": "-9.35",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789423194,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 267,
+     "spotRatePerHr": "+65.74",
+     "avgRatePerHr": "+48.55"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   },
+   {
+    "id": "0x94d91f44bd56de1732d9e8ef8836c6b779a651b9e89fc1a0c58e6211d5217967",
+    "index": 99998,
+    "name": "Kami 99998",
+    "state": "HARVESTING",
+    "level": 32,
+    "xp": 54612,
+    "xpRequired": 50449,
+    "levelUpReady": false,
+    "levelUpBlockedBy": "NOT_RESTING",
+    "skillPoints": 0,
+    "hp": {
+     "current": 268,
+     "total": 270,
+     "percent": 99
+    },
+    "hpRatePerHr": "-4.24",
+    "cooldownSec": 0,
+    "cooldownUntil": 1789441262,
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "musu": {
+     "accrued": 13,
+     "spotRatePerHr": "+29.06",
+     "avgRatePerHr": "+27.60"
+    },
+    "node": {
+     "index": 79,
+     "name": "Abandoned Campsite"
+    }
+   }
+  ]
+ },
+ "untrusted": [
+  "account.name",
+  "kamis[].account.name",
+  "kamis[].name"
+ ],
+ "meta": {
+  "servedAt": "2026-09-15T03:27:02.367Z",
+  "blockNumber": 12335910,
+  "stale": false,
+  "mode": "daemon",
+  "reconciledThrough": 12335891,
+  "asOf": {
+   "block": 12335910,
+   "projectedAtSec": 1789442819,
+   "clockSampleBlock": 12335910,
+   "clockSampleBlockTime": 1789442811,
+   "clockOffsetMs": -2513,
+   "clockSampleAgoMs": 8854,
+   "observedBlock": 12335910,
+   "observedBlockTime": 1789442811,
+   "observedAgoMs": 8854
+  }
+ }
+}

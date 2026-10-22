@@ -1,0 +1,28 @@
+{
+ "contract": "CraftSystem",
+ "systemId": "system.craft",
+ "source": "kamigotchi-open CraftSystem, in the shape kami-harness 3.7.0 (a2c22c1) executor/server.py L8433-8438 _ABI_CRAFT sends (craft_item L8442-8470)",
+ "abi": [
+  {
+   "type": "function",
+   "name": "executeTyped",
+   "inputs": [
+    {
+     "name": "recipeIndex",
+     "type": "uint32"
+    },
+    {
+     "name": "amount",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  }
+ ]
+}

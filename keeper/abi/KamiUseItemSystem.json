@@ -1,0 +1,31 @@
+{
+ "contract": "KamiUseItemSystem",
+ "systemId": "system.kami.use.item",
+ "source": "kamigotchi-open KamiUseItemSystem executeTyped(uint256 kamiID, uint32 itemIndex) [selector e60f3a76], identical to kami-harness 3.7.0 (a2c22c1) executor/server.py L4351-4355 _ABI_FEED (feed_kami L5389-5396)",
+ "abi": [
+  {
+   "type": "function",
+   "name": "executeTyped",
+   "inputs": [
+    {
+     "name": "kamiID",
+     "type": "uint256",
+     "internalType": "uint256"
+    },
+    {
+     "name": "itemIndex",
+     "type": "uint32",
+     "internalType": "uint32"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes",
+     "internalType": "bytes"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  }
+ ]
+}

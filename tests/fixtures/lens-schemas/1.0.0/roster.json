@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-lens/schemas/roster.json",
+  "$comment": "Compact roster. Carries no authored strings by design — no kami names, no account name — so its untrusted path list is always empty and the answer is identical in name-free mode. Identities are indices. Full per-kami detail lives on the party query.",
+  "$ref": "#/$defs/Roster",
+  "$defs": {
+    "Roster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "account",
+        "kamis"
+      ],
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/RosterAccount"
+        },
+        "kamis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/RosterKami"
+          }
+        },
+        "kamisTotal": {
+          "type": "number",
+          "description": "§3.16 (0.5.1): present ONLY under --stats, which caps this list at the standard 50 rows. How many kamis the account actually owns — a capped list never passes for a complete one (§3.13). The flag-off roster is uncapped and carries neither count. Rows in the capped form are ordered by kami index, unconditionally — a cap over an incidental order cannot be reconciled with any other answer (§3.13)."
+        },
+        "kamisServed": {
+          "type": "number",
+          "description": "§3.16 (0.5.1): present ONLY under --stats — how many rows this answer carries."
+        }
+      }
+    },
+    "RosterAccount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "roomIndex",
+        "levelUpReady",
+        "skillPoints"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "roomIndex": {
+          "type": "number",
+          "description": "the room the account itself is standing in"
+        },
+        "room": {
+          "$ref": "#/$defs/RoomRef",
+          "description": "§3.12 (enrich): roomIndex resolved. On roster, {index, name} only — the compact answer stays compact."
+        },
+        "levelUpReady": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "§3.13: kami indices that can be levelled RIGHT NOW (enough experience AND resting). A SET on the account block, not a field on the kami rows: the roster's compaction guarantee is measured as marginal bytes PER KAMI (G7.a), and anything outside kamis[] cancels out of that measurement — so the marginal cost is unchanged at every roster composition, including the worst case. Numeric, so the empty-untrusted-list and name-free guarantees hold."
+        },
+        "skillPoints": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "description": "§3.13: [kamiIndex, unspentSkillPoints] for every kami holding any. Set form, for the reason above. Skill NAMES never appear on this answer."
+        }
+      }
+    },
+    "RosterKami": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "state"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "state": {
+          "type": "string"
+        },
+        "hp": {
+          "type": "array",
+          "description": "[current, total] — percent is the consumer's division",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "stats": {
+          "$ref": "#/$defs/Stats"
+        },
+        "affinities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "§3.16 (0.5.1): [body, hand] affinities, `--stats` only. The reference client's own pair and its own defaulting ('NORMAL' where the trait carries none). The liquidation calcs turn on exactly this pair, so a reader previewing a liquidation could not check the preview's inputs without it."
+        },
+        "incomplete": {
+          "const": true,
+          "description": "1.0.0 (A1): present, and true, only on a row whose kami the mirror cannot project completely (a required join — stats, progress, times, or an active harvest on a resolvable node while HARVESTING — is missing). Such a row carries NO vitals. Counted in meta.incompleteRows."
+        }
+      },
+      "if": {
+        "properties": {
+          "incomplete": {
+            "const": true
+          }
+        },
+        "required": [
+          "incomplete"
+        ]
+      },
+      "then": {
+        "properties": {
+          "hp": false,
+          "stats": false,
+          "affinities": false
+        }
+      },
+      "else": {
+        "properties": {
+          "hp": true
+        },
+        "required": [
+          "hp"
+        ]
+      }
+    },
+    "RoomRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "§3.12 (enrich): a room index resolved to its registry name and description. Present only when the daemon runs with enrich=true. An index the mirror has no room for keeps the index and answers with empty strings.",
+      "required": [
+        "index",
+        "name"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base",
+        "shift",
+        "boost",
+        "sync",
+        "total"
+      ],
+      "properties": {
+        "base": {
+          "type": "number"
+        },
+        "shift": {
+          "type": "number"
+        },
+        "boost": {
+          "type": "number"
+        },
+        "sync": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        }
+      },
+      "description": "§3.16 (0.5.1): one stat as the mirror decodes it. base/shift/boost/sync are the four parts packed into the stat's uint256 on chain; `total` is the reference client's own effective value, (1 + boost/1e3) x (base + shift), after skills and equipment. Named `total` and not `current` because this answer already carries hp.current (live drained/regenerated health) beside hp.total. There is no `rate` field: Stat.rate is written only for health, so it would be a structural zero on the other three (§3.14). `shift` is bonus-inclusive; the chain's stored component value is not — G2.d records both."
+    },
+    "Stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "health",
+        "power",
+        "harmony",
+        "violence"
+      ],
+      "properties": {
+        "health": {
+          "$ref": "#/$defs/Stat"
+        },
+        "power": {
+          "$ref": "#/$defs/Stat"
+        },
+        "harmony": {
+          "$ref": "#/$defs/Stat"
+        },
+        "violence": {
+          "$ref": "#/$defs/Stat"
+        }
+      },
+      "description": "§3.16 (0.5.1): the kami sheet's stat block, `--stats` only — absent from every answer that did not pass the flag. Exactly the four stats the chain's own GetterSystem.getKamiByIndex tuple carries, which is what makes the block gate-able against chain (G2.d); `slots` and `stamina` exist in the mirror but not in that tuple, so they are not served here."
+    }
+  }
+}

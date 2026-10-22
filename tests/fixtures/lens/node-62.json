@@ -1,0 +1,26 @@
+{
+  "index": 62,
+  "name": "fixture-node",
+  "type": "HARVEST",
+  "affinity": ["NORMAL"],
+  "roomIndex": 61,
+  "attacker": {"id": "1001001", "index": 1001, "name": "fixture-kami", "cooldownSec": 0, "cooldownUntil": 0, "blocked": null},
+  "harvestsTotal": 2,
+  "harvestsServed": 2,
+  "harvests": [
+    {
+      "state": "ACTIVE",
+      "kami": {"index": 1001, "state": "HARVESTING"},
+      "account": {"index": 4242},
+      "vitals": {"hp": {"current": 120, "total": 200, "percent": 60}, "musuAccrued": 1834, "cooldownSec": 0, "cooldownUntil": 0, "level": 12},
+      "liquidation": {"eligible": false, "reason": "THRESHOLD_ZERO", "threshold": 0, "margin": -120, "spoils": 0, "salvage": 0, "recoil": 0}
+    },
+    {
+      "state": "ACTIVE",
+      "kami": {"index": 2002, "state": "HARVESTING"},
+      "account": {"index": 7777},
+      "vitals": {"hp": {"current": 45, "total": 180, "percent": 25}, "musuAccrued": 5200, "cooldownSec": 0, "cooldownUntil": 0, "level": 20},
+      "liquidation": {"eligible": true, "threshold": 62, "margin": 17, "spoils": 1560, "salvage": 780, "recoil": 20}
+    }
+  ]
+}

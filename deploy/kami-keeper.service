@@ -1,0 +1,46 @@
+# kami-keeper — fleet profile under systemd (SPEC D4), DRY RUN.
+# Runs as root: in this layout the lens socket /srv/lens/kami-lens.sock is
+# root-owned. Socket /srv/keeper/keeper.sock, data /srv/keeper, config
+# /srv/keeper/keeper.yaml (deploy.sh installs $KEEPER_CONFIG, default
+# keeper/config.example.yaml, there unless one already exists). The key
+# backend and its settings (`secretsBackend`, `keysFile`, `gcpProject`) come
+# from keeper.yaml; KAMI_KEEPER_* lines in the optional environment file
+# /etc/default/kami-keeper override this unit's Environment= lines (flag >
+# env > file > default). Keep KAMI_KEEPER_ARMED out of that file: deploy.sh
+# keeps the line below in agreement with keeper.yaml.
+#
+# KAMI_KEEPER_ARMED=false is the dry-run switch (SPEC P8): full
+# perception and decisions, every intent encoded and pre-checked by
+# eth_call, nothing signed, ledger rows marked dryRun. Going armed is a
+# separate human decision made by editing THIS line and the config, never
+# by the deploy script.
+#
+# Wants= (not Requires=) on kami-lens: with Requires=, a `systemctl
+# restart kami-lens` stops the keeper and nothing starts it again. The
+# keeper treats a missing or NOT_READY lens as a gated wait (SPEC P4), so
+# it outlives lens restarts.
+[Unit]
+Description=kami-keeper strategy daemon (fleet profile; armed or dry run per KAMI_KEEPER_ARMED)
+After=network-online.target kami-lens.service
+Wants=network-online.target
+Wants=kami-lens.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/keeper/app
+Environment=KAMI_KEEPER_PROFILE=fleet
+Environment=KAMI_KEEPER_DATA_DIR=/srv/keeper
+Environment=KAMI_KEEPER_SOCKET=/srv/keeper/keeper.sock
+Environment=KAMI_KEEPER_LENS_SOCKET=/srv/lens/kami-lens.sock
+Environment=KAMI_KEEPER_ARMED=false
+Environment=KAMI_KEEPER_CONFIG=/srv/keeper/keeper.yaml
+EnvironmentFile=-/etc/default/kami-keeper
+ExecStart=/srv/keeper/venv/bin/python -m keeper daemon --profile fleet
+Restart=always
+RestartSec=10
+StandardOutput=append:/srv/keeper/daemon.log
+StandardError=append:/srv/keeper/daemon.log
+
+[Install]
+WantedBy=multi-user.target

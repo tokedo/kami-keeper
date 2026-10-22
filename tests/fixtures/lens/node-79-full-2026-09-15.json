@@ -1,0 +1,4598 @@
+{
+ "data": {
+  "index": 79,
+  "name": "Abandoned Campsite",
+  "type": "HARVEST",
+  "affinity": [
+   "NORMAL"
+  ],
+  "roomIndex": 79,
+  "description": "placeholder",
+  "harvestsTotal": 152,
+  "harvestsServed": 152,
+  "harvests": [
+   {
+    "id": "0x442f53de102cbd06b281cd5a10af602cfa67af13d7937511e8924daec2768868",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x588b0abe296f36fa30deca46efa4a40c55aaac3a98061e49b2bd283d5fe6fbe1",
+     "name": "Kami 263",
+     "index": 263
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 171,
+      "total": 240,
+      "percent": 71
+     },
+     "hpRatePerHr": "-12.95",
+     "musuAccrued": 469,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789414357,
+     "level": 38,
+     "xp": 129823,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6d7b106613a9b0db6149bd5dd9c922fd7d060b2bc7f46aeb717be8a32005d93e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xa0cdfa3895a346ca8bf8cfab640f515610e908babc56ebb00f063fc13b538311",
+     "name": "Kami 360",
+     "index": 360
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 100,
+      "total": 230,
+      "percent": 43
+     },
+     "hpRatePerHr": "-20.81",
+     "musuAccrued": 1073,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789403743,
+     "level": 38,
+     "xp": 32561,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xfef8850185eebbeb0d9d3019fa667fe29a1f9fac298ceeee85013fdde9062711",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xa931ab6050b623d89ad9f99d76f8fc2c27ab6cdadeec59656287e82d31c73177",
+     "name": "Kami 448",
+     "index": 448
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 258,
+      "total": 260,
+      "percent": 99
+     },
+     "hpRatePerHr": "-6.60",
+     "musuAccrued": 10,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442146,
+     "level": 37,
+     "xp": 56936,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x342701d9247f5b6a2f55aad60266593fc457c4c06c91b3294684009a9bdacb18",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x58680a76143497e5859073028bc0c6f388cebb5c6bbd99ca79f730d5c68ea4c4",
+     "name": "Kami 508",
+     "index": 508
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 212,
+      "total": 220,
+      "percent": 96
+     },
+     "hpRatePerHr": "-5.07",
+     "musuAccrued": 61,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435910,
+     "level": 39,
+     "xp": 190577,
+     "xpRequired": 252951,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa21891fd35961a5812d148f8ddbc5f45db6b4c70c8ff287ab9a0b48740ee4be2",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf1b87711c5b4729443b84ada201370a71cb9092a661a85a2cba1c34075aa2275",
+     "name": "Kami 553",
+     "index": 553
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 179,
+      "total": 210,
+      "percent": 85
+     },
+     "hpRatePerHr": "-10.07",
+     "musuAccrued": 258,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789426447,
+     "level": 37,
+     "xp": 44300,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x013aced30e0e71c86c33ac232604b280c9bd9703a53069d179e9b218e796567b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x604c87fa1e45b67b04109e3458b0c84e42a20e58030501f3eedebd444abfb844",
+     "name": "Kami 601",
+     "index": 601
+    },
+    "account": {
+     "index": 2481,
+     "name": "plr03"
+    },
+    "vitals": {
+     "hp": {
+      "current": 61,
+      "total": 140,
+      "percent": 44
+     },
+     "hpRatePerHr": "-6.46",
+     "musuAccrued": 622,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789376545,
+     "level": 34,
+     "xp": 59212,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x909ca9c248e2a49c3404e6a926ed504c648a7c2fec16be381f2adc303f65a06e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5769f11742cc446205e0f46ddd5fdecd722b45f95aaac41be768b78c8eda50cd",
+     "name": "Kami 648",
+     "index": 648
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 190,
+      "total": 200,
+      "percent": 95
+     },
+     "hpRatePerHr": "-8.52",
+     "musuAccrued": 64,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438560,
+     "level": 37,
+     "xp": 54928,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb0e429f88de6de1c6157b7b7a0b4181cb5247bac82c88ac3825eafe61d20d568",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x030dc5b2079ffc7679770dfc9f4fe0cc86e0db2d14cf7b23830e1787e0bd6289",
+     "name": "Kami 699",
+     "index": 699
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 196,
+      "total": 220,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.73",
+     "musuAccrued": 170,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789428792,
+     "level": 38,
+     "xp": 121922,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb6e0e6c4d5434feb7970824a7258bf158a48e507e0c4507b4d5b470f4d00770b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xa15f3174053407fc5fc3083b6b3798fc49e5e1279100405c5d36c579f1eeebca",
+     "name": "Kami 1008",
+     "index": 1008
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 194,
+      "total": 210,
+      "percent": 92
+     },
+     "hpRatePerHr": "-6.47",
+     "musuAccrued": 120,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431550,
+     "level": 36,
+     "xp": 60759,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xfd78285fc5e1e78cfb4440f74d96593cde07be762f0dcd1cdbce9dc8f6f8872a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x1ce9e6b48346fad06078ce0d05cf1e2c17e1727165a6412beed3560cc8c88798",
+     "name": "Kami 1136",
+     "index": 1136
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 198,
+      "total": 200,
+      "percent": 99
+     },
+     "hpRatePerHr": "-7.62",
+     "musuAccrued": 11,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442104,
+     "level": 37,
+     "xp": 70761,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x999a6f78d3664ecfc10ec2ffaf34b6a2c221c9e3fbd427754c686ac31524280d",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6bcd60656842826010ed61e108bf8e26060107333893216b5d777bce5dc809d2",
+     "name": "Kami 1248",
+     "index": 1248
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 114,
+      "total": 220,
+      "percent": 52
+     },
+     "hpRatePerHr": "-13.23",
+     "musuAccrued": 833,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789396106,
+     "level": 38,
+     "xp": 12587,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xaa474c6579229fca26703f565448c2d99bb5028ca75e3a5fbd0b985a2fc193a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x1078637db0563a7cf4162398f7c8e540321006928d2d4fdbf50bbabc2b99c929",
+     "name": "Kami 1362",
+     "index": 1362
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 183,
+      "total": 220,
+      "percent": 83
+     },
+     "hpRatePerHr": "-8.18",
+     "musuAccrued": 292,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789419093,
+     "level": 36,
+     "xp": 50215,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x0b5a6cb574a513398b067ac73ad8399c05bb053560766e79a6e485c84a216256",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x681c2b6920a482d323d5ae4eef9117cae9661ffed140812f0acae29e39ec79fb",
+     "name": "Kami 1473",
+     "index": 1473
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 150,
+      "total": 250,
+      "percent": 60
+     },
+     "hpRatePerHr": "-13.74",
+     "musuAccrued": 719,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789402364,
+     "level": 36,
+     "xp": 80243,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x29350c067b941f5ed9b27b41d804fdf7a64876772799806a3def84fcc01856b7",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc5a3d91804511560f8bd14ebba8349543246a315e6adef798a17ad7ebce17d6a",
+     "name": "Kami 1587",
+     "index": 1587
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 194,
+      "total": 220,
+      "percent": 88
+     },
+     "hpRatePerHr": "-11.81",
+     "musuAccrued": 160,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789433386,
+     "level": 37,
+     "xp": 8469,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x8b491a906a51cdac64643fe57d327c6cd79ecb96dff82d353fde3416b32e09c5",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6f884f717a0fff42484b30ae05db0fba94d2754769e6bf81282e2b9868ff0874",
+     "name": "Kami 1702",
+     "index": 1702
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 235,
+      "total": 260,
+      "percent": 90
+     },
+     "hpRatePerHr": "-10.97",
+     "musuAccrued": 167,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789432822,
+     "level": 37,
+     "xp": 51846,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf7f02bd1a06bdbc18a4af284a5e4cf1a20289c39995c744911f2cc191f319656",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbf7b234528a41883784b5c9d8b4ef1fa2c5e0eaf5f92cfa367cda026773ee421",
+     "name": "Kami 1820",
+     "index": 1820
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 105,
+      "total": 200,
+      "percent": 53
+     },
+     "hpRatePerHr": "-12.46",
+     "musuAccrued": 762,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789399371,
+     "level": 36,
+     "xp": 106353,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x972f76fdec1ba712eff47c0e10511b5b82f4eb18ef3ea3d80403a5ce25bd41c7",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x3380b1ba3a569cc18051b9ab01e003a609f838a5366ce9aadc7e257a9caff731",
+     "name": "Kami 2180",
+     "index": 2180
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 170,
+      "total": 220,
+      "percent": 77
+     },
+     "hpRatePerHr": "-9.39",
+     "musuAccrued": 394,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789414175,
+     "level": 36,
+     "xp": 84601,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9f38e0797ab9751fbacccea1ee37bc8038f6a732f567ff1673ef3db8beb0c3be",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5613b27d435399633cdcc4a13fde87c2fdee607cb81a2f2440b8f2d50d55b6c0",
+     "name": "Kami 2296",
+     "index": 2296
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 133,
+      "total": 230,
+      "percent": 58
+     },
+     "hpRatePerHr": "-16.70",
+     "musuAccrued": 732,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789410462,
+     "level": 39,
+     "xp": 134118,
+     "xpRequired": 252951,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb65bfd31fa290d57560682b45ccd4abca21ade67f20a84467b12051a3fc2bb09",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xe99a75d61ebfdce33bc7ea762c7f82e185d66d938b244885a928434ba3d14b6e",
+     "name": "Kami 2405",
+     "index": 2405
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 188,
+      "total": 190,
+      "percent": 99
+     },
+     "hpRatePerHr": "-5.05",
+     "musuAccrued": 7,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442097,
+     "level": 37,
+     "xp": 90906,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x2a027618cb735bbb953e70da7fb205c6530ac0f281339876c3a8a39e6eb11711",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x57f3474b185b809abf58587f58965ee8220839dfebb531be971d6f6ed7e7b93f",
+     "name": "Kami 2632",
+     "index": 2632
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 111,
+      "total": 240,
+      "percent": 46
+     },
+     "hpRatePerHr": "-20.36",
+     "musuAccrued": 1015,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789403498,
+     "level": 37,
+     "xp": 95229,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xcdb03c56da4d854e85d9fdbcc72880b86cee52af9eb2bd895840bd8d0aa4c359",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x46ed8a473faeb2d3297052960d76942c841f1db3d4cb3f53cd1e9c3ff5dd73d2",
+     "name": "Kami 2743",
+     "index": 2743
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 131,
+      "total": 160,
+      "percent": 82
+     },
+     "hpRatePerHr": "-10.85",
+     "musuAccrued": 206,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789430649,
+     "level": 37,
+     "xp": 100144,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1548932606f3ab2762fed6ebaa79eb342a5a6775b750cdbc8943b7a459756f27",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6fc7dad5ddccb55eb5a23da4d5b521ca7a91343b6faf98929b850331f46e6714",
+     "name": "Kami 2865",
+     "index": 2865
+    },
+    "account": {
+     "index": 2481,
+     "name": "plr03"
+    },
+    "vitals": {
+     "hp": {
+      "current": 70,
+      "total": 170,
+      "percent": 41
+     },
+     "hpRatePerHr": "-5.28",
+     "musuAccrued": 628,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789376545,
+     "level": 36,
+     "xp": 93253,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xef4dd659739bc8f1b7648850ec4732d4efb6a4d077b023cc8ab6369e0abe61bc",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x08aeb6052ba568e6424e72fd2c76e71f82f3a1552a5ab37fb1b32dfd6f411ebd",
+     "name": "Kami 3098",
+     "index": 3098
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 280,
+      "total": 290,
+      "percent": 97
+     },
+     "hpRatePerHr": "-5.74",
+     "musuAccrued": 71,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789436357,
+     "level": 41,
+     "xp": 112529,
+     "xpRequired": 400949,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x68bb88752835dad40c5a426f03d596988341ede1f1a81f4de6acb192914b2e63",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xe2a2acbfce9a4ffa91975828b23739f09cb283d4498a00901cca0ae7e9e1dfb6",
+     "name": "Kami 3215",
+     "index": 3215
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 116,
+      "total": 150,
+      "percent": 77
+     },
+     "hpRatePerHr": "-11.46",
+     "musuAccrued": 239,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789429246,
+     "level": 38,
+     "xp": 30787,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa7ecf9ff32b92e9554820ca87ccfe8440bc732ea0b870704a98a059127532d1a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc9f908030fd516464f11db97dd58e9089acd366ee15ca0f64b3652fd3f1740c",
+     "name": "Kami 3451",
+     "index": 3451
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 199,
+      "total": 260,
+      "percent": 77
+     },
+     "hpRatePerHr": "-11.05",
+     "musuAccrued": 424,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789413789,
+     "level": 38,
+     "xp": 13706,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1827d9a18c3452f3f52841f96bbdc0b4f58642d99f00183050117bb1fdb70023",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xe2d0011a7f0990545ff8c5f7b6c586e3cd7319b3aaf289b2a5df9f821957e303",
+     "name": "Kami 3564",
+     "index": 3564
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 183,
+      "total": 190,
+      "percent": 96
+     },
+     "hpRatePerHr": "-8.25",
+     "musuAccrued": 42,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439881,
+     "level": 37,
+     "xp": 61929,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x591e96223183866873fcf759ee1eec918677bc6f85c62fd619732225bf9914dd",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x309abdf96872670e679af41dd956f04e3daa4fa180ffa5c4b9c3fe01515b858e",
+     "name": "Kami 3678",
+     "index": 3678
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 139,
+      "total": 170,
+      "percent": 82
+     },
+     "hpRatePerHr": "-12.81",
+     "musuAccrued": 204,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789432321,
+     "level": 37,
+     "xp": 13810,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xae99b6884828a17d72e0a0929e21343299534a62f85ef0194448a388cf3fbbe1",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x7064f900001abbfbcc058423e8bccb2b6559ad16f11d8f56970cfbd1351cba53",
+     "name": "Kami 3789",
+     "index": 3789
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 156,
+      "total": 210,
+      "percent": 74
+     },
+     "hpRatePerHr": "-10.50",
+     "musuAccrued": 384,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416829,
+     "level": 36,
+     "xp": 60694,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x70aed8f1449c614abbb417c157803b4e9928f5e6646021c2f6647a30e6a1ca42",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xdf259991657f50b52c8cf7a0453f1ea158d5076a5b1b16ea1bb1ac18b5dfd81e",
+     "name": "Kami 3904",
+     "index": 3904
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 126,
+      "total": 150,
+      "percent": 84
+     },
+     "hpRatePerHr": "-10.00",
+     "musuAccrued": 172,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431943,
+     "level": 37,
+     "xp": 129359,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x2debd16086268f11b1716ec09d36ec5d86041bb9184ca03521c584e854b47385",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcb55adde9aa7f9904102313d10df3a584eacbbb28a366dc8a90d2c4aa56e11b4",
+     "name": "Kami 4016",
+     "index": 4016
+    },
+    "account": {
+     "index": 2481,
+     "name": "plr03"
+    },
+    "vitals": {
+     "hp": {
+      "current": 75,
+      "total": 140,
+      "percent": 54
+     },
+     "hpRatePerHr": "-4.57",
+     "musuAccrued": 673,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789376545,
+     "level": 35,
+     "xp": 87038,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x7ed1de1b34fe3c15853b88a28301866508ea5e3a8cb114889f4a6bfde0eb8020",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcf4c52c46ae1b8f6d6a57583f4e0b62bd384be4a4931bce35a3cdc3f0443286b",
+     "name": "Kami 4129",
+     "index": 4129
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 198,
+      "total": 250,
+      "percent": 79
+     },
+     "hpRatePerHr": "-10.50",
+     "musuAccrued": 400,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789418818,
+     "level": 40,
+     "xp": 263054,
+     "xpRequired": 318466,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x952558d89448197894580aedb01039d4af48f18a88b9528c5467c3667534c042",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x0795490e07abe39981ee85fa33bd47e8e783b2b8242cc413195e1773fee53466",
+     "name": "Kami 4358",
+     "index": 4358
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 102,
+      "total": 200,
+      "percent": 51
+     },
+     "hpRatePerHr": "-12.70",
+     "musuAccrued": 792,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789398409,
+     "level": 36,
+     "xp": 110096,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x460f4436cf44cd2f159b4051ad9b5237df75ec157720ab4efb1450416dd0141e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xdded70765bbdd5a6d40ecb044aa0f0388d7ac9ce37ff7fcf19d5b563b554a3ee",
+     "name": "Kami 4473",
+     "index": 4473
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 151,
+      "total": 170,
+      "percent": 89
+     },
+     "hpRatePerHr": "-9.92",
+     "musuAccrued": 136,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435222,
+     "level": 37,
+     "xp": 106726,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x2883b8adfa0efdfc7ef5e248e3d44d3a90cf59699e74516abb90e8c812b18eb6",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x9c2eb26ac869686f9b8e2b1f3349ddc6eaf37b94eacd0cc40d76b2e2c8a82fe5",
+     "name": "Kami 4579",
+     "index": 4579
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 288,
+      "total": 290,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.35",
+     "musuAccrued": 12,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441565,
+     "level": 40,
+     "xp": 187815,
+     "xpRequired": 318466,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf076d5890f44a631fee37af513167b27b7c355216739312a38dbf61cb39c9383",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x73575160fe26ddd508d5917653ff0685970922679336974b6add0a00797d6d46",
+     "name": "Kami 4692",
+     "index": 4692
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 136,
+      "total": 150,
+      "percent": 91
+     },
+     "hpRatePerHr": "-9.39",
+     "musuAccrued": 93,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789436813,
+     "level": 37,
+     "xp": 79493,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x24821d652ac5333b76c16b54cfa4f51c375a36b77eb0ac54280166d2f393f348",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xb2b72b57b7fa5c24dd025fed622793225a5291570455b0dc35c36ccf8afcffce",
+     "name": "Kami 4802",
+     "index": 4802
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 203,
+      "total": 210,
+      "percent": 97
+     },
+     "hpRatePerHr": "-4.25",
+     "musuAccrued": 54,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789436011,
+     "level": 37,
+     "xp": 21738,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x176bbb9c58b74373bd09598a76630ff11157bcda9190c1772300531b4fe7bbcf",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x1d2e29235bafe5378c42f2587c8773ec179a6926bf78c11a8954e86ebe46cb78",
+     "name": "Kami 4916",
+     "index": 4916
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 158,
+      "total": 220,
+      "percent": 72
+     },
+     "hpRatePerHr": "-10.78",
+     "musuAccrued": 443,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789411055,
+     "level": 37,
+     "xp": 130315,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x50e46ed803a8930019c9542ffcdad2c5fd1571af0addc4304998ec43179dd18a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8db9e214ed60d81269c8922130b37c6edd0ce93da8a7dc960876852b777dea6d",
+     "name": "Kami 5382",
+     "index": 5382
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 124,
+      "total": 180,
+      "percent": 69
+     },
+     "hpRatePerHr": "-13.79",
+     "musuAccrued": 445,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789421241,
+     "level": 37,
+     "xp": 81506,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6d992e4f0e621828a8ee7894af3dd76e20f27d766ada561b6e6545fc6482afd9",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc943d71992e77c0fba84642c67c487dd96a04c79e6c287cb1a5bee88402566f4",
+     "name": "Kami 5492",
+     "index": 5492
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 156,
+      "total": 190,
+      "percent": 82
+     },
+     "hpRatePerHr": "-13.02",
+     "musuAccrued": 221,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431502,
+     "level": 38,
+     "xp": 22193,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x68b57baf69778b4f7e7feac9a03ab7fd525c73f09e080c5b6ed61177aab90753",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6599ab7b54b74abfc48388d415be77d931a2f71fdf2b2d380b29245d08500fc6",
+     "name": "Kami 5607",
+     "index": 5607
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 203,
+      "total": 230,
+      "percent": 88
+     },
+     "hpRatePerHr": "-8.10",
+     "musuAccrued": 190,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789427818,
+     "level": 35,
+     "xp": 58006,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9aae2bdbde5da9d680169e830e90bb2f1ff1dd0aea63f25fcc92f3d2caffba99",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x3ab414fd75818156b42c739c2026c03a4fb0299f67426128b5128475f1e60b8f",
+     "name": "Kami 5721",
+     "index": 5721
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 169,
+      "total": 240,
+      "percent": 70
+     },
+     "hpRatePerHr": "-11.43",
+     "musuAccrued": 535,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789409220,
+     "level": 36,
+     "xp": 82253,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xaaf2b272ca3aeb36c8cbc64f7a4ffad4621589fc4a54c3e16360f956116e99be",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5dee57b3cad75fc99e798e77a3ef06f8316727601646baa898c29a371b9aa6a7",
+     "name": "Kami 5837",
+     "index": 5837
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 154,
+      "total": 190,
+      "percent": 81
+     },
+     "hpRatePerHr": "-13.54",
+     "musuAccrued": 235,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431271,
+     "level": 37,
+     "xp": 146257,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x28f627d025c2b085d8f6dcbbaf287f42c1b4ba6514c591f21fe5931f34786efd",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xe6716d4c5ca860264b0b0f770b40ae43ccb208cf98241aec40f9db3195724484",
+     "name": "Kami 6058",
+     "index": 6058
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 186,
+      "total": 190,
+      "percent": 98
+     },
+     "hpRatePerHr": "-8.57",
+     "musuAccrued": 24,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441407,
+     "level": 37,
+     "xp": 145585,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9ad64436c705734ae6086ec4dc075f6f9578729479e3bab7eeddf55057890f02",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x08ffd47ed95b54f9f9dc5351e9a2d21e1aca219abf97c4a80bc64249f7c8c6a5",
+     "name": "Kami 6172",
+     "index": 6172
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 130,
+      "total": 200,
+      "percent": 65
+     },
+     "hpRatePerHr": "-14.86",
+     "musuAccrued": 594,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416211,
+     "level": 38,
+     "xp": 78873,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x62cf5115560d998d98715d4e441ecb0f0497dee6a75142f0350f5dae8a350b53",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5381966212b0111481e81b9f6b24613550851d86bf76ac4326ee38121eb7ae95",
+     "name": "Kami 6288",
+     "index": 6288
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 143,
+      "total": 210,
+      "percent": 68
+     },
+     "hpRatePerHr": "-10.77",
+     "musuAccrued": 526,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789408905,
+     "level": 37,
+     "xp": 59563,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x5b7a4f44c6ccb7818cb69300db415a46dfe9a3e95aaf0c82c63971b8f9086976",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xa884afce4821d20ff98b51a7294ff691aca4aa8266af48753f9e2273a1015086",
+     "name": "Kami 6399",
+     "index": 6399
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 182,
+      "total": 270,
+      "percent": 67
+     },
+     "hpRatePerHr": "-14.11",
+     "musuAccrued": 605,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789411862,
+     "level": 38,
+     "xp": 172593,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x92d399121a043bb02cce813643b81bfb6e13bb5ace784f595bdb893cfeb8140a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x9355c49de277fabd472a080428ed4058639687ef4a3b36547fc18684365007d3",
+     "name": "Kami 6515",
+     "index": 6515
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 157,
+      "total": 190,
+      "percent": 83
+     },
+     "hpRatePerHr": "-12.84",
+     "musuAccrued": 207,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431730,
+     "level": 37,
+     "xp": 128875,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xdb601415ee8fb96c1be091b111855e2518e76b02ee23d6ca14c2e1dc8c530dbb",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x902d8a3116bae99104cb5c0b0acdf66de7ec6cc9c8177d7522cb2769ffbc074a",
+     "name": "Kami 6622",
+     "index": 6622
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 143,
+      "total": 200,
+      "percent": 72
+     },
+     "hpRatePerHr": "-15.42",
+     "musuAccrued": 348,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789424525,
+     "level": 34,
+     "xp": 75714,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x955ec02bd23588077b1d7a457c9c2e34b3585e4f1ce01c0aad8e858b16492d",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xd6f4f2fa8b8e28c58dff0afd8e9bf733e2e982779f1bb98c96edfbf85d63714a",
+     "name": "Kami 6736",
+     "index": 6736
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 146,
+      "total": 230,
+      "percent": 63
+     },
+     "hpRatePerHr": "-12.01",
+     "musuAccrued": 644,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789403319,
+     "level": 35,
+     "xp": 88207,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6979382234982a17c61f9c3aa78189b03f7a1c0a2070cfe15667c1ac2c048211",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xac04dcb84e4e179b8d613a0304948bf3d14ffcabd735e94bf9ed0fda3d985658",
+     "name": "Kami 6849",
+     "index": 6849
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 177,
+      "total": 180,
+      "percent": 98
+     },
+     "hpRatePerHr": "-6.67",
+     "musuAccrued": 17,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441545,
+     "level": 38,
+     "xp": 5375,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x97b1cb3d95eaf76d6a226bd057c1ec12e59ed328ecf28049b17e589d045e34c5",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8a0ccd435e24d15cd5e91796700eb177fd7018c41ae382db9aa8a37169b30957",
+     "name": "Kami 6961",
+     "index": 6961
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 110,
+      "total": 170,
+      "percent": 65
+     },
+     "hpRatePerHr": "-15.72",
+     "musuAccrued": 409,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789425154,
+     "level": 38,
+     "xp": 18130,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x3c567df772f7b5b393f9f8a354989665c242a193804032b4e9d569c9537fa1df",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x7c8a94a9a01688309283ae643ca2151f724c5ca7397cc889b46a2cc7dfd4616a",
+     "name": "Kami 7078",
+     "index": 7078
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 193,
+      "total": 230,
+      "percent": 84
+     },
+     "hpRatePerHr": "-8.36",
+     "musuAccrued": 283,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789420305,
+     "level": 36,
+     "xp": 20383,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x8b7d48677b1f700277f51373bf84455233a5726d35516ac56b7a3b04f16a31de",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x482ee6374e82fbbfdb7414a5cfb8bf1c0d5d1588fd881082cbe92b1c6fabc5ac",
+     "name": "Kami 7190",
+     "index": 7190
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 226,
+      "total": 240,
+      "percent": 94
+     },
+     "hpRatePerHr": "-7.32",
+     "musuAccrued": 109,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789433859,
+     "level": 35,
+     "xp": 17506,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xdd35305a62a0f2c5d9ac20ffc4eff9949e9c16bd2db78e260ec8df0d5bd94cbb",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xff9c018e8fa1272fb14ff38a7a09c79fc9542e7245c0222c592191f26e80ec41",
+     "name": "Kami 7308",
+     "index": 7308
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 186,
+      "total": 270,
+      "percent": 69
+     },
+     "hpRatePerHr": "-19.30",
+     "musuAccrued": 587,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789417178,
+     "level": 36,
+     "xp": 47772,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1bb4f15700867be4a956ddce7dab8a627c1aca78316da76e29f318079590bc22",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xde7e1f0b76256a30cd25d8646e7e2ffa28afd8748571002ae8f25d0f9cb28dc9",
+     "name": "Kami 7534",
+     "index": 7534
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 182,
+      "total": 240,
+      "percent": 76
+     },
+     "hpRatePerHr": "-10.27",
+     "musuAccrued": 437,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789411846,
+     "level": 35,
+     "xp": 87154,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x95518d69cad7f8b4abe3c62d2487ba611c93f65507cf97a76285ab89f7b1082a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6a29f830a5336927799df0a34aad5e46927b65bbce318ffc739fedd49243b404",
+     "name": "Kami 7771",
+     "index": 7771
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 191,
+      "total": 230,
+      "percent": 83
+     },
+     "hpRatePerHr": "-8.91",
+     "musuAccrued": 287,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789420766,
+     "level": 38,
+     "xp": 30467,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x7ebe54cdbce96897c06716bb4da9432d76106e24537af61d6dd31ca3b14ae4ed",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc6cd51b8348e42bdbcb8b9a365d3f2e44a6f5e7fdb15db689e2eb13b1e2bfac",
+     "name": "Kami 7886",
+     "index": 7886
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 216,
+      "total": 220,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.55",
+     "musuAccrued": 28,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439419,
+     "level": 36,
+     "xp": 28187,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xce826d0166e2690131f0b7d65d0e871c0b50ef11348060078a10a350ef37c8af",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbb3dce8b8f70230af94736ebee66578d752e0691de4e5b242bdf6f311f5219ba",
+     "name": "Kami 7999",
+     "index": 7999
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 234,
+      "total": 240,
+      "percent": 98
+     },
+     "hpRatePerHr": "-5.16",
+     "musuAccrued": 37,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439025,
+     "level": 36,
+     "xp": 36705,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x467852909e9fd551f9d9d14782b486a2ffb049b44cc04e0bfa2b380c710f9645",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xb39a8a5d1fb9bfab80736b76ef7b74b5d5784065b4759f5303dc6e192ef723e1",
+     "name": "Kami 10004",
+     "index": 10004
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 173,
+      "total": 210,
+      "percent": 82
+     },
+     "hpRatePerHr": "-9.19",
+     "musuAccrued": 283,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789422413,
+     "level": 36,
+     "xp": 56833,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6d6748c589f293e866c9331712314c86eb8a99d0d0bde16defc36dbd2333c315",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf4f172c511a5e0bb14ef7d49e7708517170cdad139ab5cf5a53ce3d6ffe534ab",
+     "name": "Kami 10694",
+     "index": 10694
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 246,
+      "total": 300,
+      "percent": 82
+     },
+     "hpRatePerHr": "-11.39",
+     "musuAccrued": 371,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789420157,
+     "level": 38,
+     "xp": 175602,
+     "xpRequired": 200914,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf905f5a8478ff77742ce8dcc5af98354ef27c77422a3137287f23ad11ee876fc",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x912465e590dde0a418632f134b82411738e4aebdf05a74d35b25966e44d3b054",
+     "name": "Kami 11400",
+     "index": 11400
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 186,
+      "total": 250,
+      "percent": 74
+     },
+     "hpRatePerHr": "-11.13",
+     "musuAccrued": 468,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789412825,
+     "level": 36,
+     "xp": 35594,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xd12ba96ac031151369722977cce2f4de6f2f7fc7cafe57fb3a2521a5cb79672e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x28c636a32e0a6328a6104e1548447a6b8d4223606bd5676f7218501418ae32df",
+     "name": "Kami 12096",
+     "index": 12096
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 174,
+      "total": 210,
+      "percent": 83
+     },
+     "hpRatePerHr": "-12.81",
+     "musuAccrued": 218,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789429751,
+     "level": 34,
+     "xp": 80638,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xe5d1bfc74920a5b94e5b5e8334a4c772389700ef35f4be3f8814ba59e5a1ef6b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xde3d64364c92d2c02f05f745c8b630b6cbf00ab4f2058773e01ca6e548210ff8",
+     "name": "Kami 12796",
+     "index": 12796
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 136,
+      "total": 220,
+      "percent": 62
+     },
+     "hpRatePerHr": "-11.88",
+     "musuAccrued": 663,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789402153,
+     "level": 35,
+     "xp": 88182,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x0029e9e0d85125b53d643bb5d810029d96c98c3ec7410ba5fb17cad723de9d7f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x184870091b7ff3505288d3686e74ad993e9d7a67c8aa0359bbe17e917ff1a8f3",
+     "name": "Kami 13485",
+     "index": 13485
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 206,
+      "total": 210,
+      "percent": 98
+     },
+     "hpRatePerHr": "-3.82",
+     "musuAccrued": 31,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438748,
+     "level": 37,
+     "xp": 150434,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x76631fe434bd8ddc3b6510c4a5bef2562ccf24306c361f1925022f53dc7883e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcd607a40ba558062dc0674c326fe369f546735c7370ab81f386ad376cb0b767c",
+     "name": "Kami 14173",
+     "index": 14173
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 234,
+      "total": 250,
+      "percent": 94
+     },
+     "hpRatePerHr": "-6.17",
+     "musuAccrued": 114,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431287,
+     "level": 36,
+     "xp": 75759,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x92d7f792710d1910487bcc8483449a88edaaf1a1d593d1aa0cf49e2055010091",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x34de508ceac61aae82f054edf2a1c27703f9bffe461b5a313541b2bde71f65de",
+     "name": "Kami 14864",
+     "index": 14864
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 279,
+      "total": 290,
+      "percent": 96
+     },
+     "hpRatePerHr": "-7.59",
+     "musuAccrued": 67,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789437178,
+     "level": 34,
+     "xp": 57316,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xeb26a311c0eb0f90d5420009a1149990e21a214191a98fd821e45c752cd56a1",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbec36b001952e8041aa6df712ff58648187e1abfb1a48556b17f5d84e4e7c185",
+     "name": "Kami 15552",
+     "index": 15552
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 121,
+      "total": 230,
+      "percent": 53
+     },
+     "hpRatePerHr": "-15.35",
+     "musuAccrued": 798,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789402837,
+     "level": 34,
+     "xp": 72526,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x285055c75e43542ed2afbc2f50bacc8fd825ab94d10b04e68f312bde4e83e29f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xb75917e60e72dcd59cad1cadb7ca6a386673ee47118a3ab85ef30f1b469718a9",
+     "name": "Kami 16932",
+     "index": 16932
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 222,
+      "total": 250,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.91",
+     "musuAccrued": 191,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789426231,
+     "level": 35,
+     "xp": 72433,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xbc07df81bc85a754b5ae18524d611946b9fd12f7497e4ca558ca0d9a422ea9c7",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x3a1f9d8df7d5fb826cddcca336e469dbcfa703004edd1e8d89de80ff7cd32069",
+     "name": "Kami 17622",
+     "index": 17622
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 220,
+      "total": 230,
+      "percent": 96
+     },
+     "hpRatePerHr": "-5.48",
+     "musuAccrued": 64,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435812,
+     "level": 36,
+     "xp": 91968,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xe8a1082a695240dfe9f6569643672781d74ecd96728e651094e11809719d31e8",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf97b84038cebe9196b80461aa16d6f0ca1c7f2f0515cffda4c9d30919c33a18f",
+     "name": "Kami 18311",
+     "index": 18311
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 238,
+      "total": 300,
+      "percent": 79
+     },
+     "hpRatePerHr": "-13.50",
+     "musuAccrued": 539,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789415845,
+     "level": 37,
+     "xp": 25468,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9f6fbc3fdff017f49326adf86569802f9d0d2704ee205e8cd1e278de9e0965a6",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xacda34f07a8fbb65d24580625b5974d8510d8f11767639901fb82a40c302f4b7",
+     "name": "Kami 19684",
+     "index": 19684
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 189,
+      "total": 230,
+      "percent": 82
+     },
+     "hpRatePerHr": "-12.48",
+     "musuAccrued": 306,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789425904,
+     "level": 37,
+     "xp": 40310,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xfaf7ac6c03b552ca5728666b2ea583789936aa176a5f22138d5eae581f6192d1",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8f3edb76b09c1c485d90ba4f59e149b22dea5e8b1bcf0fcbc7fc215850532202",
+     "name": "Kami 21732",
+     "index": 21732
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 213,
+      "total": 240,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.98",
+     "musuAccrued": 192,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789427126,
+     "level": 36,
+     "xp": 45701,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x371f5f896b00365260628c9b8f63e6ed0c7e0d4f56af832646f69bdb6aabb570",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8eb18ae682b549aa0d8839de0617dbdfabed64ff2069f58bda1b42b8930341d0",
+     "name": "Kami 22414",
+     "index": 22414
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 234,
+      "total": 240,
+      "percent": 98
+     },
+     "hpRatePerHr": "-5.25",
+     "musuAccrued": 47,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438113,
+     "level": 37,
+     "xp": 92941,
+     "xpRequired": 159582,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x38d196364518439499875de0fb6d02c2315d5c9263aed30c08a082903297f016",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xefc1281346264d92d346428258a7a0b6fa37e3251be4aeeee4fc2b352d84840d",
+     "name": "Kami 23093",
+     "index": 23093
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 174,
+      "total": 200,
+      "percent": 87
+     },
+     "hpRatePerHr": "-8.38",
+     "musuAccrued": 187,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789428955,
+     "level": 36,
+     "xp": 91071,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf0d0d8ffa5bad76d0019b1f208a08cdf31b773d1f3f2445f2386f51fc0922d49",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcc2f43f48c1ac34406dd95064a0e0a46a11b909ff8bf32f2da3c331978e740d9",
+     "name": "Kami 23770",
+     "index": 23770
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 179,
+      "total": 240,
+      "percent": 75
+     },
+     "hpRatePerHr": "-10.64",
+     "musuAccrued": 459,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789412194,
+     "level": 36,
+     "xp": 79365,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x96d74b6fd320287e249e1c7538b66280cac1fdade0d7ec539fe837c54f51f207",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x79375748cdd79e2076a5c8d36b7efa39afbe4c4d1e9d3b2fec5b6e22f8b4b748",
+     "name": "Kami 25814",
+     "index": 25814
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 217,
+      "total": 230,
+      "percent": 94
+     },
+     "hpRatePerHr": "-6.84",
+     "musuAccrued": 88,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435030,
+     "level": 36,
+     "xp": 68960,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf41bdcf2756b155ee0ee8673f9b2dda69ea647f9fc9c22b0310b2aab2d38391c",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8d4f6741cc71ae53abb68a6133f6122a6483b37b0655335eea1bfa4f4c808273",
+     "name": "Kami 26493",
+     "index": 26493
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 110,
+      "total": 200,
+      "percent": 55
+     },
+     "hpRatePerHr": "-17.37",
+     "musuAccrued": 693,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789412087,
+     "level": 34,
+     "xp": 57097,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x68f123228c4f8b103e4a9c8a06693ad49ac4c6b1a2259ea447824f26e7053f2f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x0a20f9d6f24339a3b74e1363e72711525df55ef60ffabbaa9c46f6e2ce3dd509",
+     "name": "Kami 27172",
+     "index": 27172
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 185,
+      "total": 260,
+      "percent": 71
+     },
+     "hpRatePerHr": "-16.83",
+     "musuAccrued": 523,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789417573,
+     "level": 35,
+     "xp": 44277,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x18909bdad58ac884cdd2d6629687de15b9a72b29ba02548549cbdc07dbe5d8cd",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x730f0e567370862d526d9b8d5c2c3781dbcc58f5c0a2bfa5542e2d919019051b",
+     "name": "Kami 29891",
+     "index": 29891
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 126,
+      "total": 230,
+      "percent": 55
+     },
+     "hpRatePerHr": "-13.27",
+     "musuAccrued": 803,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789396723,
+     "level": 36,
+     "xp": 21976,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa75d4d7fccaabbe93ec350e778236db289793ecf1d2bcc433bf0cb0eebe8756f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xfb9ecd86301dc448072dd47969e775e98dd68ad3438630abd51261ba24ebb6d",
+     "name": "Kami 30574",
+     "index": 30574
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 219,
+      "total": 230,
+      "percent": 95
+     },
+     "hpRatePerHr": "-6.16",
+     "musuAccrued": 73,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435572,
+     "level": 35,
+     "xp": 34936,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x5cc222fe1768598bf93e19902e5730bf662300162fc004896d4ba1ca9c392117",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x0de52d949fedd3b7526142254a585d1d114547fd5e81acdf9e817cdf5eac96d3",
+     "name": "Kami 31251",
+     "index": 31251
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 251,
+      "total": 270,
+      "percent": 93
+     },
+     "hpRatePerHr": "-8.83",
+     "musuAccrued": 138,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789432838,
+     "level": 36,
+     "xp": 55216,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xcb68dc2d521743325efd11d012c8f614f4934bf7a17a7065c50ac2f4887c1ca",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf4143fcc7bc6c9e2f001043c7743a7d9c9dfb31aac17ebb4f4035dea7a26c45c",
+     "name": "Kami 31929",
+     "index": 31929
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 218,
+      "total": 230,
+      "percent": 95
+     },
+     "hpRatePerHr": "-6.09",
+     "musuAccrued": 88,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789434539,
+     "level": 32,
+     "xp": 38366,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6df06756ccc31479d2dea924e4936db8298221ee324cc96fb6cd1a36f15a8860",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xe3592a1ba5f7fd42b591a6fb51825b029f59902ed3b54bd94c33426489b6f426",
+     "name": "Kami 33293",
+     "index": 33293
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 204,
+      "total": 230,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.18",
+     "musuAccrued": 187,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789424894,
+     "level": 33,
+     "xp": 6038,
+     "xpRequired": 63516,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x8256dbd7cefba3489db1043bab81ea7593af3620326ff66151452d306746d801",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x4be7a324248336a2f27a3de1a823b993c410d8a22e131234c924fbb6c8e3d00c",
+     "name": "Kami 33972",
+     "index": 33972
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 238,
+      "total": 240,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.82",
+     "musuAccrued": 10,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441607,
+     "level": 32,
+     "xp": 54456,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1da90ab7cab5c43f1293e55823b1a4f9120c96d50891fb8a755828706a97b0e9",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x2e1a819a7ecbcdf7e2072a55f55b3d6af1d7fa655430579867b35048a459aac0",
+     "name": "Kami 34651",
+     "index": 34651
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 168,
+      "total": 230,
+      "percent": 73
+     },
+     "hpRatePerHr": "-14.78",
+     "musuAccrued": 453,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789418505,
+     "level": 34,
+     "xp": 45502,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1b9701f02ca45945ad9e3d4500028f3be244370b3f2d4c9fc3621b990c6b30f6",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xdb49743d8002fffb9be7b71b64a4a4a19934306aeb0574d2e9534d10621b1fbd",
+     "name": "Kami 36703",
+     "index": 36703
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 247,
+      "total": 250,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.28",
+     "musuAccrued": 17,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789440777,
+     "level": 32,
+     "xp": 56866,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x22f59ccaa481ce86fcc9e98ee6c05884d885ada710da5d8102a16c00ba3fa71e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x118f8b1b7dfeadcc3b3222a675f9f9dbc5a683be181d28c98ffabf7af78992dc",
+     "name": "Kami 39427",
+     "index": 39427
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 190,
+      "total": 210,
+      "percent": 90
+     },
+     "hpRatePerHr": "-7.35",
+     "musuAccrued": 133,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789430975,
+     "level": 35,
+     "xp": 89899,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9808224f5f60a77f011b1da58e511355613056b92028f8e8136b84fceb20c8d5",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6e45201649589cf0eb0d55bcc359613ebccd10a8609176d16389268164dd9bf4",
+     "name": "Kami 40788",
+     "index": 40788
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 237,
+      "total": 240,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.89",
+     "musuAccrued": 18,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441053,
+     "level": 36,
+     "xp": 74283,
+     "xpRequired": 126753,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x8af8eaf47791a9480960a40417725ad6473048c466818fb427c8e422a8060b49",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x0d1f7517a5ca084757bd162040908b9e4791f1df51f3c419b7aeb912c6a543c0",
+     "name": "Kami 41466",
+     "index": 41466
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 174,
+      "total": 210,
+      "percent": 83
+     },
+     "hpRatePerHr": "-9.48",
+     "musuAccrued": 251,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789425320,
+     "level": 35,
+     "xp": 61529,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x386c5722398634957e470c03454e4c2b48bba169ebbf0b0db57549a56be08394",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x663cfc75be47bc7a274e3d875465937febf73bf9ce3b4230a887da5be7972d45",
+     "name": "Kami 42143",
+     "index": 42143
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 228,
+      "total": 240,
+      "percent": 95
+     },
+     "hpRatePerHr": "-6.67",
+     "musuAccrued": 75,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789435895,
+     "level": 35,
+     "xp": 102926,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xd54074204cc8ed1fe52c9477b6d8370dc553f39f7306096a4048337609b597a9",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x2653c0a8cd858bbaf8264ce6310b90c115c5c37a8c25bdb8b4a8aeb29f470c6f",
+     "name": "Kami 43502",
+     "index": 43502
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 200,
+      "total": 210,
+      "percent": 95
+     },
+     "hpRatePerHr": "-5.86",
+     "musuAccrued": 73,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789436079,
+     "level": 35,
+     "xp": 63216,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x3f372a10d5b5c1a28fd61c4f75d9463c780995fa6a3b9353666799aa0d13ea23",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xefa628cc388054ee210dfd29cd55d256516972c005ef14d859e4263e8580d4a0",
+     "name": "Kami 44180",
+     "index": 44180
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 176,
+      "total": 180,
+      "percent": 98
+     },
+     "hpRatePerHr": "-5.44",
+     "musuAccrued": 24,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789440520,
+     "level": 34,
+     "xp": 43119,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9497c6d609372e89c62fb67f1408d40ae12c0c8eecdc95d1fe7558605791fa9e",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8deb11ab6883944ff1278c2aa9382a1999a2c41177db77c63d8f28ec09f6e346",
+     "name": "Kami 46217",
+     "index": 46217
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 124,
+      "total": 200,
+      "percent": 62
+     },
+     "hpRatePerHr": "-11.56",
+     "musuAccrued": 584,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789406623,
+     "level": 33,
+     "xp": 9349,
+     "xpRequired": 63516,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xd47bdb9592a69ed1bdb5695edd46c8595b0ef736414459ba3ae03b5ca4e2aada",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc7a18edd6128428d33de714656fe0c8a169eec1edbfa4fbe8b8f425f466d50d5",
+     "name": "Kami 47579",
+     "index": 47579
+    },
+    "account": {
+     "index": 997,
+     "name": "plr02"
+    },
+    "vitals": {
+     "hp": {
+      "current": 174,
+      "total": 190,
+      "percent": 92
+     },
+     "hpRatePerHr": "-8.50",
+     "musuAccrued": 111,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789434696,
+     "level": 34,
+     "xp": 23963,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xe05a942254ac612a2fee82b1d4b27df9296a879ed8f3771673dfae1c6519a4e8",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcbdf0cac2e3ddfcc28bf074471aa3a581580774cf86440098e0db0a7c9f8c0e6",
+     "name": "Kami 48941",
+     "index": 48941
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 205,
+      "total": 210,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.36",
+     "musuAccrued": 32,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439081,
+     "level": 35,
+     "xp": 92427,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xbe7de7b5344462206361f01545de450b1108baeb3181a398eaff1d800a27035c",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x83ef4df450159e0325c4dfda03815ec36922e7a24ec159bf8ffe43cc49ff0860",
+     "name": "Kami 53710",
+     "index": 53710
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 226,
+      "total": 230,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.39",
+     "musuAccrued": 29,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439330,
+     "level": 35,
+     "xp": 27702,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x5b9b2c56b053a5d04017883170afb345a3cb47e8d4fb50a983e7b8ed2b7d139",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf29f124079fdf9f4d2943276d269385911693fe9c12e553677241d797c514f8",
+     "name": "Kami 55081",
+     "index": 55081
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 207,
+      "total": 230,
+      "percent": 90
+     },
+     "hpRatePerHr": "-8.24",
+     "musuAccrued": 167,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789430339,
+     "level": 35,
+     "xp": 79200,
+     "xpRequired": 100678,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf985a893beaf98ccc56be45246118600e544ac38f921e88a761cd727c7756f8b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8d16384cf702a0a45f28219d9350b58ff061de8083711b2995bd803cca69d20e",
+     "name": "Kami 57130",
+     "index": 57130
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 238,
+      "total": 240,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.92",
+     "musuAccrued": 12,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441330,
+     "level": 32,
+     "xp": 56912,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x44c8fdfde15aa66d1c44944700f54f9d8429d36f48aae257d2c14e664ca40de2",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x24c7b7b5b96a5945a2de21c6d5fa700cd6bdb81158d0d97e674be34c2edd14e9",
+     "name": "Kami 58493",
+     "index": 58493
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 217,
+      "total": 240,
+      "percent": 90
+     },
+     "hpRatePerHr": "-7.81",
+     "musuAccrued": 149,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789429761,
+     "level": 34,
+     "xp": 30069,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x0d527362497de9efaca1664176cafc90c48975951d67085a11fb97eb496f0b47",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x4b1acaeca7e8f87ab5e50c1ab7471f27580bd3377572c4bf1b964b37ac75da83",
+     "name": "Kami 59170",
+     "index": 59170
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 257,
+      "total": 260,
+      "percent": 99
+     },
+     "hpRatePerHr": "-5.03",
+     "musuAccrued": 20,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789440776,
+     "level": 34,
+     "xp": 47472,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9675f429b98aaafe1408257ed346e77671222a79518ad1edaaa4c0c1b8219341",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6f7224725fb8ba994099eac7a1d3b1691e19726f5b2fa3acce01a84cb52971a7",
+     "name": "Kami 59852",
+     "index": 59852
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 208,
+      "total": 220,
+      "percent": 95
+     },
+     "hpRatePerHr": "-6.03",
+     "musuAccrued": 89,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789434803,
+     "level": 32,
+     "xp": 61537,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1f512fc613f0407072b23e3ef5f3a5eb585cd9b6aa8a64d749bbc8b9b7aa9d6",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x0b901cf2638928f124d1782cc7787c6c00958363df36e988d97b3a84b2a7fa06",
+     "name": "Kami 61212",
+     "index": 61212
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 236,
+      "total": 240,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.41",
+     "musuAccrued": 24,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789440083,
+     "level": 32,
+     "xp": 58064,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x25422d4c32760ccb02681adf8a19bb54042d0915caf3ae4e279af5b2e6f90852",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcf0f8e10b4d723a442aef38e217fc7cd3128a6c1649f7284656839c2fe68e7bb",
+     "name": "Kami 62579",
+     "index": 62579
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 225,
+      "total": 230,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.59",
+     "musuAccrued": 32,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439246,
+     "level": 32,
+     "xp": 59207,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xadae21954e716c74f4558a9bfcfff58c40101dcc76f9cde335a0d2e57ce3383f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5e25694a21c50a1049261d7c5d72f440dbd1eddcd2cd12d817333903c41f2145",
+     "name": "Kami 63940",
+     "index": 63940
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 237,
+      "total": 240,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.25",
+     "musuAccrued": 19,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789440529,
+     "level": 32,
+     "xp": 57494,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb938772246959264ffb2d9cd0034caae0d4a747316b2d6a7a8995d7cf0e05cc",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6263167554539bdb95e2dcac7a65dc8e19fa19cfc781b6d1419dae9bf287ecbc",
+     "name": "Kami 64617",
+     "index": 64617
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 205,
+      "total": 220,
+      "percent": 93
+     },
+     "hpRatePerHr": "-6.41",
+     "musuAccrued": 103,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789432613,
+     "level": 34,
+     "xp": 32323,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1ff1cfd2e7f2cdc80042ad350b89d48422f1da97b92d2cb7821189fd7a0ae444",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x531fbc7705ad59593781122f11783144c075b6f4de22be42e7b94de67c9f122c",
+     "name": "Kami 65297",
+     "index": 65297
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 220,
+      "total": 240,
+      "percent": 92
+     },
+     "hpRatePerHr": "-7.60",
+     "musuAccrued": 137,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789431108,
+     "level": 34,
+     "xp": 42843,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x9162a4d2bc2054cd868da377ebc9cc3788b08758cd027265f783b406a3a69915",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x611e41c1cf0e5b75c08d83205df7280056978e9c53d481cf89b61b46deeea41c",
+     "name": "Kami 65975",
+     "index": 65975
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 137,
+      "total": 200,
+      "percent": 69
+     },
+     "hpRatePerHr": "-7.36",
+     "musuAccrued": 485,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789402169,
+     "level": 29,
+     "xp": 2960,
+     "xpRequired": 25280,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xbd5eec2071308df9820f6c38222e6b8fb9c8dc853658f77fe11d194a2c880c44",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5c62d5884794be7936c19419fc8fd2d6328807b37a3497e1a681a516500cb337",
+     "name": "Kami 66655",
+     "index": 66655
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 157,
+      "total": 220,
+      "percent": 71
+     },
+     "hpRatePerHr": "-11.42",
+     "musuAccrued": 426,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789414181,
+     "level": 34,
+     "xp": 20548,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa3ef36d54b948099be7d6e5f909e64f00fd054386278b547bd6257a21bf38cba",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x15917d354a65e560308287ccce00478dd7386869843b0272356ff6c2f39d6d7e",
+     "name": "Kami 67338",
+     "index": 67338
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 195,
+      "total": 240,
+      "percent": 81
+     },
+     "hpRatePerHr": "-9.82",
+     "musuAccrued": 321,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789420358,
+     "level": 34,
+     "xp": 47827,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa7234adf5888a93ba7c46485f5c38eb4b2a3cbfbdfb55e917bb795912f17ca38",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x167b6ae3ee0a5599029f734140024a4fc6c6fba84ea0c418a6d906be31955b9d",
+     "name": "Kami 68017",
+     "index": 68017
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 268,
+      "total": 270,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.06",
+     "musuAccrued": 9,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441679,
+     "level": 32,
+     "xp": 54640,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa8129e260a7d0891be602a7a7aed0b429b8464491eceebe758289e5c7ecc7ae8",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6ba3f470c760a5cbe66df2e5c8510236769b3076f9324af5209cc7012e78c5ed",
+     "name": "Kami 68696",
+     "index": 68696
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 198,
+      "total": 200,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.04",
+     "musuAccrued": 10,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441379,
+     "level": 32,
+     "xp": 54667,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x521cbea2fdf71671eafa4e9843a1d3ee61b3da3c09b28a55b1018dcafa55cab8",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x08701dd14e8858e6727b418432dfd5d30d8e9a9669a8291cc143a608194f446b",
+     "name": "Kami 70056",
+     "index": 70056
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 194,
+      "total": 230,
+      "percent": 84
+     },
+     "hpRatePerHr": "-8.18",
+     "musuAccrued": 265,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789420374,
+     "level": 32,
+     "xp": 55304,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x55f023820070c7f9f30ff746cff1b4a0133ccfebeed4410f90f9bdad7d0652bc",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6120e6a06f396b875d5e7df8119aa0a432a57b336ddcfcadf55c298279863c49",
+     "name": "Kami 70735",
+     "index": 70735
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 228,
+      "total": 230,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.82",
+     "musuAccrued": 13,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441215,
+     "level": 32,
+     "xp": 57945,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xc1247ca6d194b7fe64dec02827e6ba99416a7e51274da14829f74dc6d7adf5b0",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x9a1db84907320f19be07f5ee8199d9d2e7de219b685523cf419ef4635a0b5b48",
+     "name": "Kami 72093",
+     "index": 72093
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 226,
+      "total": 290,
+      "percent": 78
+     },
+     "hpRatePerHr": "-8.16",
+     "musuAccrued": 421,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789406421,
+     "level": 29,
+     "xp": 2700,
+     "xpRequired": 25280,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa608f56b572ae0c20d459e5d17a657ae8863d935f3a64bfcf7bc438fd7144d5",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x66bf0ded4c21172607bd75f6068fa2c1895c7a0a0cc3a7971bda3ebd5bed5358",
+     "name": "Kami 72774",
+     "index": 72774
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 218,
+      "total": 220,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.58",
+     "musuAccrued": 13,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441165,
+     "level": 32,
+     "xp": 55084,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x3469a0e7d30dbcdfe1cc6e350ed99173c086a5dc130373e268799be99038240",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xfda7ed98561aa390012a0e291e943764624fb2885f5748d25be2dfa8914093d4",
+     "name": "Kami 73455",
+     "index": 73455
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 219,
+      "total": 220,
+      "percent": 100
+     },
+     "hpRatePerHr": "-3.10",
+     "musuAccrued": 3,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442459,
+     "level": 32,
+     "xp": 54471,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x1e2b15c25eacecf49cb80527016b807ae3f4cd37d5eb3c8012369cb338759030",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xb5d0de2040932a938156ecaaf14008a12b816ff11a96c5a7513b00ebe5f29b77",
+     "name": "Kami 74136",
+     "index": 74136
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 173,
+      "total": 220,
+      "percent": 79
+     },
+     "hpRatePerHr": "-9.24",
+     "musuAccrued": 356,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416513,
+     "level": 32,
+     "xp": 58002,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xc0e8c4ce65c091786c497514383eac906291fc6a345deb1aba52aee9a3eb88a9",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xf35791cc39ab8d332eb5652faf79250fa2381a982dce6fe07737592f0ee86c7d",
+     "name": "Kami 74818",
+     "index": 74818
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 222,
+      "total": 250,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.68",
+     "musuAccrued": 200,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789424680,
+     "level": 32,
+     "xp": 52067,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xe4c8f82e0e49ffdc49b0c99ca54932582f5c51ab85e4003ca4a9a0c016c511ac",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xa7770c3ce7e711009a41abf43ad576a2fb7c04658e6876a4ce809523150043e6",
+     "name": "Kami 75497",
+     "index": 75497
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 218,
+      "total": 220,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.59",
+     "musuAccrued": 13,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441149,
+     "level": 32,
+     "xp": 54857,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x54329541133f01b2df095d37fcc97e2dc6e85bdf5d93472405abe5ed8307c16a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x4c11571e59e6d65f3c51e968fea5590d828d239dc37801f9945e890bedbb967e",
+     "name": "Kami 76179",
+     "index": 76179
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 259,
+      "total": 260,
+      "percent": 100
+     },
+     "hpRatePerHr": "-4.20",
+     "musuAccrued": 2,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442689,
+     "level": 34,
+     "xp": 40755,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa0547d1ab4f4a5bb72927dd5d9396ee1c71c82e7db657de534bc79d036b0a10b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xcc2bd0fad01810f7b6922503b1272d080370e89492fed23f840fcf583760f3b4",
+     "name": "Kami 76859",
+     "index": 76859
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 183,
+      "total": 220,
+      "percent": 83
+     },
+     "hpRatePerHr": "-8.11",
+     "musuAccrued": 281,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789418678,
+     "level": 32,
+     "xp": 54778,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb1cc8265d86cd3f2e6447765fefa9ca4ee8a23f2790db95957e30cc935736291",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xefdab417dcc02529a73978db5bc75cad7f65ed0828a7e6303016ed98a6ba9620",
+     "name": "Kami 77541",
+     "index": 77541
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 178,
+      "total": 230,
+      "percent": 77
+     },
+     "hpRatePerHr": "-10.28",
+     "musuAccrued": 378,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789417752,
+     "level": 34,
+     "xp": 50298,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xcdb1b7277ffbbdf05d40eda20079888fb3923fc9198981eb8c320880a6ee37bd",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbf0bbe1f4c4a3fc21070bedb84195e6e11742faf53b1be873a298ff0f3ddd04f",
+     "name": "Kami 78220",
+     "index": 78220
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 208,
+      "total": 210,
+      "percent": 99
+     },
+     "hpRatePerHr": "-3.25",
+     "musuAccrued": 10,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441421,
+     "level": 32,
+     "xp": 55210,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x525d2ad8dae968d14acd042f56e5604ccfdc1b7198c0d3a1b3c68d789218f17b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbcd88e392c722cee3a627332f58804414c628e838c123a2cca336f4c8843fbb9",
+     "name": "Kami 78903",
+     "index": 78903
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 264,
+      "total": 270,
+      "percent": 98
+     },
+     "hpRatePerHr": "-5.56",
+     "musuAccrued": 37,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439005,
+     "level": 34,
+     "xp": 35294,
+     "xpRequired": 79966,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x7e637f070065a707b85aea00126167c50d11cdb5fba1a58fb9103b3d6b3c195a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xbe9be2dc34c8018ee24a461d505f7e5eaec4278debf8b7172b1e8afe9781cb02",
+     "name": "Kami 79586",
+     "index": 79586
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 253,
+      "total": 260,
+      "percent": 97
+     },
+     "hpRatePerHr": "-5.56",
+     "musuAccrued": 49,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789437783,
+     "level": 32,
+     "xp": 57181,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x105255950943e79c53cd691e8d9c036278c076b74a2ce383b6cbeeae8846635b",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x7348016a0f0cf45a60008c57fcfbca955a9c809e79c73da697adffa3f0ca765c",
+     "name": "Kami 80269",
+     "index": 80269
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 222,
+      "total": 250,
+      "percent": 89
+     },
+     "hpRatePerHr": "-7.62",
+     "musuAccrued": 198,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789424760,
+     "level": 32,
+     "xp": 52006,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x3b4c575bc265ed9305fd9d33ee1ad202575df6ace537a0edbe692abc098b9e35",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x3f55db0c2a82c297c3fba4dbf511df5bc3087b034bea06f3513821efb819f060",
+     "name": "Kami 80950",
+     "index": 80950
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 226,
+      "total": 230,
+      "percent": 98
+     },
+     "hpRatePerHr": "-3.99",
+     "musuAccrued": 23,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789439744,
+     "level": 32,
+     "xp": 34851,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xb089e07878719c88aaa68c874ccf4103ea65b4164c9a015f7581bfc63b84aa6",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x4c8c35585f3b94271cbd31af8e5ddb4b5846ec248d6f1e6fa89223596791bbea",
+     "name": "Kami 81635",
+     "index": 81635
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 188,
+      "total": 230,
+      "percent": 82
+     },
+     "hpRatePerHr": "-9.04",
+     "musuAccrued": 307,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789418695,
+     "level": 32,
+     "xp": 34611,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x72d10fedc5210ef50a7a0382db0cf58facb4f208bee6789f56b1b8fc89aa8107",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xef8e2a77a533344e24b960ec744c32aea9967984da4701035bba049637792e37",
+     "name": "Kami 82316",
+     "index": 82316
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 153,
+      "total": 210,
+      "percent": 73
+     },
+     "hpRatePerHr": "-10.17",
+     "musuAccrued": 438,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789412992,
+     "level": 32,
+     "xp": 35342,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf5488cbdd4cebad5fa28a7656052ace0c458e34d6247f1c0c294c107977bbff1",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x931f30d81dd4b1bbf2228c36f297f91e0bd8ec359fb46c6a21a9447f4767623a",
+     "name": "Kami 82995",
+     "index": 82995
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 254,
+      "total": 260,
+      "percent": 98
+     },
+     "hpRatePerHr": "-5.13",
+     "musuAccrued": 37,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438762,
+     "level": 32,
+     "xp": 54284,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x7f32b82047353e20a1b57c1efc1f52bd935010f5d47f25325b6f7cbca856202",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xc43aaf724ccf627080c1f84fd2bfe276f692022f0f9fdd0ce26459ded7285d",
+     "name": "Kami 83675",
+     "index": 83675
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 224,
+      "total": 230,
+      "percent": 97
+     },
+     "hpRatePerHr": "-5.01",
+     "musuAccrued": 44,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438166,
+     "level": 32,
+     "xp": 55824,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6e291b698bcad4508233f4c32e2567fcfc4efbb268d5533e3f0e252edb76db2",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xecaecaeb060d652748e68d809c23ce660a4886a54701e94dfd9948de6c7e83c4",
+     "name": "Kami 84355",
+     "index": 84355
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 255,
+      "total": 260,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.72",
+     "musuAccrued": 33,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438758,
+     "level": 32,
+     "xp": 35116,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x8bc75e22d72c53a6016f730f5cbe13a59e5f2417f48e3c9b9efde5c9fc0a3ba3",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x264aad894398f4e0425172544966b6c4635c67d84545b513d22716f90edc6df2",
+     "name": "Kami 85036",
+     "index": 85036
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 173,
+      "total": 220,
+      "percent": 79
+     },
+     "hpRatePerHr": "-9.25",
+     "musuAccrued": 357,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416481,
+     "level": 32,
+     "xp": 35586,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xc77b0f24bca7eb3a7d0b8886c3ffecfc261fff446a7567d43deeb198ceb98650",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x44966b3363cbc75252469e5f0535b722c8b26c567fef3618c8f4b1029db4bb5e",
+     "name": "Kami 86396",
+     "index": 86396
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 229,
+      "total": 230,
+      "percent": 100
+     },
+     "hpRatePerHr": "-3.56",
+     "musuAccrued": 7,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441892,
+     "level": 32,
+     "xp": 55313,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa9bb6acc531dead3cd06b82cb18100d8df718309c404a26c129e1b056ebed8de",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x3578f3f9764174dfb5d3b38eb097b88b7bf67c9390fc380621b0d8c25329579b",
+     "name": "Kami 87079",
+     "index": 87079
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 210,
+      "total": 240,
+      "percent": 88
+     },
+     "hpRatePerHr": "-7.70",
+     "musuAccrued": 219,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789422929,
+     "level": 32,
+     "xp": 54279,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x27bd26a285299072a2c195cf232109076a0a251da0ee2bf173a26c2954fbdc13",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5609b9a5340579262a24c65d13cfa1550969c9f24434e3cb607963d078509d12",
+     "name": "Kami 87760",
+     "index": 87760
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 177,
+      "total": 220,
+      "percent": 80
+     },
+     "hpRatePerHr": "-8.87",
+     "musuAccrued": 320,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789417071,
+     "level": 32,
+     "xp": 35247,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x09045a7376b3b495cf2324e37dbdc1c43ec6a487520fe354e402e1c6f20f37bd",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x938a86e29afa04cdeae026ab789cdd29c54cf37fcea0086064e5a36cddb91a68",
+     "name": "Kami 88440",
+     "index": 88440
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 176,
+      "total": 230,
+      "percent": 77
+     },
+     "hpRatePerHr": "-10.28",
+     "musuAccrued": 402,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416531,
+     "level": 32,
+     "xp": 60198,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x0e3cb28204fd6c3a39971a74d60b42a90f3fbede3b35dd6cb7f27b37808ee1b5",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xda9c0d25bf4029ad92e2e30f51f6a9f28d6002f7fb9a29c7277defa306dd105",
+     "name": "Kami 89119",
+     "index": 89119
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 224,
+      "total": 250,
+      "percent": 90
+     },
+     "hpRatePerHr": "-7.31",
+     "musuAccrued": 183,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789425347,
+     "level": 32,
+     "xp": 52179,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xeae922a04326667f3afe5b5d6c0c036a3c5f5504343680fc7e62b6dcf6231b97",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x8e9917be4a07c6cbf4950745a758c20dc576f88a981835ecb855d16182b1b384",
+     "name": "Kami 90477",
+     "index": 90477
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 171,
+      "total": 220,
+      "percent": 78
+     },
+     "hpRatePerHr": "-9.48",
+     "musuAccrued": 373,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416061,
+     "level": 32,
+     "xp": 54928,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x462b11e284350da7655ede23d1643805bf499d6c11f8c7713ad2bdd4b41eb776",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x43275face05bdfb39882d43b8806a5699d516856289eb25e534a1e9f574865ad",
+     "name": "Kami 91157",
+     "index": 91157
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 184,
+      "total": 220,
+      "percent": 84
+     },
+     "hpRatePerHr": "-8.01",
+     "musuAccrued": 274,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789418892,
+     "level": 32,
+     "xp": 53328,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xfe4dff2988af1c4f9086e6a9929448d5e7c6937638d791b35b056655e31f2234",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x7e14a4f14b9ea8701b645388031c0efc424412e81871c3ea648dee467a610430",
+     "name": "Kami 91836",
+     "index": 91836
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 170,
+      "total": 210,
+      "percent": 81
+     },
+     "hpRatePerHr": "-8.27",
+     "musuAccrued": 311,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416596,
+     "level": 32,
+     "xp": 52590,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xac76a80f2ccd4abfe74caa02318ad71d2dc1c9a509f449404f1dd83a1cf5d061",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x45aabcc9709c7ea548d4479210559224ce82b4992145e45d4cf837c266475168",
+     "name": "Kami 92519",
+     "index": 92519
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 190,
+      "total": 230,
+      "percent": 83
+     },
+     "hpRatePerHr": "-8.80",
+     "musuAccrued": 293,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789419109,
+     "level": 33,
+     "xp": 42314,
+     "xpRequired": 63516,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x6ee9f8c00fd252e43d716ecbbdee62928bb2f92f9c78760f3e761fb6dd6f2f3c",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x454bce179cd24a2605f9ebd987fd619ea77e70a1d6d8c939b6e6f7c574a48053",
+     "name": "Kami 93199",
+     "index": 93199
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 234,
+      "total": 240,
+      "percent": 98
+     },
+     "hpRatePerHr": "-4.69",
+     "musuAccrued": 37,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789438379,
+     "level": 32,
+     "xp": 34953,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf557aa0c3872c895314bcc23d7b1ac10a9432cda2dbacc21398e56d7a9eceff0",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x79655aa1ca4981acd026a5339bfac367522ae4527576a5c4d42b7d2cb28f5cbd",
+     "name": "Kami 93881",
+     "index": 93881
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 230,
+      "total": 240,
+      "percent": 96
+     },
+     "hpRatePerHr": "-5.14",
+     "musuAccrued": 71,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789434529,
+     "level": 32,
+     "xp": 37406,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x563c4f0543cf9b276bdef69602fd48cc710bb4d3654bc9d4e6b94f5fd4c5bd4a",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6a33fed37d143fb3b6780b6bc5ba7a66aa93029a1b9b6fa6344014e12c6afd7a",
+     "name": "Kami 94559",
+     "index": 94559
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 211,
+      "total": 250,
+      "percent": 84
+     },
+     "hpRatePerHr": "-9.20",
+     "musuAccrued": 270,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789422010,
+     "level": 32,
+     "xp": 36169,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xcb4bc595a9494c9bf398e11d8d1b80e3407c09912f7b5fca1b516e378a014660",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x4065470b78b0b7f62f94be91228d669e34986bda7f33d1bb82801ec1a81f3d20",
+     "name": "Kami 95922",
+     "index": 95922
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 192,
+      "total": 230,
+      "percent": 83
+     },
+     "hpRatePerHr": "-8.77",
+     "musuAccrued": 286,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789421199,
+     "level": 32,
+     "xp": 35813,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x79def13bedafa8ad5662e0ed5ac5bbe5ddb277be262609ac78febc02e53ab28f",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x6b8878b5fd4219f558e0c21ffd2f7b35825d0b7a873ca7fcb8c5c90b05506b51",
+     "name": "Kami 96602",
+     "index": 96602
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 160,
+      "total": 250,
+      "percent": 64
+     },
+     "hpRatePerHr": "-12.85",
+     "musuAccrued": 643,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789402932,
+     "level": 32,
+     "xp": 37877,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf2e21eac1aa51b3ad7fe13946ee110e843c90520ffc70a0d883783364f582e58",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xd2d05495b571749429b95e924e88597137d2a181cf164901da5fdc129dda7f8d",
+     "name": "Kami 97280",
+     "index": 97280
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 162,
+      "total": 210,
+      "percent": 77
+     },
+     "hpRatePerHr": "-9.21",
+     "musuAccrued": 366,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789414784,
+     "level": 32,
+     "xp": 35889,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa03b1c7e2d8ceb0035aab14fc8d26530d368d92b9cf7b1639d9c62fa517c766",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0xfe65ec5b8fba0b18da26f522291ca2959198c8342bb3e480e91271295008a3e1",
+     "name": "Kami 97962",
+     "index": 97962
+    },
+    "account": {
+     "index": 806,
+     "name": "player0000000001"
+    },
+    "vitals": {
+     "hp": {
+      "current": 269,
+      "total": 270,
+      "percent": 100
+     },
+     "hpRatePerHr": "-2.91",
+     "musuAccrued": 3,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789442402,
+     "level": 29,
+     "xp": 5207,
+     "xpRequired": 25280,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0x2105f869166fde809088c0f2f56b3728598a07cd9a10a667148399ca9c1a27db",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x5cb649650a0feaa699805650fc2867fe7dba7f6df571a3f18235e23cc74ea50b",
+     "name": "Kami 98640",
+     "index": 98640
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 173,
+      "total": 220,
+      "percent": 79
+     },
+     "hpRatePerHr": "-9.25",
+     "musuAccrued": 357,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789416480,
+     "level": 32,
+     "xp": 35590,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xf0252a672f18c32ace61a6997bdac1fe66e090fbad0727032d62f561ad664824",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x915401a9c0c45475e65eb5c589535f63846ec03b4c510caf28d90f09ee007f15",
+     "name": "Kami 99320",
+     "index": 99320
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 222,
+      "total": 260,
+      "percent": 85
+     },
+     "hpRatePerHr": "-9.33",
+     "musuAccrued": 266,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789423194,
+     "level": 32,
+     "xp": 38729,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "EXPERIENCE",
+     "skillPoints": 0
+    }
+   },
+   {
+    "id": "0xa4d4956760e5af32f5b2ee7e6a5a349cbef77960d5f0b7c507e4ce1290daf2ab",
+    "state": "ACTIVE",
+    "kami": {
+     "id": "0x94d91f44bd56de1732d9e8ef8836c6b779a651b9e89fc1a0c58e6211d5217967",
+     "name": "Kami 99998",
+     "index": 99998
+    },
+    "account": {
+     "index": 2849,
+     "name": "carol"
+    },
+    "vitals": {
+     "hp": {
+      "current": 268,
+      "total": 270,
+      "percent": 99
+     },
+     "hpRatePerHr": "-4.24",
+     "musuAccrued": 12,
+     "cooldownSec": 0,
+     "cooldownUntil": 1789441262,
+     "level": 32,
+     "xp": 54612,
+     "xpRequired": 50449,
+     "levelUpReady": false,
+     "levelUpBlockedBy": "NOT_RESTING",
+     "skillPoints": 0
+    }
+   }
+  ]
+ },
+ "untrusted": [
+  "harvests[].account.name",
+  "harvests[].kami.name"
+ ],
+ "meta": {
+  "servedAt": "2026-09-15T03:26:28.359Z",
+  "blockNumber": 12335906,
+  "stale": false,
+  "mode": "daemon",
+  "reconciledThrough": 12335891,
+  "asOf": {
+   "block": 12335906,
+   "projectedAtSec": 1789442775,
+   "clockSampleBlock": 12335806,
+   "clockSampleBlockTime": 1789442501,
+   "clockOffsetMs": -12548,
+   "clockSampleAgoMs": 274811,
+   "observedBlock": 12335806,
+   "observedBlockTime": 1789442501,
+   "observedAgoMs": 274811
+  }
+ }
+}

@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-keeper/schemas/auto.json",
+  "title": "auto",
+  "description": "A kami set on one node, at most maxKamisPerBook; adopts HARVESTING kamis and deploys RESTING ones on start; rests (batched stop) or feeds by regenMethod at the bound the lens previews serve, and never below restFloorPct; owner classes from the chain kill scan. SPEC P2.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kamiIndices",
+    "nodeIndex",
+    "accountIndex"
+  ],
+  "properties": {
+    "kamiIndices": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "unit": "kami index",
+      "description": "the kami set this book owns"
+    },
+    "nodeIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "unit": "node index",
+      "description": "the one node"
+    },
+    "accountIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "unit": "account index",
+      "description": "the book account's ON-CHAIN index, what the party and inventory reads take (the book's `account` is the label the grant is under; labels never cross into lens queries)"
+    },
+    "maxKamisPerBook": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 50,
+      "unit": "kamis",
+      "description": "upper bound on kamiIndices length; default 50, up to 1000 — one book may hold every kami an account harvests with on one node; transactions are still chunked at the chain's per-transaction caps"
+    },
+    "friends": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "default": [],
+      "uniqueItems": true,
+      "unit": "account index",
+      "description": "account INDICES whose kamis are listed (never previewed, never bound the margin); never display names; the book's own account is listed by construction"
+    },
+    "regenMethod": {
+      "type": "string",
+      "enum": [
+        "REST",
+        "FEED"
+      ],
+      "default": "REST",
+      "description": "how HP is recovered"
+    },
+    "foodItem": {
+      "type": "integer",
+      "minimum": 1,
+      "unit": "item index",
+      "description": "the food item; required when regenMethod is FEED"
+    },
+    "safetyMarginPct": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 5,
+      "unit": "% of max HP",
+      "description": "HP kept above the served threshold while the owner that binds the kami has a liquidate on this node in the window or has ever killed one of this account's kamis (rendered class killed-here)"
+    },
+    "passiveMarginPct": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 2,
+      "unit": "% of max HP",
+      "description": "HP kept above the served threshold while the owner that binds the kami has a positive threshold and no kill (rendered class threshold-no-kill)"
+    },
+    "passiveOwnersBind": {
+      "type": "boolean",
+      "default": true,
+      "description": "when false, the served thresholds of an owner with a positive threshold and no kill (rendered class threshold-no-kill) do not bind the book's kamis \u2014 only the rest floor does \u2014 until that owner's first recorded liquidate or cast on this node or on this account's kamis; an owner rendered killed-here always binds with safetyMarginPct"
+    },
+    "hostileWindowHours": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 720,
+      "default": 48,
+      "unit": "h",
+      "description": "the one window, measured from the last such event: a liquidate or cast on this node, or on one of this account's kamis on any node, by an owner \u2014 or by the attacker kami itself, whoever owns it now \u2014 counts toward the attacker's class (rendered killed-here-<window>h) only inside it; a departed attacker of such an owner, or such a kami, is remembered for the window"
+    },
+    "restFloorPct": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10,
+      "unit": "% of max HP",
+      "description": "a harvesting kami at or below this share of its max HP is rested (stop) or fed whatever the bound: harvest stop reverts on a kami at HP 0"
+    },
+    "cooldownHorizonSec": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 86400,
+      "default": 600,
+      "unit": "s",
+      "description": "an attacker whose liquidation cooldown exceeds this is not counted in the bound this tick (noted as cooldownSkipped)"
+    },
+    "previewRefreshSec": {
+      "type": "integer",
+      "minimum": 300,
+      "maximum": 86400,
+      "default": 3600,
+      "unit": "s",
+      "description": "age at which a threshold preview with any positive clamped threshold is fetched again (86400 when every threshold is at or below 0); a level change on either side and an arrival refresh it at once"
+    },
+    "previewRetrySec": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 86400,
+      "default": 300,
+      "unit": "s",
+      "description": "age at which a preview whose last read served a row that was not a line (no vitals, or a non-positive threshold under an attacker-side reason) is fetched again; such rows are carried, never applied, and the entry never ages out at previewRefreshSec or 86400 instead"
+    },
+    "previewsPerTick": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10,
+      "unit": "previews",
+      "description": "at most this many node <i> <attacker> preview reads per tick, arrivals first; the rest are previewsPending and read next tick"
+    },
+    "previewPolicy": {
+      "type": "string",
+      "enum": [
+        "killed-here",
+        "all"
+      ],
+      "default": "all",
+      "x-defaultWhen": [
+        {
+          "when": {
+            "passiveOwnersBind": false
+          },
+          "default": "killed-here"
+        }
+      ],
+      "description": "which present attackers get a threshold preview. all: every occupant of an account that is not listed. killed-here: only an attacker whose owner, or the kami itself, has a liquidate or cast inside hostileWindowHours (rendered class killed-here), plus a remembered one that came back; nobody else is fetched, refreshed or counted previewsPending, and the owners summary counts an owner never read under unpreviewed. With passiveOwnersBind false no other attacker binds, so no other preview changes a decision; the tick after a kill row that owner's present attackers are arrivals and hold the book's kamis at the rest floor until fetched. Refused together with passiveOwnersBind true (an owner that binds on its threshold needs the threshold). A book stored before this key exists keeps all until it is declared again"
+    },
+    "nodeCensus": {
+      "type": "string",
+      "enum": [
+        "vitals",
+        "plain"
+      ],
+      "default": "vitals",
+      "x-defaultWhen": [
+        {
+          "when": {
+            "previewPolicy": "killed-here"
+          },
+          "default": "plain"
+        }
+      ],
+      "description": "the node read that says who is on the node. vitals: node <i> --with-vitals --full (every occupant with HP, cooldown and level). plain: node <i> --full, presence and account indices only (no vitals); the liquidation cooldown and level of an attacker rendered killed-here then come from its preview answer of the pass or one kami <index> read (attackerVitalsPerTick), and an attacker with no cooldown read is counted in the bound. Refused together with passiveOwnersBind true"
+    },
+    "nodeCensusEverySec": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 86400,
+      "x-defaultWhen": [
+        {
+          "sameAs": "tickSeconds"
+        }
+      ],
+      "unit": "s",
+      "description": "the node census is read again once it is this old; between reads the last one is reused (censusAgeSec on the tick) while the book's own kamis are still read every tick. Equal to tickSeconds (the value a start fills in): read every tick pass. Never below tickSeconds. A kill or cast row on the node forces a read on the next tick; the census is shared by the books on the node and never stored"
+    },
+    "attackerVitalsPerTick": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 50,
+      "default": 10,
+      "unit": "reads",
+      "description": "with nodeCensus plain: at most this many kami <index> reads per tick pass and node (shared by the books on it) for the cooldown and level of present attackers rendered killed-here that no preview answered for in the pass; an attacker over the cap has no cooldown read and is counted in the bound"
+    },
+    "startBackoffSec": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 86400,
+      "default": 3600,
+      "unit": "s",
+      "description": "a kami the chain refused to start or stop (its pre-check reverted, e.g. resting in another room) is not offered again for this long"
+    },
+    "startBatchWaitSec": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1800,
+      "default": 0,
+      "unit": "s",
+      "description": "0 (off): a ready kami (resting at or above resumeHpPct, above its bound plus an hour of drain, not held, not in backoff) is started on the tick it is ready. Above 0: ready kamis wait until startBatchMin of the book are ready or the oldest has waited this long, then go out as one batched start, chunked at the per-transaction start cap; waiting kamis are the tick note startWaiting and the status count kamis.waiting; a kami whose bound rises above its HP while waiting leaves the queue"
+    },
+    "startBatchMin": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 31,
+      "default": 4,
+      "unit": "kamis",
+      "description": "with startBatchWaitSec above 0: this many ready kamis of the book go out at once without waiting for the oldest to reach startBatchWaitSec"
+    },
+    "stopJoinWindowMin": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 60,
+      "default": 0,
+      "unit": "min",
+      "description": "0 (off): the book rests exactly the kamis at or below their limit. Above 0: on a tick that rests at least one kami, harvesting kamis of the book whose projected minutes to their own limit ((hp - max(bound, restFloor)) / this tick's drain rate) are at most this many join the same stop transaction, nearest first, up to stopPackMax; a kami is only ever stopped EARLIER than its limit, never held past it"
+    },
+    "stopPackMax": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12,
+      "default": 12,
+      "unit": "kamis",
+      "description": "with stopJoinWindowMin above 0: the most kamis one stop pack holds, anchors (kamis at their limit) first and joiners after; anchors beyond it still go out this tick, chunked at the per-transaction cap of 12"
+    },
+    "startJoinWindowMin": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 30,
+      "default": 0,
+      "unit": "min",
+      "description": "0 (off): a resting kami starts only at resumeHpPct. Above 0: on a tick that starts at least one kami, resting kamis of the book whose projected minutes to resumeHpPct ((ceil(resumeHpPct x hpTotal / 100) - hp) / this tick's regen rate) are at most this many join the same start transaction, nearest first, only into the free places of its last chunk (cap 10); a joiner is only ever started EARLIER than its readiness, never held"
+    },
+    "logScanBlocks": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 40,
+      "unit": "blocks",
+      "description": "blocks per eth_getLogs request of the kill scan; the scan loops to catch up and reports the remainder as ws-logs-gap"
+    },
+    "killScanOverlapBlocks": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200,
+      "default": 12,
+      "unit": "blocks",
+      "description": "blocks behind the kill scan's cursor re-read every pass; a DEAD write the RPC node served late (its log index behind eth_blockNumber) is caught on the next pass, and a row already in the owner ledger is skipped without a transaction read (12 blocks \u2248 30 s \u2248 one tick)"
+    },
+    "occupantMemoryBlocks": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1440,
+      "default": 120,
+      "unit": "blocks",
+      "description": "how far behind the scan cursor a kami listed by an earlier census is still resolved as that node's occupant; a kami killed between the previous scan head and the next census has already left the node when the census is read (120 blocks \u2248 5 min; the books' own kamis are always resolved, whatever this value)"
+    },
+    "autoCollect": {
+      "type": "boolean",
+      "default": true,
+      "description": "collect when accrued MUSU reaches bountyCollectThreshold; a mid-harvest collect resets the harvest's intensity clock; false: the accrued MUSU is paid by the rest's stop"
+    },
+    "bountyCollectThreshold": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 10000,
+      "unit": "MUSU",
+      "description": "accrued MUSU at which a collect is signed"
+    },
+    "reviveOnDeath": {
+      "type": "boolean",
+      "default": true,
+      "description": "use a revive item from inventory on a DEAD kami"
+    },
+    "reviveItems": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "default": [
+        11001
+      ],
+      "unit": "item index",
+      "description": "ordered revive items, inventory only, never a purchase; default 11001 Red Ribbon Gummy"
+    },
+    "reviveRetrySec": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 3600,
+      "default": 200,
+      "unit": "s",
+      "description": "seconds after a revive attempt (offered, refused, reverted or skipped for a missing item) before the kami — if still DEAD — is offered a revive again; Spirit Glue (item 19001) locks a kami for 180 s"
+    },
+    "resumeHpPct": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 100,
+      "unit": "% of max HP",
+      "description": "redeploy a resting kami only at or above this share of its max HP (100: only at full HP), and only when its HP also exceeds its bound plus one hour of its last drain"
+    },
+    "feedCooldownSec": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 86400,
+      "default": 300,
+      "unit": "s",
+      "description": "after a feed lands, the kami is not fed again until the lens HP read shows the feed applied (HP at or above the expected post-feed HP less drain) or this many seconds have elapsed; under a stale lens only the elapsed time counts"
+    },
+    "staleFeedCooldownSec": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 86400,
+      "default": 1800,
+      "unit": "s",
+      "description": "under a lens-stale read (and nothing else degraded) a kami below its feed floor is fed at most once per this many seconds; the normal branch uses feedCooldownSec"
+    },
+    "chainFallback": {
+      "type": "boolean",
+      "default": true,
+      "description": "while the lens is unreachable, not LIVE, or reports its mirror incomplete (lens-unavailable / lens-not-live / lens-degraded) for at least chainFallbackAfterSec, read this book's own kamis from the chain (GetterSystem.getKamiByIndex plus the harvest entity's time fields, one point read, never a mirror) and sign FEEDS only from that reading (a FEED book), or — a REST book — a harvest stop for each of its kamis at or below restFloorPct, one attempt per kami per chainFeedCooldownSec: never a start, collect or revive; no external-change evaluation; a chain state DEAD is a tick note only. Off under lens-stale (the lens read feeds there) and under lens-incomplete"
+    },
+    "chainFallbackAfterSec": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 86400,
+      "default": 300,
+      "unit": "s",
+      "description": "the lens outage must have lasted at least this long before the first chain read, so a watchdog restart of the lens does not trigger chain reads"
+    },
+    "chainFeedCooldownSec": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 86400,
+      "default": 1800,
+      "unit": "s",
+      "description": "under the chain fallback a kami below its feed floor is fed at most once per this many seconds (the chain read cannot show the feed applied, so only the elapsed time clears the guard)"
+    },
+    "poolStopsAcrossBooks": {
+      "type": "boolean",
+      "default": false,
+      "description": "false (off): a stop goes out in the book's own burst. true: a stop decided on the normal assess path leaves the burst and joins every other opted-in book of the SAME account and node due in the same tick pass, as chunked stops of at most 12 kamis, sent in one burst after the pass. A book that is the only opted-in book of its account and node sends its stops at the end of the pass instead of in its own burst. Never pools a stop decided under a stale lens or from the chain fallback"
+    },
+    "killForcesTick": {
+      "type": "boolean",
+      "default": false,
+      "description": "false (off): a book assesses a kill on its node at its own next tick. true: a kill whose attacker's owner the book reads killed-here moves the book's clock forward so it assesses in the SAME pass the kill was scanned in, instead of at its own next tick. Only ever brings the clock forward; an attacker whose owner the book reads as standing-only, listed or unattributed never forces a tick - an owner on the standing list that kills on this node reads killed-here and does"
+    },
+    "externalChangeTicks": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 3,
+      "unit": "ticks",
+      "description": "consecutive valid ticks on which an external change to a book kami's harvest state or node must be observed before the book pauses; a single contradicting read is a tick note and never acts"
+    },
+    "readoptAfterBlocks": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 240,
+      "unit": "blocks",
+      "x-profile": "fleet",
+      "description": "after an external-change pause, blocks of valid reads on which the world matches the book's plan (kami on the node or resting, not dead) before the book re-adopts the observed state and runs; fleet only, refused under lab (lab pauses until the agent resumes)"
+    },
+    "tickSeconds": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 3600,
+      "default": 30,
+      "unit": "s",
+      "description": "assessment period"
+    },
+    "tickHeartbeat": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000,
+      "default": 20,
+      "unit": "ticks",
+      "description": "a tick ledger row is written when the assessment summary changes and at least every this many ticks"
+    },
+    "maxStalenessBlocks": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 90,
+      "unit": "blocks",
+      "description": "the book does not act when the lens reconciledThrough lags by more than this"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "regenMethod": {
+            "const": "FEED"
+          }
+        },
+        "required": [
+          "regenMethod"
+        ]
+      },
+      "then": {
+        "required": [
+          "foodItem"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# Test fixture (tests/test_phase2g.py): a `books:` fragment with one `auto`
+# book, in the shape a config file's `books:` section takes. Labels only,
+# never a key value. Every index below is a placeholder.
+#
+# `passiveOwnersBind: false` with the three keys `start` would fill in for
+# it spelled out (`previewPolicy: killed-here`, `nodeCensus: plain`,
+# `nodeCensusEverySec` = tickSeconds); the test checks that dropping them
+# validates to the same full config.
+# `friends:` are account indices, never names.
+books:
+- account: bob
+  strategyType: auto
+  config:
+    accountIndex: 2663
+    nodeIndex: 86
+    maxKamisPerBook: 200
+    regenMethod: REST
+    autoCollect: false
+    safetyMarginPct: 5
+    hostileWindowHours: 48
+    reviveItems: [11001]
+    passiveOwnersBind: false
+    previewPolicy: killed-here
+    nodeCensus: plain
+    nodeCensusEverySec: 30
+    attackerVitalsPerTick: 10
+    previewsPerTick: 20
+    friends: [1009, 1382, 1933, 2127, 2307, 2849, 3036, 3221, 3878, 3523, 3703, 4059]
+    kamiIndices: [1, 2, 3]  # placeholder

@@ -1,0 +1,19 @@
+{
+  "id": "1001001",
+  "index": 1001,
+  "name": "fixture-kami",
+  "state": "HARVESTING",
+  "level": 12,
+  "hp": {"current": 120, "total": 200, "percent": 60},
+  "hpRatePerHr": "-14.2",
+  "musu": {"accrued": 1834, "spotRatePerHr": "410.0", "avgRatePerHr": "398.5"},
+  "cooldownSec": 0,
+  "cooldownUntil": 0,
+  "node": {"index": 62, "name": "fixture-node"},
+  "account": {"index": 4242, "name": "lab"},
+  "xp": 120,
+  "xpRequired": 900,
+  "levelUpReady": false,
+  "levelUpBlockedBy": "EXPERIENCE",
+  "skillPoints": 0
+}

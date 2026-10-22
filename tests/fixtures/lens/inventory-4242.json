@@ -1,0 +1,7 @@
+{
+  "account": {"index": 4242, "name": "lab"},
+  "items": [
+    {"balance": 5, "item": {"id": "11301001", "index": 11301, "name": "Ghost Gum", "type": "FOOD", "for": "KAMI", "rarity": 1}},
+    {"balance": 2, "item": {"id": "21301001", "index": 21301, "name": "Red Ribbon Gummy", "type": "REVIVE", "for": "KAMI", "rarity": 2}}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+ "updatedAt": "2026-01-02T12:00:00.000Z",
+ "killers": [
+  {"kami": 4711, "account": 9001, "lastKillAt": "2026-01-02T09:30:00.000Z"},
+  {"kami": 4712, "account": 9001, "lastKillAt": "2026-01-01T04:05:00.000Z"},
+  {"kami": 5280, "account": null, "lastKillAt": "2025-12-28T11:30:45.000Z"}
+ ]
+}

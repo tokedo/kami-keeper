@@ -1,0 +1,33 @@
+{
+ "contract": "World",
+ "systemId": null,
+ "source": "kamigotchi-open World systems()/components(), identical to kami-harness 3.7.0 (a2c22c1) executor/server.py L344-349 _WORLD_ABI",
+ "abi": [
+  {
+   "type": "function",
+   "name": "components",
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "",
+     "type": "address",
+     "internalType": "contract IUint256Component"
+    }
+   ],
+   "stateMutability": "view"
+  },
+  {
+   "type": "function",
+   "name": "systems",
+   "inputs": [],
+   "outputs": [
+    {
+     "name": "",
+     "type": "address",
+     "internalType": "contract IUint256Component"
+    }
+   ],
+   "stateMutability": "view"
+  }
+ ]
+}

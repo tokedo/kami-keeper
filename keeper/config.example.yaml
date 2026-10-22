@@ -1,0 +1,148 @@
+# kami-keeper example config (placeholders; dry run).
+#
+# Two accounts, `alice` and `bob`, three books: one `auto`, one
+# `harvestAndFeed`, one `craft`. Every book key that has a default is set
+# to that default (keeper/schemas/defaults.lock.json); keys without a
+# default are either required (marked) or shown commented out. Indices
+# (kamis 101-104 / 201, nodes 1 / 2, accounts 1001 / 1002, recipe 1) are
+# placeholders. Labels only, never a key value: with the env backend each
+# label's operator key is the line <LABEL>_OPERATOR_KEY in keysFile, read
+# at grant time. Precedence: flag > env (KAMI_KEEPER_*) > this file > default.
+profile: fleet  # lab (the default) | fleet; books and grants in this file are served under fleet only
+dataDir: /srv/keeper  # book store, ledgers and runtime state
+socketPath: /srv/keeper/keeper.sock  # control socket (default <dataDir>/keeper.sock)
+lensSocket: /srv/lens/kami-lens.sock  # the kami-lens daemon's socket
+keysFile: /srv/keys/.env  # env backend: the file holding <LABEL>_OPERATOR_KEY lines
+secretsBackend: env  # env | gcp-sm | keychain: where operator keys are read at grant time
+gcpProject: ""  # gcp-sm backend only: the project holding the secrets
+keychainServicePrefix: kami-mcp/  # keychain backend only: item name prefix (the kami-harness convention)
+rpcUrl: ""  # chain JSON-RPC endpoint (kill scan, eth_call pre-checks, sends)
+wsRpcUrl: ""  # optional websocket endpoint
+worldAddress: ""  # the game's World contract address
+chainId: 0  # the chain id
+maxBooksPerAccount: 0  # 0 = no cap (fleet); required under lab
+armed: false  # false = dry run: intents encoded and pre-checked by eth_call, nothing signed; true needs rpcUrl, worldAddress, chainId
+grants: [alice, bob]  # fleet only: account LABELS granted at boot, never a key value
+statusPage: ""  # fleet only: loopback host:port of a read-only status page; empty = off
+friendsFiles: []  # fleet only: roster / friends files
+standingOwners: []  # account INDICES whose attackers always bind; never names
+requestTimeoutSec: 30  # control-socket request timeout, seconds
+books:  # fleet only: declared books start at boot, matched by (type, account, kami set / recipe set)
+- account: alice
+  strategyType: auto
+  config:
+    kamiIndices: [101, 102, 103, 104]  # required: the kami set the book owns (at most maxKamisPerBook)
+    nodeIndex: 1  # required: the node the book's kamis harvest on
+    accountIndex: 1001  # required: the account's on-chain index (party / node / preview reads take it)
+    maxKamisPerBook: 50  # upper bound on kamiIndices length
+    friends: []  # account indices whose kamis are listed, never previewed
+    regenMethod: REST  # REST: stop and regenerate; FEED: feed foodItem from inventory
+    # foodItem: 11301  # food item index fed from inventory
+    safetyMarginPct: 5  # HP % kept above the served threshold of a killed-here owner
+    passiveMarginPct: 2  # HP % kept above the served threshold of a threshold-no-kill owner
+    passiveOwnersBind: true  # whether a threshold-no-kill owner's thresholds bind
+    hostileWindowHours: 48  # window after a liquidate or cast in which its owner reads killed-here
+    restFloorPct: 10  # at or below this % of max HP a kami is rested or fed whatever the bound
+    cooldownHorizonSec: 600  # an attacker on a longer cooldown is not counted this tick
+    previewRefreshSec: 3600  # age at which a positive threshold preview is fetched again
+    previewRetrySec: 300  # age at which a preview that served no line is fetched again
+    previewsPerTick: 10  # preview reads per tick pass and node
+    previewPolicy: all  # all | killed-here: which present attackers are previewed
+    nodeCensus: vitals  # vitals | plain: the node read that lists the occupants
+    nodeCensusEverySec: 30  # census re-read age (default: the value of tickSeconds)
+    attackerVitalsPerTick: 10  # nodeCensus plain: per-attacker kami reads per tick pass and node
+    startBackoffSec: 3600  # a kami the chain refused to start or stop waits this long
+    startBatchWaitSec: 0  # 0 = start each kami when ready; above 0 = seconds ready kamis wait to start together
+    startBatchMin: 4  # startBatchWaitSec above 0: ready kamis that start at once without waiting
+    stopJoinWindowMin: 0  # 0 = off; above 0 = minutes-to-limit within which a kami joins a stop going out
+    stopPackMax: 12  # stopJoinWindowMin above 0: most kamis in one stop pack
+    startJoinWindowMin: 0  # 0 = off; above 0 = minutes-to-ready within which a kami joins a start going out
+    logScanBlocks: 40  # blocks per eth_getLogs request of the kill scan
+    killScanOverlapBlocks: 12  # blocks behind the scan cursor re-read every pass
+    occupantMemoryBlocks: 120  # blocks a census-listed kami stays resolvable as an occupant
+    autoCollect: true  # collect at bountyCollectThreshold during a harvest
+    bountyCollectThreshold: 10000  # accrued MUSU at which a collect is signed
+    reviveOnDeath: true  # use a revive item from inventory on a DEAD kami
+    reviveItems: [11001]  # ordered revive items, inventory only
+    reviveRetrySec: 200  # seconds before a still-DEAD kami is offered a revive again
+    resumeHpPct: 100  # a resting kami is redeployed at or above this % of max HP
+    feedCooldownSec: 300  # a fed kami is not fed again until the feed shows or this elapses
+    staleFeedCooldownSec: 1800  # under a stale lens: at most one feed per kami per this many seconds
+    chainFallback: true  # read the book's kamis from the chain while the lens is down
+    chainFallbackAfterSec: 300  # lens outage length before the first chain read
+    chainFeedCooldownSec: 1800  # chain fallback: at most one action per kami per this many seconds
+    poolStopsAcrossBooks: false  # false = stops go out in the book's own burst; true = joined with the same account's books on the node
+    killForcesTick: false  # false = a kill is assessed at the book's next tick; true = in the pass it was scanned
+    externalChangeTicks: 3  # valid ticks an external change must persist before the book pauses
+    readoptAfterBlocks: 240  # fleet only: matching blocks before a paused book re-adopts
+    tickSeconds: 30  # assessment period, seconds
+    tickHeartbeat: 20  # a tick row is written at least every this many ticks
+    maxStalenessBlocks: 90  # the book does not act when the lens lags by more than this
+- account: alice
+  strategyType: harvestAndFeed
+  config:
+    kamiIndex: 201  # required: the one kami the book owns
+    nodeIndex: 2  # required: the node the book's kamis harvest on
+    # accountIndex: 1002  # the account's on-chain index (party / node / preview reads take it)
+    foodItem: 11301  # required: food item index fed from inventory
+    # foodLadder: [11301, 11302]  # optional: food items for ladder mode (feed size chosen every tick)
+    ladderMinFloorPct: 60  # ladder mode: lowest no-waste floor, % of max HP
+    dipCapMode: flat  # ladder mode: flat | measured (measured reads <dataDir>/watchlist.json)
+    dipWindowDays: 7  # dipCapMode measured: kill window of a listed kami, days
+    dipMeasuredMinPct: 30  # dipCapMode measured: lowest floor, % of max HP
+    watchRefreshSec: 3600  # dipCapMode measured: re-read age of a listed kami's thresholds
+    watchPreviewsPerTick: 5  # dipCapMode measured: listed-kami reads per tick pass and node
+    watchlistMaxAgeSec: 86400  # dipCapMode measured: maximum age of the watchlist file
+    maxOverhealHp: 25  # ladder mode: HP a feed may overheal when the bound rises
+    tierUpCooldownSec: 3600  # ladder mode: seconds between two steps up the ladder
+    foodLowUnits: 100  # ladder mode: stock below this is listed as foodLow
+    friends: []  # account indices whose kamis are listed, never previewed
+    safetyMarginPct: 5  # HP % kept above the served threshold of a killed-here owner
+    passiveMarginPct: 2  # HP % kept above the served threshold of a threshold-no-kill owner
+    passiveOwnersBind: true  # whether a threshold-no-kill owner's thresholds bind
+    hostileWindowHours: 48  # window after a liquidate or cast in which its owner reads killed-here
+    restFloorPct: 10  # at or below this % of max HP a kami is rested or fed whatever the bound
+    cooldownHorizonSec: 600  # an attacker on a longer cooldown is not counted this tick
+    previewRefreshSec: 3600  # age at which a positive threshold preview is fetched again
+    previewsPerTick: 10  # preview reads per tick pass and node
+    previewPolicy: all  # all | killed-here: which present attackers are previewed
+    nodeCensus: vitals  # vitals | plain: the node read that lists the occupants
+    attackerVitalsPerTick: 10  # nodeCensus plain: per-attacker kami reads per tick pass and node
+    logScanBlocks: 40  # blocks per eth_getLogs request of the kill scan
+    killScanOverlapBlocks: 12  # blocks behind the scan cursor re-read every pass
+    occupantMemoryBlocks: 120  # blocks a census-listed kami stays resolvable as an occupant
+    feedMode: hp  # hp: feed below feedBelowHp; interval: feed every feedInterval
+    feedBelowHp: 100  # required: feedMode hp: absolute HP floor
+    feedInterval: 3600  # feedMode interval: feed period, seconds
+    # collectEvery: 129600  # optional: a fixed collect period, seconds (replaces the window)
+    collectEveryMinSec: 108000  # collect interval drawn uniformly in [min, max], seconds
+    collectEveryMaxSec: 144000  # upper end of the collect window, seconds
+    # reviveItems: [11001]  # ordered revive items, inventory only
+    reviveRetrySec: 200  # seconds before a still-DEAD kami is offered a revive again
+    failsafeRest: true  # stop the harvest when no food can be fed
+    resumeHpPct: 100  # a resting kami is redeployed at or above this % of max HP
+    feedCooldownSec: 300  # a fed kami is not fed again until the feed shows or this elapses
+    staleFeedCooldownSec: 1800  # under a stale lens: at most one feed per kami per this many seconds
+    chainFallback: true  # read the book's kamis from the chain while the lens is down
+    chainFallbackAfterSec: 300  # lens outage length before the first chain read
+    chainFeedCooldownSec: 1800  # chain fallback: at most one action per kami per this many seconds
+    poolStopsAcrossBooks: false  # false = stops go out in the book's own burst; true = joined with the same account's books on the node
+    killForcesTick: false  # false = a kill is assessed at the book's next tick; true = in the pass it was scanned
+    externalChangeTicks: 3  # valid ticks an external change must persist before the book pauses
+    readoptAfterBlocks: 240  # fleet only: matching blocks before a paused book re-adopts
+    tickSeconds: 30  # assessment period, seconds
+    tickHeartbeat: 20  # a tick row is written at least every this many ticks
+    maxStalenessBlocks: 90  # the book does not act when the lens lags by more than this
+- account: bob
+  strategyType: craft
+  config:
+    recipes:  # recipes in priority order
+    - {recipeIndex: 1, amount: 0, priority: 0}  # amount 0 = until inputs run out; lower priority runs first
+    # accountKey: bob-1  # optional: lens account key when the in-game name differs from the label
+    staminaFloor: 0  # account stamina kept unspent on top of a recipe's need
+    staleFeedCooldownSec: 1800  # under a stale lens: at most one feed per kami per this many seconds
+    externalChangeTicks: 3  # valid ticks an external change must persist before the book pauses
+    readoptAfterBlocks: 240  # fleet only: matching blocks before a paused book re-adopts
+    tickSeconds: 30  # assessment period, seconds
+    tickHeartbeat: 20  # a tick row is written at least every this many ticks
+    maxStalenessBlocks: 90  # the book does not act when the lens lags by more than this

@@ -1,0 +1,383 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-lens/schemas/node.json",
+  "$ref": "#/$defs/Node",
+  "$defs": {
+    "Node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "name",
+        "type",
+        "affinity",
+        "roomIndex",
+        "harvestsTotal",
+        "harvestsServed",
+        "harvests"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "affinity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "roomIndex": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 (§3.13)."
+        },
+        "attacker": {
+          "$ref": "#/$defs/Attacker"
+        },
+        "harvestsTotal": {
+          "type": "number",
+          "description": "§3.13: every ACTIVE harvest on the node, whether or not this answer served it. 732 measured on one node at one pin, a 266 KB answer with vitals."
+        },
+        "harvestsEligible": {
+          "type": "integer",
+          "description": "§3.13 (0.5.2): `--eligible-only` ONLY, absent without the flag. Rows that passed the filter, out of harvestsTotal — which keeps reporting the WHOLE node. From 0.5.3 the filter is TARGET-SIDE (threshold > 0 and margin > 0), so this counts targets in reach; whether the attacker can act on them is attacker.blocked."
+        },
+        "harvestsServed": {
+          "type": "number",
+          "description": "§3.13: how many rows this answer carries. Below the total when the cap fired; --full lifts it."
+        },
+        "harvests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Harvest"
+          }
+        },
+        "room": {
+          "$ref": "#/$defs/RoomRef",
+          "description": "§3.12 (enrich): roomIndex resolved. On roster, {index, name} only — the compact answer stays compact."
+        }
+      }
+    },
+    "Harvest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "kami",
+        "account"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 (§3.13)."
+        },
+        "state": {
+          "type": "string"
+        },
+        "kami": {
+          "$ref": "#/$defs/KamiRef"
+        },
+        "account": {
+          "$ref": "#/$defs/AccountRef"
+        },
+        "vitals": {
+          "$ref": "#/$defs/HarvestVitals"
+        },
+        "liquidation": {
+          "$ref": "#/$defs/Liquidation"
+        }
+      }
+    },
+    "HarvestVitals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hp",
+        "musuAccrued",
+        "cooldownSec",
+        "cooldownUntil"
+      ],
+      "properties": {
+        "hp": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "current",
+            "total",
+            "percent"
+          ],
+          "properties": {
+            "current": {
+              "type": "number"
+            },
+            "total": {
+              "type": "number"
+            },
+            "percent": {
+              "type": "number"
+            }
+          }
+        },
+        "hpRatePerHr": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 (§3.13)."
+        },
+        "musuAccrued": {
+          "type": "number"
+        },
+        "cooldownSec": {
+          "type": "number"
+        },
+        "cooldownUntil": {
+          "type": "integer",
+          "description": "§3.8 (0.5.2): the RAW on-chain cooldown end time, in CHAIN SECONDS — the value cooldownSec is projected from. 0 means the mirror holds no NextTime for this kami (it has never acted, or the component has not synced yet); treat 0 as unknown, never as 'ready'."
+        },
+        "level": {
+          "type": "number",
+          "description": "§3.13: the occupant's level. This is the surface a liquidation decision is made on, and it served health without ever naming how strong the thing holding it was."
+        },
+        "xp": {
+          "type": "number",
+          "description": "§3.13: the occupant's banked experience."
+        },
+        "xpRequired": {
+          "type": "number",
+          "description": "§3.13: what the occupant's next level costs."
+        },
+        "levelUpReady": {
+          "type": "boolean",
+          "description": "§3.13: enough experience AND resting."
+        },
+        "levelUpBlockedBy": {
+          "type": "string",
+          "enum": [
+            "EXPERIENCE",
+            "NOT_RESTING"
+          ],
+          "description": "§3.13: present exactly when levelUpReady is false."
+        },
+        "skillPoints": {
+          "type": "number",
+          "description": "§3.13: the occupant's unspent skill points."
+        },
+        "stats": {
+          "$ref": "#/$defs/Stats"
+        },
+        "affinities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "§3.16 (0.5.1): [body, hand] affinities, `--stats` only. The reference client's own pair and its own defaulting ('NORMAL' where the trait carries none). The liquidation calcs turn on exactly this pair, so a reader previewing a liquidation could not check the preview's inputs without it."
+        }
+      }
+    },
+    "Liquidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eligible",
+        "threshold",
+        "margin",
+        "spoils",
+        "salvage",
+        "recoil"
+      ],
+      "properties": {
+        "eligible": {
+          "type": "boolean",
+          "description": "canLiquidate(attacker, occupant) — the FULL pairing, attacker gates included. Unchanged at 0.5.3: --eligible-only no longer filters on this field, so a served row may read eligible: false with reason ATTACKER_STARVING."
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "ATTACKER_STARVING",
+            "ATTACKER_COOLDOWN",
+            "TARGET_HP_ABOVE_THRESHOLD",
+            "THRESHOLD_ZERO"
+          ],
+          "description": "§3.13 (0.5.0): present exactly when `eligible` is false. Upstream's own precedence, from the reference client's LiquidateButton tooltip: starving first, then cooldown, then the threshold comparison — with the degenerate no-threshold-at-all case called out separately, exactly as that tooltip does. The client's fifth branch (\"your kamis aren't on this node\") has no analogue here: the attacker is a general argument on this surface, never an own-only path (§3.6)."
+        },
+        "threshold": {
+          "type": "number"
+        },
+        "margin": {
+          "type": "number",
+          "description": "§3.13 (0.5.2): threshold minus the occupant's projected hp. May be negative. The projection error is NOT bounded (SPEC §3.13), so a caller wanting certainty requires a margin rather than trusting `eligible`."
+        },
+        "spoils": {
+          "type": "number"
+        },
+        "salvage": {
+          "type": "number"
+        },
+        "recoil": {
+          "type": "number"
+        }
+      }
+    },
+    "Attacker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "index",
+        "name",
+        "cooldownSec",
+        "cooldownUntil",
+        "blocked"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "cooldownSec": {
+          "type": "number"
+        },
+        "cooldownUntil": {
+          "type": "integer",
+          "description": "§3.8 (0.5.2): the RAW on-chain cooldown end time, in CHAIN SECONDS — the value cooldownSec is projected from. 0 means the mirror holds no NextTime for this kami (it has never acted, or the component has not synced yet); treat 0 as unknown, never as 'ready'."
+        },
+        "blocked": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "ATTACKER_STARVING",
+            "ATTACKER_COOLDOWN",
+            null
+          ],
+          "description": "§3.8/§3.13 (0.5.3): the ATTACKER's own liquidation gate, reported once. null means the attacker is ready to act; the two named values mean it is not, whatever the targets look like. Present whenever an attacker argument was given, with or without --eligible-only. Same precedence as liquidation.reason (starving before cooldown) because it is the same function. Before 0.5.3 this fact was only observable by reading every row's reason, or — worse — by inferring it from an empty --eligible-only list, which is also what an empty node looks like."
+        }
+      }
+    },
+    "KamiRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 on node harvest rows (§3.13)."
+        },
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 on node harvest rows (§3.13)."
+        },
+        "state": {
+          "type": "string"
+        }
+      }
+    },
+    "AccountRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string",
+          "description": "`--full` only from 0.5.0 on node harvest rows (§3.13)."
+        }
+      }
+    },
+    "RoomRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "§3.12 (enrich): a room index resolved to its registry name and description. Present only when the daemon runs with enrich=true. An index the mirror has no room for keeps the index and answers with empty strings.",
+      "required": [
+        "index",
+        "name"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "Stat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base",
+        "shift",
+        "boost",
+        "sync",
+        "total"
+      ],
+      "properties": {
+        "base": {
+          "type": "number"
+        },
+        "shift": {
+          "type": "number"
+        },
+        "boost": {
+          "type": "number"
+        },
+        "sync": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        }
+      },
+      "description": "§3.16 (0.5.1): one stat as the mirror decodes it. base/shift/boost/sync are the four parts packed into the stat's uint256 on chain; `total` is the reference client's own effective value, (1 + boost/1e3) x (base + shift), after skills and equipment. Named `total` and not `current` because this answer already carries hp.current (live drained/regenerated health) beside hp.total. There is no `rate` field: Stat.rate is written only for health, so it would be a structural zero on the other three (§3.14). `shift` is bonus-inclusive; the chain's stored component value is not — G2.d records both."
+    },
+    "Stats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "health",
+        "power",
+        "harmony",
+        "violence"
+      ],
+      "properties": {
+        "health": {
+          "$ref": "#/$defs/Stat"
+        },
+        "power": {
+          "$ref": "#/$defs/Stat"
+        },
+        "harmony": {
+          "$ref": "#/$defs/Stat"
+        },
+        "violence": {
+          "$ref": "#/$defs/Stat"
+        }
+      },
+      "description": "§3.16 (0.5.1): the kami sheet's stat block, `--stats` only — absent from every answer that did not pass the flag. Exactly the four stats the chain's own GetterSystem.getKamiByIndex tuple carries, which is what makes the block gate-able against chain (G2.d); `slots` and `stamina` exist in the mirror but not in that tuple, so they are not served here."
+    }
+  }
+}

@@ -1,0 +1,4 @@
+-c requirements.txt
+pytest>=8,<9
+# tester chain for the signer send-path tests (SPEC P6 nonce lane; brief 1b)
+eth-tester[py-evm]>=0.13.0b1,<0.14

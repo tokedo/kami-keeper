@@ -1,0 +1,185 @@
+{
+ "contract": "GetterSystem",
+ "systemId": "system.getter",
+ "source": "kamigotchi-open GetterSystem: getKamiByIndex(uint32 index) -> (id, index, name, mediaURI, stats {health, power, harmony, violence: (base, shift, boost, sync) int32}, traits, affinities string[] = [body, hand], account, level, xp, room, state). A VIEW read only (eth_call by the chain-backed HP fallback, keeper/chainhp.py); system.getter is never a send-path system and Chain.resolve_system still refuses it (SPEC P6 whitelist unchanged).",
+ "abi": [
+  {
+   "type": "function",
+   "name": "getKamiByIndex",
+   "inputs": [
+    {
+     "name": "index",
+     "type": "uint32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "tuple",
+     "components": [
+      {
+       "name": "id",
+       "type": "uint256"
+      },
+      {
+       "name": "index",
+       "type": "uint32"
+      },
+      {
+       "name": "name",
+       "type": "string"
+      },
+      {
+       "name": "mediaURI",
+       "type": "string"
+      },
+      {
+       "name": "stats",
+       "type": "tuple",
+       "components": [
+        {
+         "type": "tuple",
+         "components": [
+          {
+           "name": "base",
+           "type": "int32"
+          },
+          {
+           "name": "shift",
+           "type": "int32"
+          },
+          {
+           "name": "boost",
+           "type": "int32"
+          },
+          {
+           "name": "sync",
+           "type": "int32"
+          }
+         ],
+         "name": "health"
+        },
+        {
+         "type": "tuple",
+         "components": [
+          {
+           "name": "base",
+           "type": "int32"
+          },
+          {
+           "name": "shift",
+           "type": "int32"
+          },
+          {
+           "name": "boost",
+           "type": "int32"
+          },
+          {
+           "name": "sync",
+           "type": "int32"
+          }
+         ],
+         "name": "power"
+        },
+        {
+         "type": "tuple",
+         "components": [
+          {
+           "name": "base",
+           "type": "int32"
+          },
+          {
+           "name": "shift",
+           "type": "int32"
+          },
+          {
+           "name": "boost",
+           "type": "int32"
+          },
+          {
+           "name": "sync",
+           "type": "int32"
+          }
+         ],
+         "name": "harmony"
+        },
+        {
+         "type": "tuple",
+         "components": [
+          {
+           "name": "base",
+           "type": "int32"
+          },
+          {
+           "name": "shift",
+           "type": "int32"
+          },
+          {
+           "name": "boost",
+           "type": "int32"
+          },
+          {
+           "name": "sync",
+           "type": "int32"
+          }
+         ],
+         "name": "violence"
+        }
+       ]
+      },
+      {
+       "name": "traits",
+       "type": "tuple",
+       "components": [
+        {
+         "name": "face",
+         "type": "uint32"
+        },
+        {
+         "name": "hand",
+         "type": "uint32"
+        },
+        {
+         "name": "body",
+         "type": "uint32"
+        },
+        {
+         "name": "background",
+         "type": "uint32"
+        },
+        {
+         "name": "color",
+         "type": "uint32"
+        }
+       ]
+      },
+      {
+       "name": "affinities",
+       "type": "string[]"
+      },
+      {
+       "name": "account",
+       "type": "uint256"
+      },
+      {
+       "name": "level",
+       "type": "uint256"
+      },
+      {
+       "name": "xp",
+       "type": "uint256"
+      },
+      {
+       "name": "room",
+       "type": "uint32"
+      },
+      {
+       "name": "state",
+       "type": "string"
+      }
+     ]
+    }
+   ],
+   "stateMutability": "view"
+  }
+ ]
+}

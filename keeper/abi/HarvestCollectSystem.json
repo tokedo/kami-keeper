@@ -1,0 +1,41 @@
+{
+ "contract": "HarvestCollectSystem",
+ "systemId": "system.harvest.collect",
+ "source": "kamigotchi-open HarvestCollectSystem, in the shape kami-harness 3.7.0 (a2c22c1) executor/server.py L4409 _ABI_HARVEST_COLLECT = _ABI_HARVEST_STOP sends (same signature; harvest_collect L4665-4679), executeTyped and executeBatched",
+ "abi": [
+  {
+   "type": "function",
+   "name": "executeTyped",
+   "inputs": [
+    {
+     "name": "id",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  },
+  {
+   "type": "function",
+   "name": "executeBatched",
+   "inputs": [
+    {
+     "name": "ids",
+     "type": "uint256[]"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes[]"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  }
+ ]
+}

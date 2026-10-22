@@ -1,0 +1,12 @@
+{
+  "id": "4242001",
+  "index": 4242,
+  "name": "lab",
+  "ownerAddress": "0x000000000000000000000000000000000000dEaD",
+  "operatorAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "roomIndex": 61,
+  "musu": 15000,
+  "stamina": {"current": 100, "total": 100, "raw": 140},
+  "reputation": {"agency": 0, "mina": 0, "nursery": 0},
+  "kamis": [{"id": "1001001", "index": 1001, "name": "fixture-kami", "state": "HARVESTING"}]
+}

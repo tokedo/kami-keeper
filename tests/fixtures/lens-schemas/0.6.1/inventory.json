@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-lens/schemas/inventory.json",
+  "$ref": "#/$defs/Inventory",
+  "$defs": {
+    "Inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "account",
+        "items"
+      ],
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/AccountRef"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/InventoryRow"
+          }
+        }
+      }
+    },
+    "InventoryRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "balance",
+        "item"
+      ],
+      "properties": {
+        "balance": {
+          "type": "number"
+        },
+        "item": {
+          "$ref": "#/$defs/InventoryItem"
+        }
+      }
+    },
+    "InventoryItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "name",
+        "type",
+        "rarity"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Dropped on a COMPACTED merchant listing row (§3.13): a catalog names the item to buy by index, and the listing's own id is what a purchase acts on. Present everywhere else, and restored by --full."
+        },
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string",
+          "description": "§3.12 (enrich): the item's registry description."
+        },
+        "effects": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "§3.12 (enrich): what USE and EQUIP allocate, one row per raw allo — the \"is this useful to me?\" facts, on the row that holds the item.",
+          "required": [
+            "use",
+            "equip"
+          ],
+          "properties": {
+            "use": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/AlloOut"
+              }
+            },
+            "equip": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/AlloOut"
+              }
+            }
+          }
+        },
+        "requirements": {
+          "type": "array",
+          "description": "§3.12 (enrich): what USE requires. Empty array = the registry stores no USE condition.",
+          "items": {
+            "$ref": "#/$defs/ItemRequirement"
+          }
+        },
+        "for": {
+          "type": "string",
+          "description": "§3.13 (0.5.0): who the item is FOR — KAMI / ACCOUNT / …. The single fact that tells a kami food from an account food when both read `type: FOOD` (one merchant catalog at this pin sells \"Maple-Flavor Ghost Gum\" for KAMI beside \"Ice Cream\" for ACCOUNT). OMITTED, not served as an empty string, when the world holds no target: 77 of 177 items genuinely have none."
+        },
+        "rarity": {
+          "type": "number",
+          "description": "§3.13 (0.5.0): the rarity the reference client's item tooltip renders."
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "§3.13 (0.5.0): present and true only when the registry marks the item disabled — the reference client titles such an item \"Name (disabled)\"."
+        }
+      }
+    },
+    "AccountRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "name"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "AlloText": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The pinned client's own interpretation of one allocation, projected to {name, description}. `image` is never served: two shapes files carry the module NAMESPACE of a png import there rather than a URL (SPEC §4.1 quirk 2).",
+      "required": [
+        "name",
+        "description"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "AlloOut": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One RAW allocation the world stores (type, index, value) with the pinned client's interpretation of it beside it. Grouped per raw allo deliberately: the interpreter fans out — a BONUS allo yields one entry per bonus, a droptable allo one consolidated entry — so a flat parsed list would have no positional correspondence to what the world holds. `entries` is empty when this pin interprets the shape not at all; the raw facts still stand.",
+      "required": [
+        "type",
+        "index",
+        "value",
+        "entries"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "value": {
+          "type": "number"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AlloText"
+          }
+        }
+      }
+    },
+    "ItemRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "One USE requirement: the raw condition target plus the pinned client's interpreted text. Grouped rather than a bare string because 48 of the 53 item conditions at this pin are KAMI_CAN_EAT with index 0, whose text is the single word \"None\" — indistinguishable, without the target beside it, from a real requirement. Text is verbatim, upstream spacing quirks included.",
+      "required": [
+        "type",
+        "index",
+        "value",
+        "text"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "value": {
+          "type": "string",
+          "description": "VERBATIM, as a string (§1.2). A condition's value is not always a count — a room gate's is an entity id, and Number() on an id-sized uint returns 2.65e+76: a value the world does not hold and nothing can join on."
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

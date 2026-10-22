@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+*.tgz
+*.tar.gz
+dist/
+.env
+KEEPER_PIN.txt
+.pytest_cache/
+.DS_Store

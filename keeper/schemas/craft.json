@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-keeper/schemas/craft.json",
+  "title": "craft",
+  "description": "An account and a recipe list, run in priority order against account stamina. SPEC P2.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "recipes"
+  ],
+  "properties": {
+    "recipes": {
+      "type": "array",
+      "minItems": 1,
+      "unit": "recipe",
+      "description": "recipes in priority order (lower priority number first)",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "recipeIndex"
+        ],
+        "properties": {
+          "recipeIndex": {
+            "type": "integer",
+            "minimum": 0,
+            "unit": "recipe index",
+            "description": "the recipe"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "unit": "crafts",
+            "description": "0 = until inputs run out"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "lower runs first"
+          },
+          "staminaCost": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "unit": "stamina",
+            "description": "the recipe's stamina cost, when known (the catalog value); the recipe is not offered below it; a chain refusal for stamina raises the book's learned floor above the reading it was refused at, with or without this key"
+          }
+        }
+      }
+    },
+    "accountKey": {
+      "type": [
+        "integer",
+        "string"
+      ],
+      "unit": "lens account key",
+      "description": "the lens `account` query key — index, in-game name or address — used for the book's stamina read when the account's in-game name differs from its label (e.g. label alice, in-game name alice-1); absent, the label is the key; the label still names the grant, the signer lane and the ledger"
+    },
+    "staminaFloor": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 0,
+      "unit": "stamina",
+      "description": "account stamina kept unspent on top of a recipe's stamina need"
+    },
+    "staleFeedCooldownSec": {
+      "type": "integer",
+      "minimum": 60,
+      "maximum": 86400,
+      "default": 1800,
+      "unit": "s",
+      "description": "under a lens-stale read (and nothing else degraded) a kami below its feed floor is fed at most once per this many seconds; the normal branch uses feedCooldownSec"
+    },
+    "externalChangeTicks": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 3,
+      "unit": "ticks",
+      "description": "consecutive valid ticks on which an external change to a book kami's harvest state or node must be observed before the book pauses; a single contradicting read is a tick note and never acts"
+    },
+    "readoptAfterBlocks": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 240,
+      "unit": "blocks",
+      "x-profile": "fleet",
+      "description": "after an external-change pause, blocks of valid reads on which the world matches the book's plan (kami on the node or resting, not dead) before the book re-adopts the observed state and runs; fleet only, refused under lab (lab pauses until the agent resumes)"
+    },
+    "tickSeconds": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 3600,
+      "default": 30,
+      "unit": "s",
+      "description": "assessment period"
+    },
+    "tickHeartbeat": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000,
+      "default": 20,
+      "unit": "ticks",
+      "description": "a tick ledger row is written when the assessment summary changes and at least every this many ticks"
+    },
+    "maxStalenessBlocks": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 90,
+      "unit": "blocks",
+      "description": "the book does not act when the lens reconciledThrough lags by more than this"
+    }
+  }
+}

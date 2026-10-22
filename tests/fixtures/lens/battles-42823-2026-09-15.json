@@ -1,0 +1,14 @@
+{
+ "_synthetic": true,
+ "note": "SYNTHETIC: the `battles <kami>` answer shape the harness `lens_battles` documents ({kami, stats {kills, deaths, pnl}, kills[] {timestamp, roomIndex, isDeath, killer {index}, victim {index}, account {index}, blockNumber}}), with two `isDeath: true` rows so the killedAccounts seed has something to add. Kamiden-sourced, enrichment only. tests/test_phase2b.py reads only the shape and the isDeath rows.",
+ "data": {
+  "kami": {"index": 42823, "name": "Kami 42823"},
+  "stats": {"kills": 3, "deaths": 2, "pnl": 1200},
+  "kills": [
+   {"timestamp": 1789200000, "roomIndex": 79, "isDeath": false, "killer": {"index": 42823}, "victim": {"index": 5946}, "account": {"index": 2849}, "blockNumber": 12143977},
+   {"timestamp": 1789250000, "roomIndex": 79, "isDeath": true, "killer": {"index": 601}, "victim": {"index": 42823}, "account": {"index": 2481}, "blockNumber": 12168391},
+   {"timestamp": 1789260000, "roomIndex": 62, "isDeath": true, "killer": {"index": 2517}, "victim": {"index": 42823}, "account": {"index": 392}, "blockNumber": 12173391},
+   {"timestamp": 1789270000, "roomIndex": 79, "isDeath": false, "killer": {"index": 42823}, "victim": {"index": 263}, "account": {"index": 2849}, "blockNumber": 12178391}
+  ]
+ }
+}

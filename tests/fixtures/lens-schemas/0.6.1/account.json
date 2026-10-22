@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-lens/schemas/account.json",
+  "$ref": "#/$defs/Account",
+  "$defs": {
+    "Account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "index",
+        "name",
+        "ownerAddress",
+        "operatorAddress",
+        "roomIndex",
+        "stamina",
+        "kamis"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownerAddress": {
+          "type": "string"
+        },
+        "operatorAddress": {
+          "type": "string"
+        },
+        "roomIndex": {
+          "type": "number"
+        },
+        "musu": {
+          "type": "number"
+        },
+        "stamina": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "current",
+            "total",
+            "raw"
+          ],
+          "properties": {
+            "current": {
+              "type": "number"
+            },
+            "total": {
+              "type": "number"
+            },
+            "raw": {
+              "type": "number",
+              "description": "§4.2 (0.5.0): the recovery accrual WITHOUT the display clamp — the same quantity the chain's VIEW getter LibAccount.getCurrentStamina returns, and the number its error text quotes. NOT A SPENDABLE BUDGET: the chain caps at `total` when it syncs before charging (LibStat.calcSync), so `current` is the honest allowance. Served to explain a discrepancy that previously had no explanation — an arm saw 209-212 in an error beside a served 100/100 and stopped trusting the maximum."
+            }
+          }
+        },
+        "reputation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "agency",
+            "mina",
+            "nursery"
+          ],
+          "properties": {
+            "agency": {
+              "type": "number"
+            },
+            "mina": {
+              "type": "number"
+            },
+            "nursery": {
+              "type": "number"
+            }
+          }
+        },
+        "kamis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/KamiRef"
+          }
+        },
+        "kamisTotal": {
+          "type": "integer",
+          "description": "§3.13 (0.5.2): `--slim` ONLY. Kamis the account owns, paired with kamisServed (always 0 on the slim surface) so a roster-less answer is never mistakable for an account with no kamis."
+        },
+        "kamisServed": {
+          "type": "integer",
+          "description": "§3.13 (0.5.2): `--slim` ONLY. Always 0 — slim serves no roster rows."
+        },
+        "bio": {
+          "type": "string"
+        },
+        "room": {
+          "$ref": "#/$defs/RoomRef",
+          "description": "§3.12 (enrich): roomIndex resolved. On roster, {index, name} only — the compact answer stays compact."
+        },
+        "gas": {
+          "$ref": "#/$defs/Gas"
+        }
+      },
+      "description": "§3.13 (0.5.2): `musu` and `reputation` left the REQUIRED list when `--slim` landed. Both are still served on every non-slim answer; slim serves identity only, and makes no chain read, so it carries no `gas` block either."
+    },
+    "KamiRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "index",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        }
+      }
+    },
+    "RoomRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "§3.12 (enrich): a room index resolved to its registry name and description. Present only when the daemon runs with enrich=true. An index the mirror has no room for keeps the index and answers with empty strings.",
+      "required": [
+        "index",
+        "name"
+      ],
+      "properties": {
+        "index": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "GasBalance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "address",
+        "wei",
+        "eth"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "wei": {
+          "type": "string",
+          "description": "wei, as a DECIMAL STRING: the value does not fit a JSON number."
+        },
+        "eth": {
+          "type": "number",
+          "description": "The same value in ETH — a unit conversion, not a game formula."
+        }
+      }
+    },
+    "Gas": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "§3.13 (0.5.0): the account's own gas position — the one balance that decides whether it can act at all, and the only fact on this surface read from the chain rather than from the mirror. ABSENT, never faked, when the RPC read fails: the mirror answer is never blocked on it, and the read's health is reported in `status.rpcReads` the way a Kamiden feed's is.",
+      "required": [
+        "operator",
+        "owner",
+        "blockNumber"
+      ],
+      "properties": {
+        "operator": {
+          "$ref": "#/$defs/GasBalance",
+          "description": "the signer that pays for every act"
+        },
+        "owner": {
+          "$ref": "#/$defs/GasBalance"
+        },
+        "blockNumber": {
+          "type": "number",
+          "description": "The CHAIN block these balances were read at. Deliberately separate from meta.blockNumber, which is the MIRROR's block: the two clocks differ, and hiding that would make a skew invisible rather than absent."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# kami-keeper — example `books:` fragment: one `craft` book (placeholders).
+#
+# Not a complete config. Under the `fleet` profile, merge the `books:` entry
+# into keeper.yaml (books declared in a file are served under `fleet` only);
+# under `lab`, send the same {account, strategyType, config} with `start`.
+# Labels only, never a key value; the account must hold a grant. Every key
+# that has a default is set to it (keeper/schemas/defaults.lock.json); keys
+# without a default are marked `# required:` or shown commented out. Indices
+# are placeholders. `describe --type craft` serves each key's description.
+books:
+- account: bob
+  strategyType: craft
+  config:
+    recipes:  # recipes in priority order
+    - {recipeIndex: 1, amount: 0, priority: 0}  # amount 0 = until inputs run out; lower priority runs first
+    # accountKey: bob-1  # optional: lens account key when the in-game name differs from the label
+    staminaFloor: 0  # account stamina kept unspent on top of a recipe's need
+    staleFeedCooldownSec: 1800  # under a stale lens: at most one feed per kami per this many seconds
+    externalChangeTicks: 3  # valid ticks an external change must persist before the book pauses
+    readoptAfterBlocks: 240  # fleet only: matching blocks before a paused book re-adopts
+    tickSeconds: 30  # assessment period, seconds
+    tickHeartbeat: 20  # a tick row is written at least every this many ticks
+    maxStalenessBlocks: 90  # the book does not act when the lens lags by more than this

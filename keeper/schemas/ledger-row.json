@@ -1,0 +1,517 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kami-keeper/schemas/ledger-row.json",
+  "title": "ledger row",
+  "description": "SPEC P5: one row of <dataDir>/books/<id>/ledger.jsonl. Every row carries schemaVersion, the perception basis it acted on, and any degraded flags.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "kind",
+    "at",
+    "bookId",
+    "account",
+    "lensBlock",
+    "lensReconciledThrough",
+    "degraded",
+    "dryRun"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "tick",
+        "decision",
+        "tx",
+        "death",
+        "lifecycle",
+        "kill",
+        "deviation"
+      ]
+    },
+    "at": {
+      "type": "string"
+    },
+    "bookId": {
+      "type": "string"
+    },
+    "account": {
+      "type": "string"
+    },
+    "lensBlock": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "lensReconciledThrough": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "lensAppliedThrough": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "the lens APPLIED mark this row rests on (lens 1.0.0 and later) \u2014 every write of every block up to it was in the mirror. Null on a row taken against a lens 0.6.3 daemon (it serves no applied mark anywhere) and on a row that rests on no lens read. Not required: a row written before schemaVersion 0.1.1 carries none."
+    },
+    "degraded": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dryRun": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "tick"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "summary"
+        ],
+        "properties": {
+          "summary": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "decision"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "decision"
+        ],
+        "properties": {
+          "decision": {
+            "type": "object",
+            "required": [
+              "kind",
+              "parameters"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string"
+              },
+              "parameters": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "tx"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "tx"
+        ],
+        "properties": {
+          "tx": {
+            "type": "object",
+            "required": [
+              "txHash",
+              "nonce",
+              "block",
+              "status",
+              "gasUsed",
+              "effectiveGasPrice",
+              "account",
+              "kami",
+              "bookId",
+              "cycleOpenedBy",
+              "system"
+            ],
+            "properties": {
+              "txHash": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "nonce": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "block": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "success",
+                  "reverted",
+                  "unconfirmed",
+                  "not_sent",
+                  "dry_run"
+                ]
+              },
+              "gasUsed": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "effectiveGasPrice": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "account": {
+                "type": "string"
+              },
+              "kami": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "bookId": {
+                "type": "string"
+              },
+              "cycleOpenedBy": {
+                "type": "string",
+                "enum": [
+                  "keeper",
+                  "external"
+                ]
+              },
+              "musuCollected": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "decodeError": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "batchSize": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "batchFallback": {
+                "type": "boolean"
+              },
+              "nonceRetry": {
+                "type": "boolean"
+              },
+              "system": {
+                "type": "string"
+              },
+              "underStale": {
+                "type": "boolean"
+              },
+              "underChain": {
+                "type": "boolean"
+              },
+              "chainBlock": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "broadcast",
+                  "receipt"
+                ]
+              },
+              "planAdvance": {
+                "description": "on the receipt row of a BOOT-closed step that landed, what was done with the plan of the decision it belongs to - '<kind> applied to <n> kami', or 'not applied: <why>' when the decision could not be recovered from the ledger. Absent when there was nothing to apply.",
+                "type": "string"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "status": {
+                      "const": "dry_run"
+                    }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "required": [
+                      "stage"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "death"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "death"
+        ],
+        "properties": {
+          "death": {
+            "type": "object",
+            "required": [
+              "kami",
+              "deadBlock",
+              "outcome"
+            ],
+            "properties": {
+              "kami": {
+                "type": "integer"
+              },
+              "deadBlock": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "outcome": {
+                "type": "string",
+                "anyOf": [
+                  {
+                    "enum": [
+                      "observed",
+                      "revived",
+                      "revive-retry",
+                      "revive-skipped: no-item",
+                      "revive-skipped: disabled"
+                    ]
+                  },
+                  {
+                    "pattern": "^revive-refused: .+"
+                  }
+                ]
+              },
+              "txHash": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "lifecycle"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "event"
+        ],
+        "properties": {
+          "event": {
+            "type": "string",
+            "enum": [
+              "started",
+              "stopped_by",
+              "paused",
+              "resumed",
+              "external-change",
+              "readopted",
+              "parking",
+              "failed"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "kill"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "kill"
+        ],
+        "properties": {
+          "kill": {
+            "type": "object",
+            "required": [
+              "event",
+              "victimKami",
+              "victimAccount",
+              "attackerKami",
+              "attackerAccount",
+              "block",
+              "txHash",
+              "ownerClassAfter"
+            ],
+            "properties": {
+              "event": {
+                "type": "string",
+                "enum": [
+                  "liquidate",
+                  "cast"
+                ]
+              },
+              "victimKami": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "victimAccount": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "attackerKami": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "attackerAccount": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "block": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "txHash": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ownerClassAfter": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "item": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "attribution": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "deviation"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "deviation"
+        ],
+        "properties": {
+          "deviation": {
+            "type": "object",
+            "required": [
+              "kami",
+              "action",
+              "reason"
+            ],
+            "properties": {
+              "kami": {
+                "type": "integer"
+              },
+              "action": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "backoffSec": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "until": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

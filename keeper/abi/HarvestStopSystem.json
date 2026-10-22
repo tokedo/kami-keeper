@@ -1,0 +1,58 @@
+{
+ "contract": "HarvestStopSystem",
+ "systemId": "system.harvest.stop",
+ "source": "kamigotchi-open HarvestStopSystem, in the shapes kami-harness 3.7.0 (a2c22c1) executor/server.py sends: L4401-4408 _ABI_HARVEST_STOP (executeTyped/executeBatched, harvest_stop L4630-4644) and L7937-7941 _ABI_HARVEST_STOP_BATCH (executeBatchedAllowFailure)",
+ "abi": [
+  {
+   "type": "function",
+   "name": "executeTyped",
+   "inputs": [
+    {
+     "name": "id",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  },
+  {
+   "type": "function",
+   "name": "executeBatched",
+   "inputs": [
+    {
+     "name": "ids",
+     "type": "uint256[]"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes[]"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  },
+  {
+   "type": "function",
+   "name": "executeBatchedAllowFailure",
+   "inputs": [
+    {
+     "name": "ids",
+     "type": "uint256[]"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "bytes[]"
+    }
+   ],
+   "stateMutability": "nonpayable"
+  }
+ ]
+}

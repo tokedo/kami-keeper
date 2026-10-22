@@ -1,0 +1,37 @@
+{
+ "source": "kamigotchi-open component interface: safeGet(uint256 entity) -> value; getEntitiesWithValue(uint256) -> uint256[]. The component address itself is resolved through the World: world.components() -> registry.getEntitiesWithValue(keccak(text=id))[0] -> low 160 bits. Output typed uint256 for every value component read here (a uint32 such as component.index.kami sits in the same 32-byte return word).",
+ "abi": [
+  {
+   "type": "function",
+   "name": "safeGet",
+   "inputs": [
+    {
+     "name": "entity",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "uint256"
+    }
+   ],
+   "stateMutability": "view"
+  },
+  {
+   "type": "function",
+   "name": "getEntitiesWithValue",
+   "inputs": [
+    {
+     "name": "value",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "uint256[]"
+    }
+   ],
+   "stateMutability": "view"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+# kami-keeper runtime dependencies (SPEC D3/P9: small set; no Kamiden, no Kamibots, no oracle, no model client).
+web3>=7,<8
+pyyaml>=6,<7
+jsonschema>=4.18,<5

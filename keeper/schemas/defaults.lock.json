@@ -1,0 +1,133 @@
+{
+ "conditionalDefaults": {
+  "auto": {
+   "nodeCensus": [
+    {
+     "default": "plain",
+     "when": {
+      "previewPolicy": "killed-here"
+     }
+    }
+   ],
+   "nodeCensusEverySec": [
+    {
+     "sameAs": "tickSeconds"
+    }
+   ],
+   "previewPolicy": [
+    {
+     "default": "killed-here",
+     "when": {
+      "passiveOwnersBind": false
+     }
+    }
+   ]
+  },
+  "craft": {},
+  "harvestAndFeed": {}
+ },
+ "defaults": {
+  "auto": {
+   "attackerVitalsPerTick": 10,
+   "autoCollect": true,
+   "bountyCollectThreshold": 10000,
+   "chainFallback": true,
+   "chainFallbackAfterSec": 300,
+   "chainFeedCooldownSec": 1800,
+   "cooldownHorizonSec": 600,
+   "externalChangeTicks": 3,
+   "feedCooldownSec": 300,
+   "friends": [],
+   "hostileWindowHours": 48,
+   "killForcesTick": false,
+   "killScanOverlapBlocks": 12,
+   "logScanBlocks": 40,
+   "maxKamisPerBook": 50,
+   "maxStalenessBlocks": 90,
+   "nodeCensus": "vitals",
+   "occupantMemoryBlocks": 120,
+   "passiveMarginPct": 2,
+   "passiveOwnersBind": true,
+   "poolStopsAcrossBooks": false,
+   "previewPolicy": "all",
+   "previewRefreshSec": 3600,
+   "previewRetrySec": 300,
+   "previewsPerTick": 10,
+   "readoptAfterBlocks": 240,
+   "regenMethod": "REST",
+   "restFloorPct": 10,
+   "resumeHpPct": 100,
+   "reviveItems": [
+    11001
+   ],
+   "reviveOnDeath": true,
+   "reviveRetrySec": 200,
+   "safetyMarginPct": 5,
+   "staleFeedCooldownSec": 1800,
+   "startBackoffSec": 3600,
+   "startBatchMin": 4,
+   "startBatchWaitSec": 0,
+   "startJoinWindowMin": 0,
+   "stopJoinWindowMin": 0,
+   "stopPackMax": 12,
+   "tickHeartbeat": 20,
+   "tickSeconds": 30
+  },
+  "craft": {
+   "externalChangeTicks": 3,
+   "maxStalenessBlocks": 90,
+   "readoptAfterBlocks": 240,
+   "staleFeedCooldownSec": 1800,
+   "staminaFloor": 0,
+   "tickHeartbeat": 20,
+   "tickSeconds": 30
+  },
+  "harvestAndFeed": {
+   "attackerVitalsPerTick": 10,
+   "chainFallback": true,
+   "chainFallbackAfterSec": 300,
+   "chainFeedCooldownSec": 1800,
+   "collectEveryMaxSec": 144000,
+   "collectEveryMinSec": 108000,
+   "cooldownHorizonSec": 600,
+   "dipCapMode": "flat",
+   "dipMeasuredMinPct": 30,
+   "dipWindowDays": 7,
+   "externalChangeTicks": 3,
+   "failsafeRest": true,
+   "feedCooldownSec": 300,
+   "feedInterval": 3600,
+   "feedMode": "hp",
+   "foodLowUnits": 100,
+   "friends": [],
+   "hostileWindowHours": 48,
+   "killForcesTick": false,
+   "killScanOverlapBlocks": 12,
+   "ladderMinFloorPct": 60,
+   "logScanBlocks": 40,
+   "maxOverhealHp": 25,
+   "maxStalenessBlocks": 90,
+   "nodeCensus": "vitals",
+   "occupantMemoryBlocks": 120,
+   "passiveMarginPct": 2,
+   "passiveOwnersBind": true,
+   "poolStopsAcrossBooks": false,
+   "previewPolicy": "all",
+   "previewRefreshSec": 3600,
+   "previewsPerTick": 10,
+   "readoptAfterBlocks": 240,
+   "restFloorPct": 10,
+   "resumeHpPct": 100,
+   "reviveRetrySec": 200,
+   "safetyMarginPct": 5,
+   "staleFeedCooldownSec": 1800,
+   "tickHeartbeat": 20,
+   "tickSeconds": 30,
+   "tierUpCooldownSec": 3600,
+   "watchPreviewsPerTick": 5,
+   "watchRefreshSec": 3600,
+   "watchlistMaxAgeSec": 86400
+  }
+ },
+ "sha256": "9bebe98b251ab3c0deb5407630c70fdd9059ad577320d79a883ea6540529da0a"
+}

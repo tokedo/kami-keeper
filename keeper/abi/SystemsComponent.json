@@ -1,0 +1,24 @@
+{
+ "contract": "SystemsComponent",
+ "systemId": null,
+ "source": "kami-harness 3.7.0 (a2c22c1) executor/server.py L350-354 _SYSTEMS_COMPONENT_ABI (getEntitiesWithValue(uint256) -> uint256[]; used by _resolve_system L359-372)",
+ "abi": [
+  {
+   "type": "function",
+   "name": "getEntitiesWithValue",
+   "inputs": [
+    {
+     "name": "v",
+     "type": "uint256"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "",
+     "type": "uint256[]"
+    }
+   ],
+   "stateMutability": "view"
+  }
+ ]
+}

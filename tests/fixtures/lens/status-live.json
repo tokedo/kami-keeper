@@ -1,0 +1,76 @@
+{
+  "version": "0.6.1",
+  "upstreamPin": "fixture",
+  "state": "LIVE",
+  "msg": "",
+  "percentage": 100,
+  "liveBlockNumber": 12000100,
+  "blockLag": 3,
+  "headBlockNumber": 12000103,
+  "headSampledAt": "2026-09-12T08:00:00.000Z",
+  "streamSilentMs": 1200,
+  "bootstrapMode": "checkpoint",
+  "resumeFromBlock": 11990000,
+  "startedAt": "2026-09-12T07:00:00.000Z",
+  "liveAt": "2026-09-12T07:02:00.000Z",
+  "checkpoint": null,
+  "tripwires": {},
+  "degraded": [],
+  "feedsDegraded": [],
+  "kamiden": {
+    "configured": false,
+    "url": null,
+    "stream": {
+      "state": "disabled",
+      "topics": [],
+      "startedAt": null,
+      "framesReceived": 0,
+      "feedFrames": 0,
+      "lastFrameAtWallMs": 0,
+      "silentMs": 0,
+      "messageFramesDropped": 0,
+      "messagesDropped": 0,
+      "retries": 0,
+      "consecutiveFailures": 0,
+      "lastError": null,
+      "events": {}
+    },
+    "buffer": {
+      "size": 0,
+      "capacity": 0,
+      "evicted": 0,
+      "newestSeq": 0
+    },
+    "unary": {}
+  },
+  "rpcReads": {
+    "ok": 1,
+    "failed": 0
+  },
+  "sync": {
+    "reconnects": 12,
+    "gapsHealed": 1,
+    "gapsDeferred": 0,
+    "reconcilePasses": 30,
+    "reconciledThrough": 12000098,
+    "lastReconcileAt": "2026-09-12T07:59:30.000Z",
+    "unhealedRanges": [],
+    "lastHealMs": 1400,
+    "reconcileIntervalMs": 120000
+  },
+  "clockOffsetMs": -9000,
+  "clockLastSyncWallMs": 1789200000000,
+  "config": {
+    "chainId": 428962654539583,
+    "worldAddress": "0x2729174c265dbBd8416C6449E0E813E88f43D0E7",
+    "jsonRpcUrl": "http://fixture.invalid",
+    "chatEnabled": false,
+    "enrich": false,
+    "dataDir": "/srv/lens",
+    "checkpointIntervalMs": 60000
+  },
+  "configSources": {
+    "dataDir": "flag"
+  },
+  "configFile": null
+}

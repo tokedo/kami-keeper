@@ -1,0 +1,16 @@
+{
+ "source": "kamigotchi-open World `_emitter()`: the Emitter contract that logs WorldEvent(string,uint8[],bytes); a KAMI_CAST event carries topic[1] = keccak(\"KAMI_CAST\")",
+ "abi": [
+  {
+   "type": "function",
+   "name": "_emitter",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "address"
+    }
+   ],
+   "stateMutability": "view"
+  }
+ ]
+}
