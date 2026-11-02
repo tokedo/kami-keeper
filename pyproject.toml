@@ -1,9 +1,26 @@
 [project]
 name = "kami-keeper"
-version = "1.0.0"
+version = "1.0.1"
 description = "A deterministic strategy process next to a kami-lens daemon (SPEC.md is the contract)."
 requires-python = ">=3.11"
 license = {text = "MIT"}
+
+# `keeper` on PATH ≡ `python -m keeper`. The client (`keeper.cli`) imports
+# only the standard library, `protocol`, `profiles` and `scrub`, so a client
+# venv installs with `pip install --no-deps .`; the daemon's dependencies are
+# requirements.txt (hash-pinned), as before.
+[project.scripts]
+keeper = "keeper.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["keeper", "keeper.strategies"]
+
+[tool.setuptools.package-data]
+keeper = ["abi/*.json", "schemas/*.json", "data/*.csv", "data/README.md", "config.example.yaml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -1,7 +1,8 @@
 """The fake lens invents values, never fields: every fixture answer is
 valid against the copied kami-lens schema for its query — in BOTH the
-versions the keeper is tested against (SPEC D1 `LENS_TESTED_VERSIONS`),
-each against its own schema set: `0.6.1/` for the 0.6.3 answers (0.6.2
+contract shapes the keeper's client distinguishes (SPEC D1; the tested
+daemons 1.0.5 and 1.1.0 serve the 1.0.0 shape), each against its own
+schema set: `0.6.1/` for the 0.6.3 answers (0.6.2
 and 0.6.3 changed no schema the keeper reads) and `1.0.0/` for the 1.0.0
 ones, where an `incomplete` row and the `--targets` selector have to be
 valid too."""

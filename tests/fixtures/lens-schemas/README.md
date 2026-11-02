@@ -1,5 +1,6 @@
-Copies of kami-lens `src/queries/schemas/*.json`, one directory per lens
-version the keeper is tested against (SPEC D1, `LENS_TESTED_VERSIONS`):
+Copies of kami-lens `src/queries/schemas/*.json`, one directory per
+contract shape the keeper's client distinguishes (SPEC D1; the tested
+daemons 1.0.5 and 1.1.0 serve the 1.0.0 shape):
 
 - `0.6.1/` — kami-lens 0.6.1 (`f07209d`). The shape a 0.6.3 daemon still
   serves (0.6.2 and 0.6.3 added no query schema the keeper reads).

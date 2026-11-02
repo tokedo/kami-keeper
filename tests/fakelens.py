@@ -10,7 +10,9 @@ Modes:
   stale      LIVE, but reconciledThrough lags the mirror by `lag` blocks
   absent     no socket at all (LensUnavailable at the client)
 
-Versions (`lens_version`, SPEC D1 `LENS_TESTED_VERSIONS`):
+Versions (`lens_version`): the two contract shapes `keeper/lens.py`
+`features_for` distinguishes (SPEC D1; the tested daemons 1.0.5 and 1.1.0
+serve the 1.0.0 shape):
   0.6.3  the default: no `appliedThrough`
          anywhere, `meta.asOf` carries BOTH the `clockSample*` and the
          deprecated `observed*` names, and `--at-least` / `--targets` /

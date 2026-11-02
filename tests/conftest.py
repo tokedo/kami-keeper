@@ -74,8 +74,9 @@ def make_keeper(tmp_path: Path, sock_dir: Path):
         data_dir = tmp_path / f"keeper{n}"
         data_dir.mkdir()
         lens_sock = str(sock_dir / f"lens{n}.sock")
-        # `lens_version` (SPEC D1 LENS_TESTED_VERSIONS): the default is the
-        # 0.6.3 contract; a test that wants the 1.0.0 contract asks
+        # `lens_version` (the two contract shapes of SPEC D1): the default is
+        # the 0.6.3 shape; a test that wants the 1.0.0 shape (the one the
+        # tested daemons 1.0.5 / 1.1.0 serve) asks
         # for it here, or flips `e.lens.lens_version` on a built env
         lens = FakeLens(lens_sock, mode=lens_mode, lag=lag, lens_version=lens_version).start()
         kf = keys_file or write_keys_file(tmp_path / f"keys{n}.env")

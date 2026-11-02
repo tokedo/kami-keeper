@@ -1158,8 +1158,11 @@ release.
 
 ## D1 — kami-lens daemon
 
-Pin: ≥ 0.6.1. **Tested against 0.6.3 AND 1.0.0 (`0ffc8a7`) —
-`LENS_TESTED_VERSIONS` — and the same build serves either.**
+Pin: ≥ 0.6.1. **Tested against kami-lens 1.0.5 (`e604290`) AND 1.1.0
+(`379d2e7`) — `LENS_TESTED_VERSIONS` — and the same build serves either;
+the row states what was tested, not what is required.** The suite's fake
+daemon also serves the pre-1.0.0 contract shape (no applied mark, none of
+the 1.0.0 options), so a 0.6.x daemon stays within the pin.
 The client reads `status.version` on every perception and gates each
 1.0.0 feature on it (`keeper/lens.py` `LensFeatures` / `features_for`:
 all flags true iff the version parses as SemVer with MAJOR ≥ 1); where a

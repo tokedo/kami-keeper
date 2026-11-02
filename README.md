@@ -131,4 +131,7 @@ one at the `receipt` stage after. Read it with
 
 ## License
 
-MIT — see `LICENSE`.
+MIT — see `LICENSE`. The game content this repository names — the item
+and strategy names in `describe` output, tests and docs, and the node
+data — is Asphodel Studios' and is used under the Kamigotchi NOTICE's
+community-use allowance; see `NOTICE.md`.

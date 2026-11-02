@@ -13,16 +13,19 @@ from __future__ import annotations
 
 # SPEC P11: SemVer. `KEEPER_VERSION` is the package version; `SCHEMA_VERSION`
 # stamps every response and ledger row.
-KEEPER_VERSION = "1.0.0"
+KEEPER_VERSION = "1.0.1"
 SCHEMA_VERSION = "0.1.1"
 
 # SPEC D1: the oldest lens the keeper is written against.
 LENS_MIN_VERSION = "0.6.1"
 
-# SPEC D1: the lens versions this code is TESTED against, both of them in
-# one build — 0.6.3 (no applied mark, none of the 1.0.0 options) and 1.0.0.
-# Every 1.0.0 feature is gated on `status.version` (keeper/lens.py
-# `features_for`), so the same client serves either.
-LENS_TESTED_VERSIONS = ("0.6.3", "1.0.0")
+# SPEC D1: the kami-lens versions this build is TESTED against — 1.0.5
+# (`e604290`) and 1.1.0 (`379d2e7`), the suite run against each daemon. The
+# row states what was tested, not what is required: every 1.0.0 feature is
+# gated on `status.version` (keeper/lens.py `features_for`, all flags on at
+# MAJOR >= 1), so the same client serves either, and a pre-1.0.0 daemon (no
+# applied mark, none of the 1.0.0 options) is still served — the suite's
+# fake lens covers that contract shape as well.
+LENS_TESTED_VERSIONS = ("1.0.5", "1.1.0")
 
 __all__ = ["KEEPER_VERSION", "SCHEMA_VERSION", "LENS_MIN_VERSION", "LENS_TESTED_VERSIONS"]
