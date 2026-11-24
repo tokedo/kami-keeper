@@ -22,7 +22,7 @@ import pytest
 from web3 import Web3
 
 from conftest import FIXTURE_OPERATOR_ADDRESS, HAF_CONFIG
-from evm_stubs import BatchingTesterProvider, deploy_world
+from evm_stubs import BatchingTesterProvider, deploy_world, plant_system
 from keeper.chain import Chain, harvest_entity_id, kami_entity_id
 from keeper.config import load as load_config
 from keeper.core import Keeper, _iso
@@ -514,7 +514,7 @@ def test_batch_fallback_on_the_tester_chain_with_a_reverting_collect_system(make
     world = deploy_world(w3, w3.eth.accounts[1])
     w3.eth.send_transaction({"from": w3.eth.accounts[0], "to": FIXTURE_OPERATOR_ADDRESS, "value": 10**18})  # the pre-check calls FROM the operator
     chain = Chain("http://tester.invalid", world, w3.eth.chain_id, web3=w3)
-    chain._systems["system.harvest.collect"] = deploy(w3, reverter("Harvest: starving"))
+    plant_system(chain, "system.harvest.collect", deploy(w3, reverter("Harvest: starving")))
     e = make_keeper()
     cfg = load_config(flags={"profile": "lab", "dataDir": str(tmp_path / "dry"), "lensSocket": e.lens.socket_path, "keysFile": str(e.keys_file), "secretsBackend": "env", "maxBooksPerAccount": 4, "rpcUrl": "http://tester.invalid", "worldAddress": chain.world_address, "chainId": chain.chain_id, "requestTimeoutSec": 5}, env={})
     k = Keeper(cfg, lens=LensClient(e.lens.socket_path, 5), chain=chain)

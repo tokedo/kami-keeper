@@ -50,7 +50,7 @@ from .previews import PreviewCache
 from .protocol import STRATEGY_TYPES, Answer, Basis, KeeperError, Router, describe_protocol
 from .receipts import decode_musu_collected
 from .runtime import iso as rt_iso, load_runtime, restore_into, save_runtime
-from .scrub import ScrubError, assert_clean
+from .scrub import KEY_SHAPED_RE, ScrubError, assert_clean, find_forbidden
 from .secrets import SecretError, SecretStore, store_from_config
 from .signer import DryRunSigner, LiveSigner, NotGranted, Signer, SignerRefused, WhitelistRefused
 from .status import book_status, lens_incomplete as incomplete_flag, outage_only, rpc_unavailable as rpc_flag, stale_only, ws_logs_gap
@@ -224,6 +224,9 @@ class Keeper:
         self.lens = lens or LensClient(cfg.lensSocket, cfg.requestTimeoutSec)
         self.status_lens = LensClient(self.lens.socket_path, STATUS_LENS_TIMEOUT_SEC)
         self.chain = chain if chain is not None else build_chain(cfg)
+        if self.chain is not None:
+            # a game redeploy the chain layer absorbed (Chain.recheck_system): one log line, no address in it
+            self.chain.on_system_moved = lambda m: self._log(None, f"game redeploy: {m.get('system')} resolves to a new address since {m.get('at')}; re-resolved, carrying on (status: signer.chain.movedSystems)")
         self.dry_run = not cfg.armed
         if signer is None:
             if cfg.armed:
@@ -303,6 +306,12 @@ class Keeper:
         # None while the lens answers) gates it by chainFallbackAfterSec
         self.chainhp: Any | None = None
         self.lens_outage_since: float | None = None
+        # 1.0.2: the last Kamiden probe — the lens's own `feedsDegraded` on
+        # a status read, the one source of `kamiden-unavailable` — as the
+        # status serves it, and the lock that keeps a transition logged once
+        # (the tick pass and the `status` command both probe)
+        self.kamiden: dict[str, Any] = {"probedAt": None, "ok": None, "error": None}
+        self._kamiden_lock = threading.Lock()
         # fleet: books declared in config (SPEC P8 "declared at deploy")
         self.config_books_pending: list[dict[str, Any]] = []
         self.config_books_started: list[str] = []
@@ -352,6 +361,7 @@ class Keeper:
                     # status read for the Kamiden gate, shared by the pass)
                     if boot_per is None:
                         boot_per = perceive(self.lens, STATUS_STALENESS_DEFAULT)
+                        self._note_kamiden(boot_per)
                     extra["seedFromBattles"] = self._seed_from_battles(self.strategies[b.id], boot_per)
                 self._ledger(b).lifecycle(Basis(), "resumed", reason="keeper-restart", dry_run=self.dry_run, runtime=restored, **extra)
                 self._log(b.id, f"resumed after keeper restart (runtime {restored['restore']}; lastCollectAt {restored['lastCollectAt']})" + (f"; battles seed {extra['seedFromBattles'].get('status')}" if "seedFromBattles" in extra else "") + (f"; {extra['openTx']} open broadcast row(s)" if extra.get("openTx") else ""))
@@ -686,6 +696,28 @@ class Keeper:
         self.logs.append(entry)
         log.info("%s %s", book_id or "-", line)
 
+    def _note_kamiden(self, per: Perception) -> None:
+        """1.0.2: keep the Kamiden probe of this perception for `status`
+        and log the `kamiden-unavailable` flag's TRANSITIONS with the
+        lens's own text (the flag came and went with no line for either).
+        A perception the lens did not answer probed nothing and changes
+        nothing. The flag gates no decision; this only says why it reads."""
+        if per.lens_status is None:
+            return
+        on = "kamiden-unavailable" in per.degraded
+        error: str | None = None
+        if on:
+            error = KEY_SHAPED_RE.sub("<hash>", "; ".join(per.feeds_degraded_text))[:200] or "feeds degraded (no detail served)"
+            if find_forbidden(error):
+                error = "lens text withheld: it carried forbidden language"
+        with self._kamiden_lock:
+            was_on = self.kamiden.get("ok") is False
+            self.kamiden = {"probedAt": _now_iso(), "ok": not on, "error": error}
+            if on and not was_on:
+                self._log(None, f"kamiden-unavailable set: the lens reports its feeds degraded ({error}); enrichment only, no decision is gated (status: kamiden)")
+            elif was_on and not on:
+                self._log(None, "kamiden-unavailable cleared: the lens reports its feeds healthy again (status: kamiden)")
+
     def _book(self, book_id: str) -> Book:
         b = self.store.get(book_id)
         if b is None:
@@ -700,6 +732,7 @@ class Keeper:
         """Lens gate for start/resume (SPEC P1): refusal codes."""
         per = perceive(self.lens, max_staleness)
         self.last_perception = per
+        self._note_kamiden(per)
         for f in per.degraded:
             if f == "lens-unavailable":
                 raise KeeperError("LENS_UNAVAILABLE", "the lens daemon is unreachable")
@@ -1009,6 +1042,7 @@ class Keeper:
     def h_status(self, args: dict[str, Any]) -> Answer:
         max_st = self._status_staleness()
         per = perceive(self.status_lens, max_st)
+        self._note_kamiden(per)
         # what the watchlist file said at the last tick pass (it is
         # read there, never here — and never written anywhere)
         lens_block = {"state": (per.lens_status or {}).get("state"), "liveBlockNumber": (per.lens_status or {}).get("liveBlockNumber"), "reconciledThrough": per.basis.lensReconciledThrough, "appliedThrough": per.applied_through, "version": per.lens_version, "stalenessBlocks": per.staleness_blocks, "maxStalenessBlocks": max_st, "outageSince": _iso(self.lens_outage_since), **self._pass_totals(), "watchlist": {"updatedAt": _iso(self.watchlist.updated_at), "killers": len(self.watchlist.killers)}}
@@ -1025,6 +1059,9 @@ class Keeper:
             "chain": self.chain.describe() if self.chain is not None else None,
             "engine": {"started": self.engine_started, "refusals": list(self.engine_refusals)},
             "degraded": list(per.degraded),
+            # 1.0.2: the probe behind `kamiden-unavailable` — when the lens's
+            # `feedsDegraded` was last read, what it said, and its text
+            "kamiden": dict(self.kamiden),
             "lens": lens_block,
             "blockClock": self.block_clock.describe(),
             "grants": self.signer.grants(),
@@ -1163,6 +1200,7 @@ class Keeper:
         # -- 1. the lens status gate (SPEC P4) ---------------------------------
         per = perceive(self.lens, int(book.config["maxStalenessBlocks"]))
         self.last_perception = per
+        self._note_kamiden(per)
         degraded = list(per.degraded)
         rt["degraded"] = degraded
         # a PARKING book acts on a VALID read only — no stale-feed
@@ -1817,7 +1855,14 @@ class Keeper:
                 self._log(book.id, f"kami {dev.get('kami')}: {dev.get('action')} refused ({dev.get('reason')}); not offered again for {dev.get('backoffSec')} s")
             else:  # a deviation that is an act, not a refusal (the chain-backed floor rest)
                 self._log(book.id, f"kami {dev.get('kami')}: {dev.get('action')} — {dev.get('reason')}")
-        summary: dict[str, Any] = {"acted": bool(intents) or bool(pooled) or bool(stops), "decisions": [d.kind for d in decisions], "txCount": len(records), "txStatus": [r.status for r in records]}
+        # 1.0.2: `txCountInTick` / `txStatusInTick` are the names — the
+        # transactions of THIS tick's own burst (and its fallback singles).
+        # A collect or a stop the tick pooled goes out after the row is
+        # written and is counted by `collectPooled` / `stopPooled`; its `tx`
+        # rows follow. `txCount` / `txStatus` are the same values under the
+        # old names, kept for one release (SPEC P11).
+        tx_status = [r.status for r in records]
+        summary: dict[str, Any] = {"acted": bool(intents) or bool(pooled) or bool(stops), "decisions": [d.kind for d in decisions], "txCountInTick": len(records), "txStatusInTick": list(tx_status), "txCount": len(records), "txStatus": tx_status}
         if fallback_rows:
             summary["batchFallbackTx"] = fallback_rows
         if stops:

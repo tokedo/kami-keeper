@@ -14,7 +14,7 @@ import pytest
 from web3 import Web3
 
 from conftest import FIXTURE_KEY_HEX, FIXTURE_OPERATOR_ADDRESS, FIXTURE_OPERATOR_KEY
-from evm_stubs import BatchingTesterProvider, deploy, deploy_world, reverter
+from evm_stubs import BatchingTesterProvider, deploy, deploy_world, reverter, plant_system
 from keeper.chain import Chain, RpcUnavailable
 from keeper.secrets import OperatorKey
 from keeper.signer import GAS_CEILINGS, GAS_PER_ITEM, MAX_TX_GAS, Intent, LiveSigner, NotGranted, WhitelistRefused, gas_for
@@ -93,7 +93,7 @@ def test_whitelist_at_send_refuses_without_any_rpc_and_no_grant_signs_nothing(li
 
 def test_precheck_revert_refuses_that_item_and_the_burst_goes_on(live):
     provider, w3, chain, signer, sink = live
-    chain._systems["system.craft"] = deploy(w3, reverter("craft: not enough stamina 0x" + "cd" * 32))
+    plant_system(chain, "system.craft", deploy(w3, reverter("craft: not enough stamina 0x" + "cd" * 32)))
     recs = signer.submit([_feed(1), Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}), _feed(2)], CFG)
     assert [r.status for r in recs] == ["success", "not_sent", "success"]
     assert recs[1].precheck == "reverted" and "not enough stamina" in recs[1].reason and "<hash>" in recs[1].reason and "cd" * 32 not in recs[1].reason
@@ -251,7 +251,7 @@ def test_two_bursts_of_one_operator_under_a_frozen_pending_count_take_consecutiv
 
 def test_a_burst_refused_pre_send_does_not_move_the_cursor(live):
     provider, w3, chain, signer, sink = live
-    chain._systems["system.craft"] = deploy(w3, reverter("craft: not enough stamina"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("craft: not enough stamina")))
     signer.submit([_feed(1)], CFG)
     c = signer.lane("lab").cursor
     recs = signer.submit([Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1})], CFG)

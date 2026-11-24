@@ -10,7 +10,7 @@ first tick; the park lasts the regen time to the need.
 from __future__ import annotations
 
 from conftest import write_keys_file  # noqa: F401
-from evm_stubs import deploy, reverter
+from evm_stubs import deploy, reverter, plant_system
 from keeper.config import load as load_config
 from keeper.core import Keeper
 from keeper.lens import LensClient
@@ -20,7 +20,7 @@ from test_core_1b import _tester_chain
 
 def _craft_keeper(make_keeper, tmp_path, name="craft"):
     provider, w3, chain = _tester_chain()
-    chain._systems["system.craft"] = deploy(w3, reverter("Account: insufficient stamina"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("Account: insufficient stamina")))
     e = make_keeper()
     cfg = load_config(flags={"profile": "lab", "dataDir": str(tmp_path / name), "lensSocket": e.lens.socket_path, "keysFile": str(e.keys_file), "secretsBackend": "env", "maxBooksPerAccount": 4, "rpcUrl": "http://tester.invalid", "worldAddress": chain.world_address, "chainId": chain.chain_id, "requestTimeoutSec": 5}, env={})
     k = Keeper(cfg, lens=LensClient(e.lens.socket_path, 5), chain=chain)
@@ -53,7 +53,7 @@ def test_a_stamina_refusal_raises_a_learned_floor_and_parks_for_the_regen_time(m
     s3 = k.tick_book(book, now=t0 + 600)
     assert s3["decisions"] == ["craft"] and rt["staminaMin"] == {"29": 73}
     # the chain accepts at 77: crafted moves, the floor stays (a landed reading is not the cost)
-    chain._systems["system.craft"] = w3.eth.accounts[1]
+    plant_system(chain, "system.craft", w3.eth.accounts[1])
     e.lens.set_stamina(4242, 77)
     s4 = k.tick_book(book, now=t0 + 1200)
     assert s4["decisions"] == ["craft"] and k.signer.recorded[-1].precheck == "ok"
@@ -68,7 +68,7 @@ def test_a_stamina_refusal_raises_a_learned_floor_and_parks_for_the_regen_time(m
 
 def test_a_declared_stamina_cost_is_a_floor_from_the_first_tick_and_the_unspent_floor_sits_on_top(make_keeper, tmp_path):
     e, w3, chain, k, _ = _craft_keeper(make_keeper, tmp_path, "declared")
-    chain._systems["system.craft"] = w3.eth.accounts[1]  # the chain would accept
+    plant_system(chain, "system.craft", w3.eth.accounts[1])  # the chain would accept
     s = k.handle("start", {"account": "lab", "strategyType": "craft", "config": {"recipes": [{"recipeIndex": 29, "staminaCost": 75}], "staminaFloor": 10}})
     assert s["ok"], s
     bid = s["data"]["book"]["id"]
@@ -102,7 +102,7 @@ def test_the_learned_floor_survives_a_restart(make_keeper, tmp_path):
     k2.boot()
     assert k2.handle("grant", {"account": "lab"})["ok"]
     assert k2.runtime[bid]["staminaMin"] == {"29": 68}
-    chain._systems["system.craft"] = w3.eth.accounts[1]
+    plant_system(chain, "system.craft", w3.eth.accounts[1])
     s2 = k2.tick_book(k2.store.get(bid), now=200.0)
     assert s2["decisions"] == [] and s2["staminaWait"][0]["need"] == 68
     k2.stop_engine()
@@ -127,7 +127,7 @@ def test_account_key_names_the_lens_account_when_the_label_is_not_the_in_game_na
     kf = tmp_path / "two.env"
     kf.write_text("A_OPERATOR_KEY=0x" + "11" * 32 + "\nB_OPERATOR_KEY=0x" + "22" * 32 + "\n")
     provider, w3, chain = _tester_chain()
-    chain._systems["system.craft"] = deploy(w3, reverter("Account: insufficient stamina"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("Account: insufficient stamina")))
     e = make_keeper(keys_file=kf)
     cfg = load_config(flags={"profile": "lab", "dataDir": str(tmp_path / "accountkey"), "lensSocket": e.lens.socket_path, "keysFile": str(kf), "secretsBackend": "env", "maxBooksPerAccount": 4, "rpcUrl": "http://tester.invalid", "worldAddress": chain.world_address, "chainId": chain.chain_id, "requestTimeoutSec": 5}, env={})
     k = Keeper(cfg, lens=LensClient(e.lens.socket_path, 5), chain=chain)

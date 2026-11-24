@@ -51,6 +51,13 @@ Enforcement cells name the test or gate that checks the row, or
   direction; a frame test asserts it.
 - Undeclared arguments are refused with `BAD_ARGS` on the socket AND
   the CLI (one router, both entry points).
+- (1.0.2) The CLI adds the command's usage line to every `BAD_ARGS`
+  answer it prints, as `error.usage` (`usage: keeper grant --account
+  <label> [--socket <path>]`: flags only — no command takes a
+  positional argument — the required ones unbracketed), and `keeper
+  --help` lists that line for every command. The CLI adds it when it
+  prints: a frame on the socket carries `code` and `message` only, as
+  before, and the message keeps the router's wording.
 - Commands: `describe [type]`, `books`, `start`, `stop`, `park`, `pause`,
   `resume`, `grant`, `revoke`, `status`, `logs`, `ledger`.
 
@@ -155,6 +162,24 @@ diffs (CI compares defaults against the last tag).
 - Status is derived from the keeper's own state at answer time, never a
   cache. Stopped books stay enumerable with their reason until purged
   by the operator.
+- (1.0.2) `kamiden` `{probedAt, ok, error}`: the probe behind the
+  `kamiden-unavailable` flag — the lens's own `feedsDegraded` on the
+  last status read the lens answered (a tick's or this command's): when
+  it was read, whether the feeds were healthy, and the lens's text when
+  they were not (at most 200 characters, key-shaped runs replaced). All
+  three are null before the first such read; a read the lens did not
+  answer changes nothing. Each transition of the flag writes one
+  keeper-level log line (`kamiden-unavailable set: …` with that text,
+  `kamiden-unavailable cleared: …`). The flag still gates nothing.
+- (1.0.2) `movedSystems` in the chain description (`chain`, and
+  `signer.chain` on a live signer): the systems the game redeployed
+  while this process ran — `{system, from, to, at}`, oldest first, the
+  newest 20. When a pre-check reverts, the keeper re-reads that system's
+  address from the World's registry (at most once a minute per system);
+  if it moved, the call is judged once more at the new address, that
+  verdict stands, the transaction is signed to the new address, and one
+  keeper-level log line names the system and the time (no address). A
+  pre-check that ends `rpc-unavailable` asks the registry nothing.
 - Keeper-level staleness: the `status` answer's own lens gate
   (`degraded`, `lens.stalenessBlocks`) uses the LARGEST
   `maxStalenessBlocks` among the running books — the loosest bound any
@@ -454,7 +479,7 @@ collect, P7 off).
 
 - Append-only `ledger.jsonl` per book under `<dataDir>/books/<id>/`,
   versioned `schemaVersion` on every row.
-- Row kinds: `tick` (assessment summary; written on change and at least every `tickHeartbeat` ticks; an UNCONFIRMED contradiction — fewer than `externalChangeTicks` consecutive valid reads — is a `tick` summary note (`contradiction`, `observedTicks`, `confirmAfterTicks`), never a lifecycle row; a withheld feed is a `feedWithheld` note; a pooled collect is a `collectPooled` count, its `tx` row follows from the account's batched collect; a pooled stop is a `stopPooled` count — the kamis this tick's pooled stop holds, its `tx` rows following from the account+node burst — and a tick a binding kill pulled forward carries `killForcedTick: true`; neither is an ignored key: both move only when the thing happens, like `chainRested`; an `auto` tick: `kamis {harvesting, resting, dead, held, backoff, elsewhere}` (plus `cooldown` — own kamis the lens reads on the chain's action cooldown), `owners {listed, no-threshold, threshold-no-kill, killed-here}` by rendered class, `minMarginHp` (min over harvesting owned kamis of hp − bound), `boundKamis`, `boundKamisBy {<rendered class>[/<hostileBy>]: n}` — the bound kamis by the class of the attacker that binds each — and `hostileKamis` (PRESENT attackers whose own kills put them inside the window, whoever owns them), `liftedAttackers` (PRESENT attackers whose entry carries a measured lift) and `liftMaxPct` (the largest, one decimal), both ABSENT while no lift is in force, plus `liftsExpired[]` (the attackers whose lift hold passed this pass) when it applies — none of the three an ignored key: they move only when a lift is learnt, in force or lost — `attackers`, `remembered[]`, `cooldownSkipped[]`, `held[] {kami, reason, …}`, `restNotApplied[]`, `stopPulled[] {kami, projectedMinutes}` — the joiners this tick's stop pack took, which is NOT an ignored key: it moves only when a stop is signed, like `chainRested` — `startJoined[] {kami, projectedMinutes}` — the joiners this tick's START transaction took, not an ignored key either and for the same reason — `cooldownDeferred[] {kami, action `start|rest`, cooldownSec, hp?, limit?}`, at most 10 — the own kamis whose start or stop this tick deferred because the lens reads them on the chain's action cooldown (a RESTING one leaves the batched-start queue and its `readySinceSec` starts over when the cooldown ends; a HARVESTING one at or below its limit is offered the stop on a later tick, and is never a stop-pack joiner meanwhile; a FEED book's feed decision is NOT deferred), which is NOT an ignored key either: it moves only when a kami is deferred, like `held` — `backoffKamis[]`, `batchFallbackTx`, (a PARKING tick only)
+- Row kinds: `tick` (assessment summary; written on change and at least every `tickHeartbeat` ticks; an UNCONFIRMED contradiction — fewer than `externalChangeTicks` consecutive valid reads — is a `tick` summary note (`contradiction`, `observedTicks`, `confirmAfterTicks`), never a lifecycle row; a withheld feed is a `feedWithheld` note; a pooled collect is a `collectPooled` count, its `tx` row follows from the account's batched collect; (1.0.2) `txCountInTick` / `txStatusInTick` are the transactions of the tick's OWN burst and its fallback singles — a collect or a stop the tick pooled goes out after the row is written and is not among them — and `txCount` / `txStatus` carry the same values under the old names for one release (P11); a pooled stop is a `stopPooled` count — the kamis this tick's pooled stop holds, its `tx` rows following from the account+node burst — and a tick a binding kill pulled forward carries `killForcedTick: true`; neither is an ignored key: both move only when the thing happens, like `chainRested`; an `auto` tick: `kamis {harvesting, resting, dead, held, backoff, elsewhere}` (plus `cooldown` — own kamis the lens reads on the chain's action cooldown), `owners {listed, no-threshold, threshold-no-kill, killed-here}` by rendered class, `minMarginHp` (min over harvesting owned kamis of hp − bound), `boundKamis`, `boundKamisBy {<rendered class>[/<hostileBy>]: n}` — the bound kamis by the class of the attacker that binds each — and `hostileKamis` (PRESENT attackers whose own kills put them inside the window, whoever owns them), `liftedAttackers` (PRESENT attackers whose entry carries a measured lift) and `liftMaxPct` (the largest, one decimal), both ABSENT while no lift is in force, plus `liftsExpired[]` (the attackers whose lift hold passed this pass) when it applies — none of the three an ignored key: they move only when a lift is learnt, in force or lost — `attackers`, `remembered[]`, `cooldownSkipped[]`, `held[] {kami, reason, …}`, `restNotApplied[]`, `stopPulled[] {kami, projectedMinutes}` — the joiners this tick's stop pack took, which is NOT an ignored key: it moves only when a stop is signed, like `chainRested` — `startJoined[] {kami, projectedMinutes}` — the joiners this tick's START transaction took, not an ignored key either and for the same reason — `cooldownDeferred[] {kami, action `start|rest`, cooldownSec, hp?, limit?}`, at most 10 — the own kamis whose start or stop this tick deferred because the lens reads them on the chain's action cooldown (a RESTING one leaves the batched-start queue and its `readySinceSec` starts over when the cooldown ends; a HARVESTING one at or below its limit is offered the stop on a later tick, and is never a stop-pack joiner meanwhile; a FEED book's feed decision is NOT deferred), which is NOT an ignored key either: it moves only when a kami is deferred, like `held` — `backoffKamis[]`, `batchFallbackTx`, (a PARKING tick only)
   `parking: true`, `parkOffered` (the kamis whose stop this tick offered),
   `parkPacks` (the transactions it took) and `parkRemaining` (the kamis
   HARVESTING on the node this tick did not offer — the per-tick cap, a
@@ -1158,9 +1183,7 @@ release.
 
 ## D1 — kami-lens daemon
 
-Pin: ≥ 0.6.1. **Tested against kami-lens 1.0.5 (`e604290`) AND 1.1.0
-(`379d2e7`) — `LENS_TESTED_VERSIONS` — and the same build serves either;
-the row states what was tested, not what is required.** The suite's fake
+Pin: ≥ 0.6.1. `LENS_TESTED_VERSIONS` names the kami-lens releases this code line has run against, and on what each row rests: **1.0.5 (`e604290`) and 1.1.0 (`379d2e7`) — the suite run against each daemon; 1.1.1 (`3fec1e0`) — a 24-hour unattended book (keeper 1.0.1, 2026-11-07/08); 1.2.0 (`4c83ddd`) and 1.2.1 (`6828a11`) — the daemons a running keeper of this code line has been served by in operation (from 2026-11-21 and from 2026-11-23); no suite run against the last three.** The same build serves each; the row states what was run, not what is required. The suite's fake
 daemon also serves the pre-1.0.0 contract shape (no applied mark, none of
 the 1.0.0 options), so a 0.6.x daemon stays within the pin.
 The client reads `status.version` on every perception and gates each

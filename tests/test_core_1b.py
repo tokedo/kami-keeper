@@ -14,7 +14,7 @@ import pytest
 from web3 import Web3
 
 from conftest import FIXTURE_OPERATOR_ADDRESS, HAF_CONFIG, write_keys_file
-from evm_stubs import BatchingTesterProvider, deploy, deploy_world, reverter
+from evm_stubs import BatchingTesterProvider, deploy, deploy_world, reverter, plant_system
 from keeper.chain import Chain, RpcUnavailable
 from keeper.config import load as load_config
 from keeper.core import Keeper
@@ -116,7 +116,7 @@ def test_death_without_a_revive_item_in_inventory_is_recorded_and_the_book_keeps
 
 def test_craft_parks_a_recipe_the_precheck_refuses_and_retries_after_the_window(make_keeper, tmp_path):
     provider, w3, chain = _tester_chain()
-    chain._systems["system.craft"] = deploy(w3, reverter("Craft: insufficient inputs"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("Craft: insufficient inputs")))
     e = make_keeper()
     cfg = load_config(flags={"profile": "lab", "dataDir": str(tmp_path / "craft"), "lensSocket": e.lens.socket_path, "keysFile": str(e.keys_file), "secretsBackend": "env", "maxBooksPerAccount": 4, "rpcUrl": "http://tester.invalid", "worldAddress": chain.world_address, "chainId": chain.chain_id, "requestTimeoutSec": 5}, env={})
     k = Keeper(cfg, lens=LensClient(e.lens.socket_path, 5), chain=chain)
@@ -145,7 +145,7 @@ def test_craft_parks_a_recipe_the_precheck_refuses_and_retries_after_the_window(
     s4 = k.tick_book(book, now=t0 + 3601)
     assert s4["decisions"] == ["craft"] and k.signer.recorded[-1].params["recipeIndex"] == 29
     # a recipe the chain accepts: crafted count moves, park cleared
-    chain._systems["system.craft"] = w3.eth.accounts[1]
+    plant_system(chain, "system.craft", w3.eth.accounts[1])
     s5 = k.tick_book(book, now=t0 + 7300)
     assert s5["decisions"] == ["craft"] and k.signer.recorded[-1].precheck == "ok"
     assert k.runtime[bid]["crafted"] == {"29": 1} and "29" not in k.runtime[bid]["parked"]

@@ -473,6 +473,9 @@ class Perception:
     # the daemon's own version string, both served on the status answer
     applied_through: int | None = None
     lens_version: str | None = None
+    # 1.0.2: the lens's own `status.feedsDegraded` entries, verbatim — the
+    # probe behind `kamiden-unavailable` (the flag carries no detail)
+    feeds_degraded_text: list[str] = field(default_factory=list)
 
     @property
     def can_act(self) -> bool:
@@ -551,6 +554,8 @@ def perceive(client: LensClient, max_staleness_blocks: int) -> Perception:
             if f not in degraded:
                 degraded.append(f)
             lens_text.append(d)
-    if data.get("feedsDegraded"):
+    feeds = data.get("feedsDegraded")
+    feeds_text = [str(x) for x in feeds] if isinstance(feeds, (list, tuple)) else ([str(feeds)] if feeds else [])
+    if feeds:
         degraded.append(flags.kamiden_unavailable())
-    return Perception(ans.basis(), degraded, lens_status=data, staleness_blocks=st, lens_degraded_text=lens_text, applied_through=ans.applied_through, lens_version=features.version)
+    return Perception(ans.basis(), degraded, lens_status=data, staleness_blocks=st, lens_degraded_text=lens_text, applied_through=ans.applied_through, lens_version=features.version, feeds_degraded_text=feeds_text)

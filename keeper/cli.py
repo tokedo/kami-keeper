@@ -2,6 +2,11 @@
 SAME command registry the socket serves, so an undeclared `--flag` is
 refused with the router's BAD_ARGS wording before anything is dialled.
 `python -m keeper daemon ...` starts the keeper process.
+
+1.0.2: every BAD_ARGS answer the CLI prints carries the command's usage
+line under `error.usage` (`usage: keeper grant --account <label>`), and
+`--help` lists each command with its flags, the required ones unbracketed.
+This is the CLI's own layer: the frames on the socket are unchanged.
 """
 
 from __future__ import annotations
@@ -13,7 +18,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from . import KEEPER_VERSION, SCHEMA_VERSION
-from .protocol import COMMANDS, KeeperError, build_meta, validate_request
+from .protocol import COMMANDS, ArgSpec, KeeperError, build_meta, validate_request
 from .profiles import PROFILES
 
 DEFAULT_SOCKET = "/srv/keeper/keeper.sock"
@@ -43,9 +48,33 @@ def _add_daemon_parser(sub: argparse._SubParsersAction) -> None:  # type: ignore
     p.add_argument("--no-engine", dest="noEngine", action="store_true", help="serve the socket without the tick loop (tests)")
 
 
+# What a flag's value looks like in a usage line, by argument name; an
+# argument with an enum prints its choices, any other one its type.
+_PLACEHOLDER = {"account": "<label>", "book": "<book-id>", "config": "<json|@file>"}
+
+
+def _flag_usage(a: ArgSpec) -> str:
+    if a.type == "boolean":
+        return f"--{a.name}"
+    if a.enum:
+        return f"--{a.name} {'|'.join(a.enum)}"
+    if a.name in _PLACEHOLDER:
+        return f"--{a.name} {_PLACEHOLDER[a.name]}"
+    return f"--{a.name} {'<n>' if a.type == 'integer' else '<json|@file>' if a.type in ('object', 'array') else '<' + a.name + '>'}"
+
+
+def usage_line(cmd: str) -> str:
+    """`usage: keeper <cmd> <required flags> [<optional flags>]` from the
+    command registry: flags only (no positional form exists), the required
+    ones first and unbracketed."""
+    spec = COMMANDS[cmd]
+    parts = [_flag_usage(a) for a in spec.args if a.required] + [f"[{_flag_usage(a)}]" for a in spec.args if not a.required]
+    return " ".join(["usage: keeper", cmd, *parts, "[--socket <path>]"])
+
+
 def _add_command_parsers(sub: argparse._SubParsersAction) -> None:  # type: ignore[type-arg]
     for c in COMMANDS.values():
-        p = sub.add_parser(c.name, help=c.description, add_help=True)
+        p = sub.add_parser(c.name, help=c.description, add_help=True, usage=usage_line(c.name)[len("usage: "):])
         p.add_argument("--socket", dest="_socket", default=None, help=f"keeper socket (default {DEFAULT_SOCKET})")
         for a in c.args:
             flag = "--" + a.name
@@ -60,7 +89,8 @@ def _add_command_parsers(sub: argparse._SubParsersAction) -> None:  # type: igno
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="keeper", description=f"kami-keeper {KEEPER_VERSION} (schema {SCHEMA_VERSION}) — control CLI and daemon")
+    epilog = "every flag of every command (the required ones are unbracketed; there is no positional form):\n" + "\n".join("  " + usage_line(c)[len("usage: "):] for c in COMMANDS)
+    parser = argparse.ArgumentParser(prog="keeper", description=f"kami-keeper {KEEPER_VERSION} (schema {SCHEMA_VERSION}) — control CLI and daemon", epilog=epilog, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--version", action="version", version=f"kami-keeper {KEEPER_VERSION} schema {SCHEMA_VERSION}")
     sub = parser.add_subparsers(dest="cmd", metavar="<cmd>")
     _add_daemon_parser(sub)
@@ -104,6 +134,16 @@ def _error_frame(e: KeeperError) -> dict[str, Any]:
     return {"id": 1, "ok": False, "error": {"code": e.code, "message": e.message}, "meta": build_meta("unknown")}
 
 
+def with_usage(frame: dict[str, Any], cmd: str) -> dict[str, Any]:
+    """A BAD_ARGS frame the CLI is about to print gains `error.usage` — the
+    command's usage line. Any other frame is returned as it is. The message
+    keeps the router's wording; the frame on the socket is not touched."""
+    err = frame.get("error") if isinstance(frame, dict) else None
+    if isinstance(err, dict) and err.get("code") == "BAD_ARGS" and cmd in COMMANDS:
+        frame = {**frame, "error": {**err, "usage": usage_line(cmd)}}
+    return frame
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     ns, extras = parser.parse_known_args(list(sys.argv[1:] if argv is None else argv))
@@ -119,7 +159,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         req = build_request(ns.cmd, ns, extras)
     except KeeperError as e:
-        print(json.dumps(_error_frame(e)))
+        print(json.dumps(with_usage(_error_frame(e), ns.cmd)))
         return EXIT_BAD_ARGS
     from .server import request
 
@@ -129,5 +169,5 @@ def main(argv: Sequence[str] | None = None) -> int:
     except (OSError, ConnectionError) as e:
         print(json.dumps({"id": 1, "ok": False, "error": {"code": "NOT_READY", "message": f"no keeper at {sock}: {type(e).__name__}"}, "meta": build_meta("unknown")}))
         return EXIT_NO_DAEMON
-    print(json.dumps(frame, indent=1, sort_keys=True))
+    print(json.dumps(with_usage(frame, ns.cmd), indent=1, sort_keys=True))
     return EXIT_OK if frame.get("ok") else EXIT_ERROR_FRAME

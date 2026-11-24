@@ -64,7 +64,7 @@ def test_a_burst_refused_in_full_by_the_precheck_still_reports_at_the_broadcast_
     from evm_stubs import deploy, reverter
 
     provider, w3, chain, signer, sink = live
-    chain._systems["system.craft"] = deploy(w3, reverter("Craft: no stamina"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("Craft: no stamina")))
     seen: list[list[Any]] = []
     recs = signer.submit([Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}, "b1")], CFG, on_broadcast=lambda rs: seen.append([(r.status, r.reason, r.txHash) for r in rs]))
     assert [r.status for r in recs] == ["not_sent"] and recs[0].precheck == "reverted"
@@ -76,7 +76,7 @@ def test_a_mixed_burst_reports_the_refused_row_not_sent_and_the_others_unconfirm
     from evm_stubs import deploy, reverter
 
     provider, w3, chain, signer, sink = live
-    chain._systems["system.craft"] = deploy(w3, reverter("Craft: no stamina"))
+    plant_system(chain, "system.craft", deploy(w3, reverter("Craft: no stamina")))
     seen: list[list[tuple[str, str | None]]] = []
     recs = signer.submit([_feed(1), Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}, "b1"), _feed(2)], CFG, on_broadcast=lambda rs: seen.append([(r.status, r.txHash) for r in rs]))
     assert [s for s, _h in seen[0]] == ["unconfirmed", "not_sent", "unconfirmed"] and seen[0][1][1] is None
@@ -121,7 +121,7 @@ def test_the_stage_is_broadcast_or_receipt_and_a_dry_run_row_carries_none(tmp_pa
 # ------------------------------------------------------------ §B the core: broadcast row, then receipt row
 
 from conftest import HAF_CONFIG  # noqa: E402
-from evm_stubs import BatchingTesterProvider, deploy, deploy_world, reverter  # noqa: E402
+from evm_stubs import BatchingTesterProvider, deploy, deploy_world, plant_system, reverter  # noqa: E402
 from keeper.chain import Chain  # noqa: E402
 from keeper.config import load as load_config  # noqa: E402
 from keeper.core import Keeper  # noqa: E402
@@ -175,7 +175,7 @@ def test_a_normal_burst_writes_a_broadcast_row_then_a_receipt_row_per_step_in_or
 
 def test_a_pre_send_refusal_is_one_not_sent_row_at_the_broadcast_stage(make_keeper, tmp_path):
     e, provider, w3, chain = _live_env(make_keeper, tmp_path)
-    chain._systems["system.harvest.stop"] = deploy(w3, reverter("Harvest: not active"))
+    plant_system(chain, "system.harvest.stop", deploy(w3, reverter("Harvest: not active")))
     book = _start(e, BOOK_43[:3], previewsPerTick=50)
     e.books = [book]  # type: ignore[attr-defined]
     _set_party(e.lens, BOOK_43[0], hp=(20, 240))
@@ -238,7 +238,7 @@ def _batch_only_reverter(limit: int) -> bytes:
 
 def test_the_batch_fallback_singles_each_get_a_broadcast_row_and_a_receipt_row_after_the_batch_one_not_sent_row(make_keeper, tmp_path):
     e, provider, w3, chain = _live_env(make_keeper, tmp_path)
-    chain._systems["system.harvest.stop"] = deploy(w3, _batch_only_reverter(100))  # a single stop is 36 bytes of calldata, a batch of two 132
+    plant_system(chain, "system.harvest.stop", deploy(w3, _batch_only_reverter(100)))  # a single stop is 36 bytes of calldata, a batch of two 132
     book = _start(e, BOOK_43[:3], previewsPerTick=50)
     e.books = [book]  # type: ignore[attr-defined]
     _set_party(e.lens, BOOK_43[0], hp=(20, 240))

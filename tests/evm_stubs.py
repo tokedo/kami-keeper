@@ -67,6 +67,16 @@ def deploy_world(w3: Web3, system_address: str) -> str:
     return deploy(w3, returner(abi_encode(["address"], [sc])))
 
 
+def plant_system(chain: Any, system_id: str, address: str) -> None:
+    """Make ONE system resolve to `address` while the stub registry (one
+    address for every id) names another. The keeper re-reads the registry
+    when a pre-check reverts (Chain.recheck_system) and would correct the
+    planted address, so the re-read is switched off for this system: a
+    test that plants a reverter is about the revert, not about a redeploy."""
+    chain._systems[system_id] = address
+    chain._rechecked[system_id] = float("inf")
+
+
 class BatchingTesterProvider(EthereumTesterProvider):
     """The tester provider plus `make_batch_request` (ids = the caller's
     request_counter, as web3's HTTPProvider) and a request log. Fault

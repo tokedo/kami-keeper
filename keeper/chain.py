@@ -46,6 +46,10 @@ from web3.exceptions import ContractLogicError, Web3Exception
 
 from .whitelist import Intent, check_system
 
+# After a reverted pre-check the registry is asked again for that system's
+# address, at most this often per system (two eth_calls each time).
+SYSTEM_RECHECK_SEC = 60.0
+
 ABI_DIR = Path(__file__).with_name("abi")
 
 # system id -> ABI file and the function names the keeper may encode.
@@ -225,6 +229,10 @@ class Chain:
             web3 = Web3(Web3.HTTPProvider(rpc_url, request_kwargs={"timeout": request_timeout_sec}))
         self.w3 = web3
         self._systems: dict[str, str] = {}
+        self._rechecked: dict[str, float] = {}  # system id -> when the registry was last re-read for it
+        self._moved: list[dict[str, str]] = []  # redeploys seen by recheck_system, newest last
+        self._clock = time.monotonic
+        self.on_system_moved: Any = None  # callable(move dict) — the keeper's log line; never raises into a send
         self._verified_chain_id: int | None = None
         self._batch_providers: dict[float, Any] = {}
 
@@ -240,6 +248,8 @@ class Chain:
             # the SEND-path resolutions only: component / view / emitter
             # addresses sit under prefixed keys and are read-only
             "resolvedSystems": {k: v for k, v in self._systems.items() if ":" not in k},
+            # systems the game redeployed while this process ran (recheck_system)
+            "movedSystems": list(self._moved),
             "batchBroadcast": self.supports_batch,
         }
 
@@ -288,6 +298,13 @@ class Chain:
         check_system(system_id)
         if system_id in self._systems:
             return self._systems[system_id]
+        addr = self._registry_system_address(system_id)
+        self._systems[system_id] = addr
+        return addr
+
+    def _registry_system_address(self, system_id: str) -> str:
+        """The address the World's systems registry holds for this id NOW
+        (two reads, never cached here)."""
         if not self.world_address:
             raise ChainError("worldAddress is required")
         world = self.w3.eth.contract(address=self.world_address, abi=load_abi("World"))
@@ -296,9 +313,40 @@ class Chain:
         entities = self._read("systems.getEntitiesWithValue", sc.functions.getEntitiesWithValue(system_hash(system_id)).call)
         if not entities:
             raise ChainError(f"system not found on chain: {system_id}")
-        addr = Web3.to_checksum_address("0x" + hex(int(entities[0]))[2:].zfill(40)[-40:])
-        self._systems[system_id] = addr
-        return addr
+        return Web3.to_checksum_address("0x" + hex(int(entities[0]))[2:].zfill(40)[-40:])
+
+    def recheck_system(self, system_id: str) -> bool:
+        """Has the game redeployed this system? Asked after a pre-check
+        reverted: the studio redeploys systems without notice, the registry
+        then holds a new address, and every call to the old one reverts
+        (2026-09-02, 10-21, 11-20, 11-21 — each time the keeper stood
+        still until it was restarted by hand). Reads the registry again,
+        at most once per SYSTEM_RECHECK_SEC per system; when the address
+        differs the cache takes the new one and the move is kept for the
+        status. True = it moved. A failed read changes nothing."""
+        check_system(system_id)
+        old = self._systems.get(system_id)
+        if old is None:
+            return False
+        now = self._clock()
+        if now - self._rechecked.get(system_id, float("-inf")) < SYSTEM_RECHECK_SEC:
+            return False
+        self._rechecked[system_id] = now
+        try:
+            new = self._registry_system_address(system_id)
+        except (RpcUnavailable, ChainError, ContractLogicError):
+            return False
+        if new == old:
+            return False
+        self._systems[system_id] = new
+        self._moved.append({"system": system_id, "from": old, "to": new, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())})
+        del self._moved[:-20]
+        if callable(self.on_system_moved):
+            try:
+                self.on_system_moved(self._moved[-1])
+            except Exception:  # noqa: BLE001 — a log line must not stop a send
+                pass
+        return True
 
     def code_size(self, address: str) -> int:
         return len(self._read("eth_getCode", self.w3.eth.get_code, Web3.to_checksum_address(address)))
@@ -306,8 +354,18 @@ class Chain:
     def precheck(self, call: Call, from_address: str) -> None:
         """eth_call of the exact calldata from the signing address (server.py
         L1783 _dry_run). Raises PrecheckReverted(reason) on a revert,
-        RpcUnavailable when the node did not answer twice."""
-        to = self.resolve_system(call.system)
+        RpcUnavailable when the node did not answer twice. A revert makes
+        the keeper ask the registry whether the system moved
+        (`recheck_system`); if it did, the call is judged once more at the
+        new address and THAT verdict stands."""
+        try:
+            self._precheck_at(self.resolve_system(call.system), call, from_address)
+        except PrecheckReverted:
+            if not self.recheck_system(call.system):
+                raise
+            self._precheck_at(self.resolve_system(call.system), call, from_address)
+
+    def _precheck_at(self, to: str, call: Call, from_address: str) -> None:
         params = {"from": from_address, "to": to, "data": _hex(call.calldata)}
         for attempt in (1, 2):
             try:

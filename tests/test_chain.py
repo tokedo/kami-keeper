@@ -133,11 +133,74 @@ def test_precheck_passes_on_the_sink_and_refuses_with_the_node_message_on_a_reve
     call = encode(Intent("system.kami.use.item", "lab", 7, {"itemIndex": 11301}))
     chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)  # sink: empty return, no revert
     rev = deploy(w3, reverter("harvest: kami not owned"))
-    chain._systems["system.craft"] = rev
+    chain.world_address = deploy_world(w3, rev)  # the registry itself names the reverter: a cached address the registry disagrees with is re-resolved (recheck_system)
     with pytest.raises(PrecheckReverted) as ei:
         chain.precheck(encode(Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1})), FIXTURE_OPERATOR_ADDRESS)
     assert "kami not owned" in ei.value.reason
     assert chain.code_size(rev) > 0 and chain.code_size(sink) == 0
+
+
+def test_a_redeployed_system_is_found_again_when_its_precheck_reverts(tester):
+    """The game redeploys a system: the registry holds a new address and the
+    old one reverts every call. The keeper stood still for hours on this
+    four times (2026-09-02, 10-21, 11-20, 11-21) until restarted by hand."""
+    provider, w3, chain, sink = tester
+    seen = []
+    chain.on_system_moved = seen.append
+    call = encode(Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}))
+    old = deploy(w3, reverter(""))  # the retired system: a bare revert
+    chain.world_address = deploy_world(w3, old)
+    assert chain.resolve_system("system.craft") == old
+    chain.world_address = deploy_world(w3, sink)  # the redeploy: the registry now names the sink
+    chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)  # reverts at the old address, passes at the new one
+    assert chain.resolve_system("system.craft") == sink
+    moved = chain.describe()["movedSystems"]
+    assert len(moved) == 1 and moved[0]["system"] == "system.craft" and moved[0]["from"] == old and moved[0]["to"] == sink
+    assert seen == moved
+
+
+def test_a_revert_on_an_unmoved_system_stands_and_the_registry_is_asked_once_a_minute(tester):
+    provider, w3, chain, sink = tester
+    call = encode(Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}))
+    rev = deploy(w3, reverter("craft: not enough stamina"))
+    chain.world_address = deploy_world(w3, rev)
+    t = [1000.0]
+    chain._clock = lambda: t[0]
+    with pytest.raises(PrecheckReverted) as ei:
+        chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)
+    assert "not enough stamina" in ei.value.reason and chain.describe()["movedSystems"] == []
+    before = provider.count("eth_call")
+    with pytest.raises(PrecheckReverted):
+        chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)
+    assert provider.count("eth_call") == before + 1  # the pre-check alone: no second registry read inside the minute
+    t[0] += 61
+    with pytest.raises(PrecheckReverted):
+        chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)
+    assert provider.count("eth_call") == before + 4  # the pre-check + the two registry reads
+
+
+def test_a_failed_registry_read_keeps_the_address_and_a_moved_system_that_still_refuses_says_so(tester, monkeypatch):
+    provider, w3, chain, sink = tester
+    call = encode(Intent("system.craft", "lab", None, {"recipeIndex": 29, "amount": 1}))
+    old = deploy(w3, reverter(""))
+    chain.world_address = deploy_world(w3, old)
+    chain.resolve_system("system.craft")
+    real = chain._registry_system_address
+
+    def down(system_id):
+        raise RpcUnavailable("systems.getEntitiesWithValue: ConnectionError")
+
+    monkeypatch.setattr(chain, "_registry_system_address", down)
+    with pytest.raises(PrecheckReverted):
+        chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)
+    assert chain.resolve_system("system.craft") == old and chain.describe()["movedSystems"] == []
+    monkeypatch.setattr(chain, "_registry_system_address", real)
+    chain._rechecked.clear()
+    new = deploy(w3, reverter("craft: recipe not found"))
+    chain.world_address = deploy_world(w3, new)
+    with pytest.raises(PrecheckReverted) as ei:
+        chain.precheck(call, FIXTURE_OPERATOR_ADDRESS)
+    assert "recipe not found" in ei.value.reason and chain.resolve_system("system.craft") == new  # the new address's verdict stands
 
 
 def test_rpc_failures_read_as_unavailable_with_a_class_name_only(tester):
