@@ -406,9 +406,16 @@ class FakeLens:
                         else:
                             data = copy.deepcopy(src)
                             att_row = next((h for h in data["harvests"] if h.get("kami", {}).get("index") == att), None)
-                            if att_row is None:
+                            if att_row is None and att not in self.kamis:
                                 return self._error(rid, "NOT_FOUND", f"attacker {att} not on node {idx}")
-                            data["attacker"] = {"id": att_row["kami"].get("id", str(att)), "index": att, "name": att_row["kami"].get("name", f"kami-{att}"), "cooldownSec": (att_row.get("vitals") or {}).get("cooldownSec", 0), "cooldownUntil": 0, "blocked": None}
+                            if att_row is None:
+                                # the real daemon serves an ABSENT attacker's
+                                # lines against the occupants (any kami of the
+                                # mirror; seen on kami-lens 1.0.5)
+                                kr = self.kamis[att]
+                                data["attacker"] = {"id": kr.get("id", str(att)), "index": att, "name": kr.get("name", f"kami-{att}"), "cooldownSec": kr.get("cooldownSec", 0), "cooldownUntil": 0, "blocked": None}
+                            else:
+                                data["attacker"] = {"id": att_row["kami"].get("id", str(att)), "index": att, "name": att_row["kami"].get("name", f"kami-{att}"), "cooldownSec": (att_row.get("vitals") or {}).get("cooldownSec", 0), "cooldownUntil": 0, "blocked": None}
                             for h in data["harvests"]:
                                 k = h.get("kami", {}).get("index")
                                 if k == att:

@@ -34,6 +34,8 @@ Per tick (observation -> action, no policy language):
             window, OR the kami X itself did, whoever owns it now)
               killed-here      -> max(0, thr(X,k)) + safetyMarginPct % x hpTotal
               standing         -> max(0, thr(X,k)) + safetyMarginPct % x hpTotal (the owner is on the keeper's standingOwners; no kill needed, no window)
+                                  (or X is on the keeper's standingKamis — then X is an attacker of the node whether the
+                                  census shows it or not: a synthetic occupant, previewed and refreshed while absent)
               threshold-no-kill-> max(0, thr(X,k)) + passiveMarginPct % x hpTotal
               no-threshold     -> 0
             thr from the lens preview only; an attacker never previewed
@@ -849,7 +851,7 @@ class Auto(NodeThreat, Strategy):
         ctx = self.context
         nxt = None
         if ctx is not None and ctx.previews is not None:
-            nxt = ctx.previews.next_due_at(self.node, self.account_index, int(self._cfg("previewRefreshSec", 3600)), offered, retry_sec=int(self._cfg("previewRetrySec", 300)))
+            nxt = ctx.previews.next_due_at(self.node, self.account_index, int(self._cfg("previewRefreshSec", 3600)), offered, retry_sec=int(self._cfg("previewRetrySec", 300)), refresh_always=self.standing_kamis)
         return {"kamis": dict(summary.get("kamis") or {}), "owners": dict(summary.get("owners") or {}), "minMarginHp": summary.get("minMarginHp"), "boundKamis": summary.get("boundKamis"), "previewsPending": summary.get("previewsPending"), "nextPreviewDueAt": nxt}
 
     def status_extra(self, runtime: dict[str, Any]) -> dict[str, Any] | None:

@@ -389,7 +389,7 @@ class PreviewCache:
 
     # -- what is due ------------------------------------------------------------
 
-    def due(self, node: int, account: int, foreign: dict[int, NodeOccupant], owned_levels: dict[int, int | None], refresh_sec: int, now: float, own_on_node: bool = False, retry_sec: int = 300) -> list[tuple[int, str]]:
+    def due(self, node: int, account: int, foreign: dict[int, NodeOccupant], owned_levels: dict[int, int | None], refresh_sec: int, now: float, own_on_node: bool = False, retry_sec: int = 300, refresh_always: frozenset[int] | set[int] | None = None) -> list[tuple[int, str]]:
         """[(attacker, reason)] in fetch order: the PRESENT entries flagged
         for a refetch (their owner killed one of ours on this node),
         then arrivals, then the entries
@@ -405,8 +405,13 @@ class PreviewCache:
         due again; with it false such an entry ages as any other.
         `retry_sec` (`previewRetrySec`): an entry whose last fetch
         served a row that was not a line is due again this many seconds
-        after it, never at `refresh_sec` or 86400."""
+        after it, never at `refresh_sec` or 86400. `refresh_always` (the
+        standing kamis): an entry of one of these is refreshed at
+        `refresh_sec` even when every line it serves is 0 — a standing
+        kami read dead or resting serves nothing then and must be read
+        again within the hour, not the day."""
         ents = self.entries(node, account)
+        always = frozenset(int(a) for a in (refresh_always or ()))
         arrivals: list[tuple[int, str]] = []
         refetch: list[tuple[int, str]] = []
         no_rows: list[tuple[int, str]] = []
@@ -438,7 +443,7 @@ class PreviewCache:
                 if now - e.fetched_at >= int(retry_sec):
                     aged.append((a, f"degraded read: {len(e.invalid_rows)} invalid rows; retry"))
                 continue
-            limit = int(refresh_sec) if e.max_clamped() > 0 else REFRESH_NO_THRESHOLD_SEC
+            limit = int(refresh_sec) if (e.max_clamped() > 0 or a in always) else REFRESH_NO_THRESHOLD_SEC
             if now - e.fetched_at >= limit:
                 aged.append((a, f"older than {limit} s"))
         # when the demand exceeds `previewsPerTick` the cap must take the
@@ -454,13 +459,15 @@ class PreviewCache:
         aged.sort(key=weight)
         return refetch + arrivals + no_rows + levels + aged
 
-    def next_due_at(self, node: int, account: int, refresh_sec: int, only: set[int] | None = None, retry_sec: int = 300) -> float | None:
+    def next_due_at(self, node: int, account: int, refresh_sec: int, only: set[int] | None = None, retry_sec: int = 300, refresh_always: frozenset[int] | set[int] | None = None) -> float | None:
         """`only`: the attackers the book's `previewPolicy` offers — an
         entry outside it is never refreshed, so it names no due time.
         `retry_sec`: a degraded read is due again that soon. An
-        entry flagged for a refetch is due NOW (0.0, the minimum)."""
+        entry flagged for a refetch is due NOW (0.0, the minimum).
+        `refresh_always`: as in `due`."""
         ents = self.entries(node, account)
-        times = [0.0 if e.refetch else e.fetched_at + (int(retry_sec) if e.degraded_read else (int(refresh_sec) if e.max_clamped() > 0 else REFRESH_NO_THRESHOLD_SEC)) for a, e in ents.items() if not e.remembered and (only is None or a in only)]
+        always = frozenset(int(a) for a in (refresh_always or ()))
+        times = [0.0 if e.refetch else e.fetched_at + (int(retry_sec) if e.degraded_read else (int(refresh_sec) if (e.max_clamped() > 0 or a in always) else REFRESH_NO_THRESHOLD_SEC)) for a, e in ents.items() if not e.remembered and (only is None or a in only)]
         return min(times) if times else None
 
     # -- fetch ------------------------------------------------------------------

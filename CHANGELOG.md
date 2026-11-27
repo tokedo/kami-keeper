@@ -2,6 +2,57 @@
 
 SemVer (SPEC P11): a `describe` text or default change is MAJOR.
 
+## 1.1.0 — 2026-11-27
+
+MINOR: one keeper-level config key with an empty default. No book schema
+key, no default moved, no `describe` text changed, the defaults lock
+unchanged, no protocol frame field removed or renamed (`txCount` /
+`txStatus` stay beside `txCountInTick` / `txStatusInTick`).
+
+- **Standing kamis.** `standingKamis` (kami INDICES; env
+  `KAMI_KEEPER_STANDING_KAMIS`; the same shape and parser as
+  `standingOwners`; a bad entry is one error naming the key): a kami the
+  operator names is an attacker of EVERY node a book watches, whether the
+  node read shows it or not. Absent, it is a synthetic occupant — its
+  owner, level and cooldown from one `kami <index>` read per pass and
+  node — previewed in its turn like any attacker the policy previews
+  (attackers never previewed go in index order, `previewsPerTick` a
+  pass: the book's first pass under `previewPolicy killed-here`, several
+  passes under `previewPolicy all` on a busy node; the book holds its
+  kamis until the preview lands — no start, no rest on the bound, the
+  floor still rests), refreshed at
+  `previewRefreshSec` while absent (also when every line it serves is 0),
+  classed `standing` (no new rendered name; `boundBy.hostileBy`
+  `standing`), bound with `safetyMarginPct`, never remembered, dropped or
+  expired. A listed owner still wins; a kill by it still renders
+  `killed-here-<window>` inside the window; its owner is not made
+  standing by it. For an attacker that is on a node only for the seconds
+  of a kill and never at a tick: without the key no preview of it exists
+  and nothing binds. Additive: the tick note `standingKamisAbsent`; one
+  boot log line `standing kamis: [...]`; the keyword parameter
+  `refresh_always` on `PreviewCache.due` / `next_due_at`. With the key
+  empty (the default) nothing is read and nothing changes. The key is
+  documented in SPEC P3 and `keeper/config.example.yaml`. Tests:
+  `tests/test_phase2hc.py` (24); the fake lens serves an absent
+  attacker's lines, as the daemon does.
+- **An index the lens cannot read holds the book.** A listed index the
+  lens does not know is still an attacker of every watched node — an
+  unknown one, so each book holds its kamis (no start, no rest on the
+  bound; the floor still rests) on every tick until the index is read
+  or removed from the list. The only sign is on the tick row
+  (`previewsRefused[]`, `attackerVitalsUnread[]`, the bound's
+  `unknown[]`): check the list against the lens when you write it.
+- **`attackerVitalsCalls` counts the standing reads.** The tick's count
+  of `kami <index>` reads includes the read of an absent standing kami
+  (one per pass and node, made by the first book of the pass on that
+  node); it takes its unit of the `attackerVitalsPerTick` budget like
+  any attacker read.
+- **`txCount` / `txStatus` stay.** 1.0.2 said the old tick-summary names
+  would "go with the next" release. They do not: removing a field an
+  agent may read is a behaviour change on a default call (SPEC P11), so
+  both names are kept, with the same values as `txCountInTick` /
+  `txStatusInTick`, until the next MAJOR.
+
 ## 1.0.2 — 2026-11-24
 
 PATCH: no default moved, no `describe` text changed, no protocol frame

@@ -33,7 +33,7 @@ from ..census import PLAIN, VITALS, NodeCensus, entity_id, parse_census
 from ..kills import OccupantRef
 from ..lens import LensAnswer, LensClient, LensQueryError
 from ..owner_class import OwnerClass, classify, hostile_by, render
-from .base import HARVESTING, KamiView, Observation
+from .base import HARVESTING, KamiView, NodeOccupant, Observation
 
 # `previewPolicy` values. The narrow one is named after the RENDERED
 # class it previews (P3a) — the internal word is on the P9 scrub list and a
@@ -66,6 +66,18 @@ class NodeThreat:
         return frozenset() if ctx is None else frozenset(int(a) for a in (getattr(ctx, "standing_owners", None) or ()))
 
     @property
+    def standing_kamis(self) -> frozenset[int]:
+        """The keeper's `standingKamis` — kami indices treated as PRESENT
+        on every node a book watches, whether the node read shows them or
+        not: previewed on the book's first pass, refreshed at
+        `previewRefreshSec` while absent (the lens serves an absent
+        attacker's lines against the occupants all the same — the watch
+        reads rest on the same fact), classed `standing` and bound with
+        `safetyMarginPct`. Keeper-level config, like the owners."""
+        ctx = self.context
+        return frozenset() if ctx is None else frozenset(int(k) for k in (getattr(ctx, "standing_kamis", None) or ()))
+
+    @property
     def window_hours(self) -> int:
         return int(self._cfg("hostileWindowHours", 48))
 
@@ -92,6 +104,17 @@ class NodeThreat:
         occupants = census.occupants
         plain = census.mode == PLAIN
         listed = self.listed_accounts()
+        # a standing kami the census does not show is an occupant all the
+        # same — a synthetic row, never written to the shared census (the
+        # kill scanner's refs and the other books' reads are untouched).
+        # Its `kami` reads take from the pass's shared budget like any
+        # attacker read, so the tick's count is taken around the call
+        vitals_before = int(ctx.census.vitals_calls.get(self.node, 0)) if ctx is not None else 0
+        synthetic = self._standing_absent(lens, obs, occupants, now)
+        if synthetic:
+            occupants = {**occupants, **synthetic}
+            obs.occupants = occupants
+            notes["standingKamisAbsent"] = sorted(synthetic)
         foreign = {i: o for i, o in occupants.items() if o.account_index is None or int(o.account_index) not in listed}
         notes["foreignOccupants"] = len(foreign)
         if not plain:
@@ -100,7 +123,7 @@ class NodeThreat:
         # cache or an earlier pass served it) and how old the one in use is
         notes["nodeReadBytes"] = int(node_ans.size or 0) if node_ans is not None and not node_ans.served_from_pass else 0
         notes["censusAgeSec"] = 0 if node_ans is not None else int(max(0.0, now - census.read_at))
-        notes["attackerVitalsCalls"] = 0
+        notes["attackerVitalsCalls"] = (int(ctx.census.vitals_calls.get(self.node, 0)) - vitals_before) if ctx is not None else 0
         # is anything of the ACCOUNT on the node? The preview serves
         # thresholds against occupants only, so a fetch made while nothing
         # of ours was there has no rows at all — it binds nothing and holds
@@ -130,7 +153,9 @@ class NodeThreat:
             hostile_kamis = ctx.owners.hostile_kamis_for(self.node, self.account_index, self.window_hours, head) if ctx.owners is not None else set()
             # the attackers that are killed-here inside the window, by
             # owner OR by kami — the same two sets `reconcile_presence` takes
-            binding = sorted(i for i, o in foreign.items() if i in hostile_kamis or (o.account_index is not None and int(o.account_index) in hostile))
+            # and every standing kami, present or synthetic
+            standing_kamis = self.standing_kamis
+            binding = sorted(i for i, o in foreign.items() if i in hostile_kamis or i in standing_kamis or (o.account_index is not None and int(o.account_index) in hostile))
             offered = foreign
             if self.preview_policy == PREVIEW_KILLED_HERE:
                 # lazy previews: with passiveOwnersBind false only a killed-here
@@ -148,7 +173,7 @@ class NodeThreat:
             expired = previews.expire_lifts(self.node, self.account_index, now)
             if expired:
                 notes["liftsExpired"] = expired
-            due = previews.due(self.node, self.account_index, offered, owned_levels, int(self._cfg("previewRefreshSec", 3600)), now, own_on_node=own_on_node, retry_sec=int(self._cfg("previewRetrySec", 300)))
+            due = previews.due(self.node, self.account_index, offered, owned_levels, int(self._cfg("previewRefreshSec", 3600)), now, own_on_node=own_on_node, retry_sec=int(self._cfg("previewRetrySec", 300)), refresh_always=standing_kamis)
             cap = max(1, int(self._cfg("previewsPerTick", 10)))
             room = max(0, cap - int(previews.pass_fetches.get(self.node, 0)))  # the cap is per pass and node, shared by the books on it
             got = {"calls": 0, "changed": 0, "bytes": 0, "invalid": 0}
@@ -223,6 +248,49 @@ class NodeThreat:
                         census.refs.setdefault(entity_id(int(k)), OccupantRef(self.node, int(k), self.account_index))
             ctx.node_occupants[self.node] = census.refs
 
+    def _standing_absent(self, lens: LensClient, obs: Observation, occupants: dict[int, NodeOccupant], now: float) -> dict[int, NodeOccupant]:
+        """A synthetic occupant row per standing kami the census does
+        not show, so the rest of the pass treats it as present: previewed
+        (`node <i> <kami>` serves its lines against the occupants while it
+        is away), classed, bound, never remembered or dropped. Its owner,
+        level and cooldown come from one `kami <index>` read per pass and
+        node (shared by the books on it through the census cache, the same
+        table `_attacker_vitals` reads under the plain census); a refused
+        read leaves them unknown (owner None, cooldown 0: it binds). A
+        standing kami the census DOES show is a real occupant and takes
+        the ordinary path."""
+        standing = self.standing_kamis
+        if not standing:
+            return {}
+        ctx = self.context
+        cache = ctx.census if ctx is not None else None
+        seen = cache.attacker_vitals.setdefault(self.node, {}) if cache is not None else {}
+        out: dict[int, NodeOccupant] = {}
+        for k in sorted(standing):
+            if k in occupants:
+                continue
+            row = seen.get(k)
+            if row is None:
+                row = seen[k] = {}
+                if cache is not None:
+                    cache.vitals_calls[self.node] = int(cache.vitals_calls.get(self.node, 0)) + 1
+                try:
+                    ans = lens.kami(k)
+                except LensQueryError:
+                    ans = None
+                if ans is not None:
+                    obs.answers.append(ans)
+                    data = ans.data if isinstance(ans.data, dict) else {}
+                    if _num(data.get("cooldownSec")):
+                        row["cooldownSec"] = int(data["cooldownSec"])
+                    if _num(data.get("level")):
+                        row["level"] = int(data["level"])
+                    acct = data.get("account") if isinstance(data.get("account"), dict) else {}
+                    if _num(acct.get("index")):
+                        row["account"] = int(acct["index"])
+            out[k] = NodeOccupant(harvest_id="", kami_id=entity_id(int(k)), kami_index=int(k), account_index=row.get("account"), hp_current=0, hp_total=0, hp_rate_per_hr=None, cooldown_sec=int(row.get("cooldownSec", 0)), level=row.get("level"), musu_accrued=0)
+        return out
+
     def _census(self, lens: LensClient, now: float) -> tuple[NodeCensus, LensAnswer | None]:
         """(the node census, the answer when it was read THIS tick — None
         when a census of an earlier pass was reused). `nodeCensus`
@@ -294,7 +362,7 @@ class NodeThreat:
             if e is not None and e.attacker_level is not None and row.get("level") is not None and int(row["level"]) != int(e.attacker_level):
                 moved.append(a)
         obs.attacker_cooldowns = cooldowns
-        notes["attackerVitalsCalls"] = calls
+        notes["attackerVitalsCalls"] = int(notes.get("attackerVitalsCalls", 0)) + calls  # on top of the standing reads
         if over:
             notes["attackerVitalsOverCap"] = over[:20]
         if unread:
@@ -332,7 +400,7 @@ class NodeThreat:
         attacker KAMI itself did, whoever owns it now. One window for both.
         The third flag is CONFIG, not ledger — it is computed even
         without a context or an owner ledger."""
-        standing = owner is not None and int(owner) in self.standing_owners
+        standing = (owner is not None and int(owner) in self.standing_owners) or (kami is not None and int(kami) in self.standing_kamis)
         ctx = self.context
         if ctx is None or ctx.owners is None:
             return False, False, standing
@@ -378,7 +446,9 @@ class NodeThreat:
                 o_flags = self._hostile_flags(owner, None, head)
                 flags[owner] = (o_flags[0], o_flags[2])
             owner_hostile, standing = flags[owner]
-            kami_hostile = self._hostile_flags(None, kami, head)[1]
+            kami_flags = self._hostile_flags(None, kami, head)
+            kami_hostile = kami_flags[1]
+            standing = standing or kami_flags[2]  # a standing KAMI under any owner
         else:
             owner_hostile, kami_hostile, standing = self._hostile_flags(owner, kami, head)
         cls = classify(listed=False, max_threshold=max_thr, owner_hostile_in_window=owner_hostile, kami_hostile_in_window=kami_hostile, standing=standing)

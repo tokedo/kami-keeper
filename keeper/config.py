@@ -39,6 +39,7 @@ _KEYS: tuple[tuple[str, str, Any, str], ...] = (
     ("statusPage", "KAMI_KEEPER_STATUS_PAGE", "", "string"),  # fleet only: loopback host:port
     ("friendsFiles", "KAMI_KEEPER_FRIENDS_FILES", [], "list"),  # fleet only
     ("standingOwners", "KAMI_KEEPER_STANDING_OWNERS", [], "list"),  # account indices whose attackers always bind
+    ("standingKamis", "KAMI_KEEPER_STANDING_KAMIS", [], "list"),  # kami indices that bind every watched node, present or not
     ("requestTimeoutSec", "KAMI_KEEPER_REQUEST_TIMEOUT_SEC", 30, "integer"),
     # fleet only: books declared at deploy — [{account, strategyType, config}], file only
     ("books", "", [], "objects"),
@@ -76,6 +77,14 @@ class KeeperConfig:
     # its declaration by (type, account, kami set, node): a book key would
     # reach a running book only through a new book id and a new ledger.
     standingOwners: list[int] = field(default_factory=list)
+    # the operator's standing KAMIS — kami INDICES that are treated as
+    # present on every node a book watches: previewed on the book's first
+    # pass, refreshed at `previewRefreshSec` while absent, classed
+    # `standing`, bound with `safetyMarginPct`. For an attacker that is on
+    # a node only for the seconds of a kill: it is never there at a tick,
+    # so without this no preview of it exists and nothing binds. Read at
+    # start like `standingOwners`; empty (the default) changes nothing.
+    standingKamis: list[int] = field(default_factory=list)
     requestTimeoutSec: int = 30
     books: list[dict[str, Any]] = field(default_factory=list)
     sources: dict[str, str] = field(default_factory=dict)
@@ -176,17 +185,27 @@ def load(
     # the key is allowed under `lab` and `fleet` alike (no registry row —
     # it is not a gated feature).
     values["standingOwners"], standing_error = _standing_owners(values.get("standingOwners") or [])
+    # the standing kamis — the same shape, kami indices
+    values["standingKamis"], kamis_error = _index_list(values.get("standingKamis") or [], "standingKamis: expected kami indices (non-negative integers)")
 
     cfg = KeeperConfig(**values, sources=sources, configFile=str(cfg_path) if cfg_path else None)
     cfg.errors = validate(cfg)
     if standing_error:
         cfg.errors.append(standing_error)
+    if kamis_error:
+        cfg.errors.append(kamis_error)
     return cfg
 
 
 def _standing_owners(raw: Any) -> tuple[list[int], str | None]:
     """(the account indices, the one error or None). An empty list is the
     default and means "no standing owner"."""
+    return _index_list(raw, "standingOwners: expected account indices (non-negative integers)")
+
+
+def _index_list(raw: Any, error: str) -> tuple[list[int], str | None]:
+    """A list of non-negative integers from a file list or an env comma
+    string: duplicates collapse, order kept, one error naming the key."""
     out: list[int] = []
     bad = False
     for x in raw if isinstance(raw, list) else [raw]:
@@ -200,7 +219,7 @@ def _standing_owners(raw: Any) -> tuple[list[int], str | None]:
             continue
         if n not in out:
             out.append(n)
-    return out, ("standingOwners: expected account indices (non-negative integers)" if bad else None)
+    return out, (error if bad else None)
 
 
 def validate(cfg: KeeperConfig) -> list[str]:

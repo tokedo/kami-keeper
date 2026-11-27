@@ -26,6 +26,7 @@ grants: [alice, bob]  # fleet only: account LABELS granted at boot, never a key 
 statusPage: ""  # fleet only: loopback host:port of a read-only status page; empty = off
 friendsFiles: []  # fleet only: roster / friends files
 standingOwners: []  # account INDICES whose attackers always bind; never names
+standingKamis: []  # kami INDICES that bind EVERY watched node, on it or not (previewed and refreshed while absent); never names; an index the lens does not know holds the book
 requestTimeoutSec: 30  # control-socket request timeout, seconds
 books:  # fleet only: declared books start at boot, matched by (type, account, kami set / recipe set)
 - account: alice

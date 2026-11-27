@@ -298,7 +298,8 @@ class StrategyContext:
     and `watch`, the thresholds its kamis serve per node, also shared by
     every book on the node. `standing_owners` — the keeper's `standingOwners`, owners
     whose attackers bind as if killed-here, without a kill and without a
-    window."""
+    window. `standing_kamis` — the keeper's `standingKamis`, kamis treated
+    as present on every watched node (previewed and bound while absent)."""
 
     previews: Any = None
     owners: Any = None
@@ -306,6 +307,7 @@ class StrategyContext:
     watchlist: Any = None
     watch: Any = None
     standing_owners: frozenset[int] = frozenset()
+    standing_kamis: frozenset[int] = frozenset()
     clock: Any = None
     profile: str = "lab"
     node_occupants: dict[int, dict[int, Any]] = field(default_factory=dict)

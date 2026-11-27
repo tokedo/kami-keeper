@@ -296,7 +296,7 @@ class Keeper:
         # the operator's standing list, keeper-level config (not
         # a book key: a live book is matched to its declaration by type,
         # account, kami set and node, so a book key would need a new book)
-        self.context = StrategyContext(previews=self.previews, owners=self.owners, census=self.census, watchlist=self.watchlist, watch=self.watch, standing_owners=frozenset(int(a) for a in self.cfg.standingOwners), clock=lambda: self.clock(), profile=self.profile)
+        self.context = StrategyContext(previews=self.previews, owners=self.owners, census=self.census, watchlist=self.watchlist, watch=self.watch, standing_owners=frozenset(int(a) for a in self.cfg.standingOwners), standing_kamis=frozenset(int(k) for k in self.cfg.standingKamis), clock=lambda: self.clock(), profile=self.profile)
         self.pass_totals: collections.deque[tuple[int, int]] = collections.deque(maxlen=PASS_TOTALS_KEPT)
         self.scan_runs = 0
         # the chain-backed HP fallback — the reader is
@@ -367,6 +367,8 @@ class Keeper:
                 self._log(b.id, f"resumed after keeper restart (runtime {restored['restore']}; lastCollectAt {restored['lastCollectAt']})" + (f"; battles seed {extra['seedFromBattles'].get('status')}" if "seedFromBattles" in extra else "") + (f"; {extra['openTx']} open broadcast row(s)" if extra.get("openTx") else ""))
         if self.cfg.standingOwners:
             self._log(None, f"standing owners: {sorted(int(a) for a in self.cfg.standingOwners)}")
+        if self.cfg.standingKamis:
+            self._log(None, f"standing kamis: {sorted(int(k) for k in self.cfg.standingKamis)}")
         if self.cfg.books and profiles.allows("books-in-config", self.profile):
             self.config_books_pending = [dict(b) for b in self.cfg.books]
             self._start_config_books()
@@ -1860,7 +1862,7 @@ class Keeper:
         # A collect or a stop the tick pooled goes out after the row is
         # written and is counted by `collectPooled` / `stopPooled`; its `tx`
         # rows follow. `txCount` / `txStatus` are the same values under the
-        # old names, kept for one release (SPEC P11).
+        # old names, kept until the next MAJOR (SPEC P11).
         tx_status = [r.status for r in records]
         summary: dict[str, Any] = {"acted": bool(intents) or bool(pooled) or bool(stops), "decisions": [d.kind for d in decisions], "txCountInTick": len(records), "txStatusInTick": list(tx_status), "txCount": len(records), "txStatus": tx_status}
         if fallback_rows:

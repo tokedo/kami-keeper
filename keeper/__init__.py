@@ -13,7 +13,7 @@ from __future__ import annotations
 
 # SPEC P11: SemVer. `KEEPER_VERSION` is the package version; `SCHEMA_VERSION`
 # stamps every response and ledger row.
-KEEPER_VERSION = "1.0.2"
+KEEPER_VERSION = "1.1.0"
 SCHEMA_VERSION = "0.1.1"
 
 # SPEC D1: the oldest lens the keeper is written against.
